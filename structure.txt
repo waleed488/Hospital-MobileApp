@@ -1,0 +1,3275 @@
+Folder PATH listing
+Volume serial number is 94C9-F421
+C:.
+¦   .flutter-plugins-dependencies
+¦   .gitignore
+¦   .metadata
+¦   analysis_options.yaml
+¦   firebase.json
+¦   hospitalproject.iml
+¦   pubspec.lock
+¦   pubspec.yaml
+¦   README.md
+¦   structure.txt
+¦   
++---.dart_tool
+¦   ¦   package_config.json
+¦   ¦   package_graph.json
+¦   ¦   version
+¦   ¦   
+¦   +---chrome-device
+¦   ¦   +---Default
+¦   ¦       ¦   Account Web Data
+¦   ¦       ¦   Account Web Data-journal
+¦   ¦       ¦   Affiliation Database
+¦   ¦       ¦   Affiliation Database-journal
+¦   ¦       ¦   BookmarkMergedSurfaceOrdering
+¦   ¦       ¦   BrowsingTopicsSiteData
+¦   ¦       ¦   BrowsingTopicsSiteData-journal
+¦   ¦       ¦   BrowsingTopicsState
+¦   ¦       ¦   DIPS
+¦   ¦       ¦   engine_allowlist.bf
+¦   ¦       ¦   Favicons
+¦   ¦       ¦   Favicons-journal
+¦   ¦       ¦   heavy_ad_intervention_opt_out.db
+¦   ¦       ¦   heavy_ad_intervention_opt_out.db-journal
+¦   ¦       ¦   History
+¦   ¦       ¦   History-journal
+¦   ¦       ¦   LOCK
+¦   ¦       ¦   LOG
+¦   ¦       ¦   Login Data
+¦   ¦       ¦   Login Data For Account
+¦   ¦       ¦   Login Data For Account-journal
+¦   ¦       ¦   Login Data-journal
+¦   ¦       ¦   Network Action Predictor
+¦   ¦       ¦   Network Action Predictor-journal
+¦   ¦       ¦   Preferences
+¦   ¦       ¦   PreferredApps
+¦   ¦       ¦   Secure Preferences
+¦   ¦       ¦   ServerCertificate
+¦   ¦       ¦   ServerCertificate-journal
+¦   ¦       ¦   SharedStorage
+¦   ¦       ¦   Shortcuts
+¦   ¦       ¦   Shortcuts-journal
+¦   ¦       ¦   Top Sites
+¦   ¦       ¦   Top Sites-journal
+¦   ¦       ¦   trusted_vault.pb
+¦   ¦       ¦   Web Data
+¦   ¦       ¦   Web Data-journal
+¦   ¦       ¦   
+¦   ¦       +---AutofillStrikeDatabase
+¦   ¦       ¦       LOCK
+¦   ¦       ¦       LOG
+¦   ¦       ¦       LOG.old
+¦   ¦       ¦       
+¦   ¦       +---blob_storage
+¦   ¦       ¦   +---0b311a40-dab5-4843-bc41-bb44999d2e0a
+¦   ¦       ¦   +---7b06cb68-9e90-4a90-971f-e9e62fef16d9
+¦   ¦       +---BudgetDatabase
+¦   ¦       ¦       LOCK
+¦   ¦       ¦       LOG
+¦   ¦       ¦       LOG.old
+¦   ¦       ¦       
+¦   ¦       +---chrome_cart_db
+¦   ¦       ¦       LOCK
+¦   ¦       ¦       LOG
+¦   ¦       ¦       LOG.old
+¦   ¦       ¦       
+¦   ¦       +---ClientCertificates
+¦   ¦       ¦       LOCK
+¦   ¦       ¦       LOG
+¦   ¦       ¦       LOG.old
+¦   ¦       ¦       
+¦   ¦       +---commerce_subscription_db
+¦   ¦       ¦       LOCK
+¦   ¦       ¦       LOG
+¦   ¦       ¦       LOG.old
+¦   ¦       ¦       
+¦   ¦       +---discounts_db
+¦   ¦       ¦       LOCK
+¦   ¦       ¦       LOG
+¦   ¦       ¦       LOG.old
+¦   ¦       ¦       
+¦   ¦       +---discount_infos_db
+¦   ¦       ¦       LOCK
+¦   ¦       ¦       LOG
+¦   ¦       ¦       LOG.old
+¦   ¦       ¦       
+¦   ¦       +---Download Service
+¦   ¦       ¦   +---EntryDB
+¦   ¦       ¦   ¦       LOCK
+¦   ¦       ¦   ¦       LOG
+¦   ¦       ¦   ¦       
+¦   ¦       ¦   +---Files
+¦   ¦       +---Extension Rules
+¦   ¦       ¦       000003.log
+¦   ¦       ¦       CURRENT
+¦   ¦       ¦       LOCK
+¦   ¦       ¦       LOG
+¦   ¦       ¦       MANIFEST-000001
+¦   ¦       ¦       
+¦   ¦       +---Extension Scripts
+¦   ¦       ¦       000003.log
+¦   ¦       ¦       CURRENT
+¦   ¦       ¦       LOCK
+¦   ¦       ¦       LOG
+¦   ¦       ¦       MANIFEST-000001
+¦   ¦       ¦       
+¦   ¦       +---Extension State
+¦   ¦       ¦       000003.log
+¦   ¦       ¦       CURRENT
+¦   ¦       ¦       LOCK
+¦   ¦       ¦       LOG
+¦   ¦       ¦       LOG.old
+¦   ¦       ¦       MANIFEST-000001
+¦   ¦       ¦       
+¦   ¦       +---Feature Engagement Tracker
+¦   ¦       ¦   +---AvailabilityDB
+¦   ¦       ¦   ¦       LOCK
+¦   ¦       ¦   ¦       LOG
+¦   ¦       ¦   ¦       LOG.old
+¦   ¦       ¦   ¦       
+¦   ¦       ¦   +---EventDB
+¦   ¦       ¦           LOCK
+¦   ¦       ¦           LOG
+¦   ¦       ¦           LOG.old
+¦   ¦       ¦           
+¦   ¦       +---GCM Store
+¦   ¦       ¦   ¦   000003.log
+¦   ¦       ¦   ¦   CURRENT
+¦   ¦       ¦   ¦   LOCK
+¦   ¦       ¦   ¦   LOG
+¦   ¦       ¦   ¦   MANIFEST-000001
+¦   ¦       ¦   ¦   
+¦   ¦       ¦   +---Encryption
+¦   ¦       ¦           000003.log
+¦   ¦       ¦           CURRENT
+¦   ¦       ¦           LOCK
+¦   ¦       ¦           LOG
+¦   ¦       ¦           LOG.old
+¦   ¦       ¦           MANIFEST-000001
+¦   ¦       ¦           
+¦   ¦       +---IndexedDB
+¦   ¦       ¦   +---http_localhost_55722.indexeddb.leveldb
+¦   ¦       ¦   ¦       000006.log
+¦   ¦       ¦   ¦       000008.ldb
+¦   ¦       ¦   ¦       CURRENT
+¦   ¦       ¦   ¦       LOCK
+¦   ¦       ¦   ¦       LOG
+¦   ¦       ¦   ¦       MANIFEST-000001
+¦   ¦       ¦   ¦       
+¦   ¦       ¦   +---http_localhost_63969.indexeddb.leveldb
+¦   ¦       ¦           000007.log
+¦   ¦       ¦           000009.ldb
+¦   ¦       ¦           CURRENT
+¦   ¦       ¦           LOCK
+¦   ¦       ¦           LOG
+¦   ¦       ¦           LOG.old
+¦   ¦       ¦           MANIFEST-000001
+¦   ¦       ¦           
+¦   ¦       +---Local Storage
+¦   ¦       ¦   +---leveldb
+¦   ¦       ¦           000003.log
+¦   ¦       ¦           CURRENT
+¦   ¦       ¦           LOCK
+¦   ¦       ¦           LOG
+¦   ¦       ¦           LOG.old
+¦   ¦       ¦           MANIFEST-000001
+¦   ¦       ¦           
+¦   ¦       +---Network
+¦   ¦       ¦       Cookies
+¦   ¦       ¦       Cookies-journal
+¦   ¦       ¦       Device Bound Sessions
+¦   ¦       ¦       Device Bound Sessions-journal
+¦   ¦       ¦       Network Persistent State
+¦   ¦       ¦       NetworkDataMigrated
+¦   ¦       ¦       Reporting and NEL
+¦   ¦       ¦       Reporting and NEL-journal
+¦   ¦       ¦       TransportSecurity
+¦   ¦       ¦       Trust Tokens
+¦   ¦       ¦       Trust Tokens-journal
+¦   ¦       ¦       
+¦   ¦       +---optimization_guide_hint_cache_store
+¦   ¦       ¦       LOCK
+¦   ¦       ¦       LOG
+¦   ¦       ¦       
+¦   ¦       +---parcel_tracking_db
+¦   ¦       ¦       LOCK
+¦   ¦       ¦       LOG
+¦   ¦       ¦       LOG.old
+¦   ¦       ¦       
+¦   ¦       +---PersistentOriginTrials
+¦   ¦       ¦       LOCK
+¦   ¦       ¦       LOG
+¦   ¦       ¦       LOG.old
+¦   ¦       ¦       
+¦   ¦       +---Safe Browsing Network
+¦   ¦       ¦       NetworkDataMigrated
+¦   ¦       ¦       Safe Browsing Cookies
+¦   ¦       ¦       Safe Browsing Cookies-journal
+¦   ¦       ¦       
+¦   ¦       +---Segmentation Platform
+¦   ¦       ¦   +---SegmentInfoDB
+¦   ¦       ¦   ¦       LOCK
+¦   ¦       ¦   ¦       LOG
+¦   ¦       ¦   ¦       LOG.old
+¦   ¦       ¦   ¦       
+¦   ¦       ¦   +---SignalDB
+¦   ¦       ¦   ¦       LOCK
+¦   ¦       ¦   ¦       LOG
+¦   ¦       ¦   ¦       LOG.old
+¦   ¦       ¦   ¦       
+¦   ¦       ¦   +---SignalStorageConfigDB
+¦   ¦       ¦           LOCK
+¦   ¦       ¦           LOG
+¦   ¦       ¦           LOG.old
+¦   ¦       ¦           
+¦   ¦       +---Service Worker
+¦   ¦       ¦   +---Database
+¦   ¦       ¦   ¦       000003.log
+¦   ¦       ¦   ¦       CURRENT
+¦   ¦       ¦   ¦       LOCK
+¦   ¦       ¦   ¦       LOG
+¦   ¦       ¦   ¦       LOG.old
+¦   ¦       ¦   ¦       MANIFEST-000001
+¦   ¦       ¦   ¦       
+¦   ¦       ¦   +---ScriptCache
+¦   ¦       ¦       ¦   2cc80dabc69f58b6_0
+¦   ¦       ¦       ¦   4cb013792b196a35_0
+¦   ¦       ¦       ¦   4cb013792b196a35_1
+¦   ¦       ¦       ¦   index
+¦   ¦       ¦       ¦   
+¦   ¦       ¦       +---index-dir
+¦   ¦       ¦               the-real-index
+¦   ¦       ¦               
+¦   ¦       +---Session Storage
+¦   ¦       ¦       000003.log
+¦   ¦       ¦       CURRENT
+¦   ¦       ¦       LOCK
+¦   ¦       ¦       LOG
+¦   ¦       ¦       LOG.old
+¦   ¦       ¦       MANIFEST-000001
+¦   ¦       ¦       
+¦   ¦       +---Sessions
+¦   ¦       ¦       Session_13426500407402183
+¦   ¦       ¦       Session_13426502022358106
+¦   ¦       ¦       Tabs_13426501967485800
+¦   ¦       ¦       Tabs_13426502022649461
+¦   ¦       ¦       
+¦   ¦       +---Shared Dictionary
+¦   ¦       ¦   ¦   db
+¦   ¦       ¦   ¦   db-journal
+¦   ¦       ¦   ¦   
+¦   ¦       ¦   +---cache
+¦   ¦       ¦       ¦   index
+¦   ¦       ¦       ¦   
+¦   ¦       ¦       +---index-dir
+¦   ¦       ¦               the-real-index
+¦   ¦       ¦               
+¦   ¦       +---shared_proto_db
+¦   ¦       ¦   ¦   000003.log
+¦   ¦       ¦   ¦   CURRENT
+¦   ¦       ¦   ¦   LOCK
+¦   ¦       ¦   ¦   LOG
+¦   ¦       ¦   ¦   MANIFEST-000001
+¦   ¦       ¦   ¦   
+¦   ¦       ¦   +---metadata
+¦   ¦       ¦           000003.log
+¦   ¦       ¦           CURRENT
+¦   ¦       ¦           LOCK
+¦   ¦       ¦           LOG
+¦   ¦       ¦           LOG.old
+¦   ¦       ¦           
+¦   ¦       +---Site Characteristics Database
+¦   ¦       ¦       000003.log
+¦   ¦       ¦       CURRENT
+¦   ¦       ¦       LOCK
+¦   ¦       ¦       LOG
+¦   ¦       ¦       MANIFEST-000001
+¦   ¦       ¦       
+¦   ¦       +---Sync Data
+¦   ¦       ¦   +---LevelDB
+¦   ¦       ¦           000003.log
+¦   ¦       ¦           CURRENT
+¦   ¦       ¦           LOCK
+¦   ¦       ¦           LOG
+¦   ¦       ¦           MANIFEST-000001
+¦   ¦       ¦           
+¦   ¦       +---WebStorage
+¦   ¦               QuotaManager
+¦   ¦               QuotaManager-journal
+¦   ¦               
+¦   +---dartpad
+¦   ¦       web_plugin_registrant.dart
+¦   ¦       
+¦   +---extension_discovery
+¦           vs_code.json
+¦           
++---.idea
+¦   ¦   modules.xml
+¦   ¦   workspace.xml
+¦   ¦   
+¦   +---libraries
+¦   ¦       Dart_SDK.xml
+¦   ¦       KotlinJavaRuntime.xml
+¦   ¦       
+¦   +---runConfigurations
+¦           main_dart.xml
+¦           
++---android
+¦   ¦   .gitignore
+¦   ¦   build.gradle.kts
+¦   ¦   gradle.properties
+¦   ¦   gradlew
+¦   ¦   gradlew.bat
+¦   ¦   hospitalproject_android.iml
+¦   ¦   local.properties
+¦   ¦   settings.gradle.kts
+¦   ¦   
+¦   +---.gradle
+¦   ¦   +---8.14
+¦   ¦   ¦   ¦   gc.properties
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +---checksums
+¦   ¦   ¦   ¦       checksums.lock
+¦   ¦   ¦   ¦       md5-checksums.bin
+¦   ¦   ¦   ¦       sha1-checksums.bin
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---executionHistory
+¦   ¦   ¦   ¦       executionHistory.lock
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---expanded
+¦   ¦   ¦   +---fileChanges
+¦   ¦   ¦   ¦       last-build.bin
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---fileHashes
+¦   ¦   ¦   ¦       fileHashes.bin
+¦   ¦   ¦   ¦       fileHashes.lock
+¦   ¦   ¦   ¦       resourceHashesCache.bin
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---vcsMetadata
+¦   ¦   +---buildOutputCleanup
+¦   ¦   ¦       buildOutputCleanup.lock
+¦   ¦   ¦       cache.properties
+¦   ¦   ¦       
+¦   ¦   +---nb-cache
+¦   ¦   ¦   ¦   subprojects.ser
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +---android-1347312611
+¦   ¦   ¦   ¦       project-info.ser
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---app-2013501922
+¦   ¦   ¦   ¦       project-info.ser
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---trust
+¦   ¦   ¦           39E1264B8F0101693C5AC1D6A4469C11F1D74086EA91FE90DBDCE75DAB1CFE11
+¦   ¦   ¦           
+¦   ¦   +---noVersion
+¦   ¦   ¦       buildLogic.lock
+¦   ¦   ¦       
+¦   ¦   +---vcs-1
+¦   ¦           gc.properties
+¦   ¦           
+¦   +---app
+¦   ¦   ¦   build.gradle.kts
+¦   ¦   ¦   google-services.json
+¦   ¦   ¦   
+¦   ¦   +---src
+¦   ¦       +---debug
+¦   ¦       ¦       AndroidManifest.xml
+¦   ¦       ¦       
+¦   ¦       +---main
+¦   ¦       ¦   ¦   AndroidManifest.xml
+¦   ¦       ¦   ¦   
+¦   ¦       ¦   +---java
+¦   ¦       ¦   ¦   +---io
+¦   ¦       ¦   ¦       +---flutter
+¦   ¦       ¦   ¦           +---plugins
+¦   ¦       ¦   ¦                   GeneratedPluginRegistrant.java
+¦   ¦       ¦   ¦                   
+¦   ¦       ¦   +---kotlin
+¦   ¦       ¦   ¦   +---com
+¦   ¦       ¦   ¦       +---example
+¦   ¦       ¦   ¦           +---hospitalproject
+¦   ¦       ¦   ¦                   MainActivity.kt
+¦   ¦       ¦   ¦                   
+¦   ¦       ¦   +---res
+¦   ¦       ¦       +---drawable
+¦   ¦       ¦       ¦       launch_background.xml
+¦   ¦       ¦       ¦       
+¦   ¦       ¦       +---drawable-v21
+¦   ¦       ¦       ¦       launch_background.xml
+¦   ¦       ¦       ¦       
+¦   ¦       ¦       +---mipmap-hdpi
+¦   ¦       ¦       ¦       ic_launcher.png
+¦   ¦       ¦       ¦       
+¦   ¦       ¦       +---mipmap-mdpi
+¦   ¦       ¦       ¦       ic_launcher.png
+¦   ¦       ¦       ¦       
+¦   ¦       ¦       +---mipmap-xhdpi
+¦   ¦       ¦       ¦       ic_launcher.png
+¦   ¦       ¦       ¦       
+¦   ¦       ¦       +---mipmap-xxhdpi
+¦   ¦       ¦       ¦       ic_launcher.png
+¦   ¦       ¦       ¦       
+¦   ¦       ¦       +---mipmap-xxxhdpi
+¦   ¦       ¦       ¦       ic_launcher.png
+¦   ¦       ¦       ¦       
+¦   ¦       ¦       +---values
+¦   ¦       ¦       ¦       styles.xml
+¦   ¦       ¦       ¦       
+¦   ¦       ¦       +---values-night
+¦   ¦       ¦               styles.xml
+¦   ¦       ¦               
+¦   ¦       +---profile
+¦   ¦               AndroidManifest.xml
+¦   ¦               
+¦   +---gradle
+¦       +---wrapper
+¦               gradle-wrapper.jar
+¦               gradle-wrapper.properties
+¦               
++---build
+¦   ¦   b70f9274ac3b5ec9754be8774a3c9a1c.cache.dill.track.dill
+¦   ¦   
+¦   +---1e049d8717e89c2d18abafbc1449d98d
+¦   ¦       .filecache
+¦   ¦       dart_build.d
+¦   ¦       dart_build.stamp
+¦   ¦       dart_build_result.json
+¦   ¦       gen_dart_plugin_registrant.stamp
+¦   ¦       gen_localizations.stamp
+¦   ¦       outputs.json
+¦   ¦       _composite.stamp
+¦   ¦       
+¦   +---app
+¦   ¦   +---tmp
+¦   ¦       +---allTests
+¦   ¦       +---analyzeDebugAndroidTestDependencies
+¦   ¦       +---analyzeDebugDependencies
+¦   ¦       +---analyzeDebugUnitTestDependencies
+¦   ¦       +---analyzeProfileDependencies
+¦   ¦       +---analyzeProfileUnitTestDependencies
+¦   ¦       +---analyzeReleaseDependencies
+¦   ¦       +---analyzeReleaseUnitTestDependencies
+¦   ¦       +---androidDependencies
+¦   ¦       +---artifactTransforms
+¦   ¦       +---asarToCompatSplitsForDebug
+¦   ¦       +---asarToCompatSplitsForProfile
+¦   ¦       +---asarToCompatSplitsForRelease
+¦   ¦       +---assemble
+¦   ¦       +---assembleAndroidTest
+¦   ¦       +---assembleDebug
+¦   ¦       +---assembleDebugAndroidTest
+¦   ¦       +---assembleDebugUnitTest
+¦   ¦       +---assembleProfile
+¦   ¦       +---assembleProfileUnitTest
+¦   ¦       +---assembleRelease
+¦   ¦       +---assembleReleaseUnitTest
+¦   ¦       +---assembleUnitTest
+¦   ¦       +---build
+¦   ¦       +---buildCMakeDebug
+¦   ¦       +---buildCMakeDebug[arm64-v8a]
+¦   ¦       +---buildCMakeDebug[armeabi-v7a]
+¦   ¦       +---buildCMakeDebug[x86_64]
+¦   ¦       +---buildCMakeProfile
+¦   ¦       +---buildCMakeProfile[arm64-v8a]
+¦   ¦       +---buildCMakeProfile[armeabi-v7a]
+¦   ¦       +---buildCMakeProfile[x86_64]
+¦   ¦       +---buildCMakeRelease
+¦   ¦       +---buildCMakeRelease[arm64-v8a]
+¦   ¦       +---buildCMakeRelease[armeabi-v7a]
+¦   ¦       +---buildCMakeRelease[x86_64]
+¦   ¦       +---buildDebugPreBundle
+¦   ¦       +---buildDependents
+¦   ¦       +---buildEnvironment
+¦   ¦       +---buildKotlinToolingMetadata
+¦   ¦       +---buildNeeded
+¦   ¦       +---buildProfilePreBundle
+¦   ¦       +---buildReleasePreBundle
+¦   ¦       +---bundle
+¦   ¦       +---bundleDebug
+¦   ¦       +---bundleDebugClassesToCompileJar
+¦   ¦       +---bundleDebugClassesToRuntimeJar
+¦   ¦       +---bundleDebugResources
+¦   ¦       +---bundleProfile
+¦   ¦       +---bundleProfileClassesToCompileJar
+¦   ¦       +---bundleProfileClassesToRuntimeJar
+¦   ¦       +---bundleProfileResources
+¦   ¦       +---bundleRelease
+¦   ¦       +---bundleReleaseClassesToCompileJar
+¦   ¦       +---bundleReleaseClassesToRuntimeJar
+¦   ¦       +---bundleReleaseResources
+¦   ¦       +---check
+¦   ¦       +---checkDebugAarMetadata
+¦   ¦       +---checkDebugAndroidTestAarMetadata
+¦   ¦       +---checkDebugAndroidTestDuplicateClasses
+¦   ¦       +---checkDebugDuplicateClasses
+¦   ¦       +---checkDebugManifest
+¦   ¦       +---checkJetifier
+¦   ¦       +---checkKotlinGradlePluginConfigurationErrors
+¦   ¦       +---checkLegacyAbi
+¦   ¦       +---checkProfileAarMetadata
+¦   ¦       +---checkProfileDuplicateClasses
+¦   ¦       +---checkProfileManifest
+¦   ¦       +---checkReleaseAarMetadata
+¦   ¦       +---checkReleaseDuplicateClasses
+¦   ¦       +---checkReleaseManifest
+¦   ¦       +---checkSigningConfiguration
+¦   ¦       +---clean
+¦   ¦       +---cleanMergeDebugAssets
+¦   ¦       +---cleanMergeProfileAssets
+¦   ¦       +---cleanMergeReleaseAssets
+¦   ¦       +---collectReleaseDependencies
+¦   ¦       +---compileDebugAndroidTestJavaWithJavac
+¦   ¦       +---compileDebugAndroidTestKotlin
+¦   ¦       +---compileDebugAndroidTestShaders
+¦   ¦       +---compileDebugAndroidTestSources
+¦   ¦       +---compileDebugArtProfile
+¦   ¦       +---compileDebugJavaWithJavac
+¦   ¦       +---compileDebugKotlin
+¦   ¦       +---compileDebugShaders
+¦   ¦       +---compileDebugSources
+¦   ¦       +---compileDebugUnitTestJavaWithJavac
+¦   ¦       +---compileDebugUnitTestKotlin
+¦   ¦       +---compileDebugUnitTestSources
+¦   ¦       +---compileFlutterBuildDebug
+¦   ¦       +---compileFlutterBuildProfile
+¦   ¦       +---compileFlutterBuildRelease
+¦   ¦       +---compileLint
+¦   ¦       +---compileLintChecks
+¦   ¦       +---compileProfileArtProfile
+¦   ¦       +---compileProfileJavaWithJavac
+¦   ¦       +---compileProfileKotlin
+¦   ¦       +---compileProfileShaders
+¦   ¦       +---compileProfileSources
+¦   ¦       +---compileProfileUnitTestJavaWithJavac
+¦   ¦       +---compileProfileUnitTestKotlin
+¦   ¦       +---compileProfileUnitTestSources
+¦   ¦       +---compileReleaseArtProfile
+¦   ¦       +---compileReleaseJavaWithJavac
+¦   ¦       +---compileReleaseKotlin
+¦   ¦       +---compileReleaseShaders
+¦   ¦       +---compileReleaseSources
+¦   ¦       +---compileReleaseUnitTestJavaWithJavac
+¦   ¦       +---compileReleaseUnitTestKotlin
+¦   ¦       +---compileReleaseUnitTestSources
+¦   ¦       +---components
+¦   ¦       +---compressDebugAndroidTestAssets
+¦   ¦       +---compressDebugAssets
+¦   ¦       +---compressProfileAssets
+¦   ¦       +---compressReleaseAssets
+¦   ¦       +---configureCMakeDebug
+¦   ¦       +---configureCMakeDebug[arm64-v8a]
+¦   ¦       +---configureCMakeDebug[armeabi-v7a]
+¦   ¦       +---configureCMakeDebug[x86_64]
+¦   ¦       +---configureCMakeProfile
+¦   ¦       +---configureCMakeProfile[arm64-v8a]
+¦   ¦       +---configureCMakeProfile[armeabi-v7a]
+¦   ¦       +---configureCMakeProfile[x86_64]
+¦   ¦       +---configureCMakeRelease
+¦   ¦       +---configureCMakeRelease[arm64-v8a]
+¦   ¦       +---configureCMakeRelease[armeabi-v7a]
+¦   ¦       +---configureCMakeRelease[x86_64]
+¦   ¦       +---configureReleaseDependencies
+¦   ¦       +---connectedAndroidTest
+¦   ¦       +---connectedCheck
+¦   ¦       +---connectedDebugAndroidTest
+¦   ¦       +---consumeConfigAttr
+¦   ¦       +---convertLinkedResourcesToBinaryRelease
+¦   ¦       +---convertShrunkResourcesToBinaryRelease
+¦   ¦       +---copyFlutterAssetsDebug
+¦   ¦       +---copyFlutterAssetsProfile
+¦   ¦       +---copyFlutterAssetsRelease
+¦   ¦       +---createDebugAndroidTestApkListingFileRedirect
+¦   ¦       +---createDebugApkListingFileRedirect
+¦   ¦       +---createDebugApksFromBundleListingFileRedirect
+¦   ¦       +---createDebugBundleListingFileRedirect
+¦   ¦       +---createDebugCompatibleScreenManifests
+¦   ¦       +---createMockableJar
+¦   ¦       +---createProfileApkListingFileRedirect
+¦   ¦       +---createProfileApksFromBundleListingFileRedirect
+¦   ¦       +---createProfileBundleListingFileRedirect
+¦   ¦       +---createProfileCompatibleScreenManifests
+¦   ¦       +---createReleaseApkListingFileRedirect
+¦   ¦       +---createReleaseApksFromBundleListingFileRedirect
+¦   ¦       +---createReleaseBundleListingFileRedirect
+¦   ¦       +---createReleaseCompatibleScreenManifests
+¦   ¦       +---DebugMinSdkCheck
+¦   ¦       +---dependencies
+¦   ¦       +---dependencyInsight
+¦   ¦       +---dependentComponents
+¦   ¦       +---desugarDebugAndroidTestFileDependencies
+¦   ¦       +---desugarDebugFileDependencies
+¦   ¦       +---desugarProfileFileDependencies
+¦   ¦       +---deviceAndroidTest
+¦   ¦       +---deviceCheck
+¦   ¦       +---dexBuilderDebug
+¦   ¦       +---dexBuilderDebugAndroidTest
+¦   ¦       +---dexBuilderProfile
+¦   ¦       +---dumpLegacyAbi
+¦   ¦       +---expandReleaseArtProfileWildcards
+¦   ¦       +---externalNativeBuildCleanDebug
+¦   ¦       +---externalNativeBuildCleanProfile
+¦   ¦       +---externalNativeBuildCleanRelease
+¦   ¦       +---externalNativeBuildDebug
+¦   ¦       +---externalNativeBuildProfile
+¦   ¦       +---externalNativeBuildRelease
+¦   ¦       +---extractApksForDebug
+¦   ¦       +---extractApksForProfile
+¦   ¦       +---extractApksForRelease
+¦   ¦       +---extractApksFromBundleForDebug
+¦   ¦       +---extractApksFromBundleForProfile
+¦   ¦       +---extractApksFromBundleForRelease
+¦   ¦       +---extractDebugNativeDebugMetadata
+¦   ¦       +---extractDebugNativeSymbolTables
+¦   ¦       +---extractDeepLinksDebug
+¦   ¦       +---extractDeepLinksProfile
+¦   ¦       +---extractDeepLinksRelease
+¦   ¦       +---extractProfileNativeDebugMetadata
+¦   ¦       +---extractProfileNativeSymbolTables
+¦   ¦       +---extractProguardFiles
+¦   ¦       +---extractReleaseNativeDebugMetadata
+¦   ¦       +---extractReleaseNativeSymbolTables
+¦   ¦       +---extractReleaseVersionControlInfo
+¦   ¦       +---generateDebugAndroidTestAssets
+¦   ¦       +---generateDebugAndroidTestLintModel
+¦   ¦       +---generateDebugAndroidTestResources
+¦   ¦       +---generateDebugAndroidTestResValues
+¦   ¦       +---generateDebugAndroidTestSources
+¦   ¦       +---generateDebugAssets
+¦   ¦       +---generateDebugFeatureMetadata
+¦   ¦       +---generateDebugFeatureTransitiveDeps
+¦   ¦       +---generateDebugLintModel
+¦   ¦       +---generateDebugLintReportModel
+¦   ¦       +---generateDebugManifestClass
+¦   ¦       +---generateDebugResources
+¦   ¦       +---generateDebugResValues
+¦   ¦       +---generateDebugSources
+¦   ¦       +---generateDebugUnitTestAssets
+¦   ¦       +---generateDebugUnitTestLintModel
+¦   ¦       +---generateDebugUnitTestResources
+¦   ¦       +---generateDebugUnitTestSources
+¦   ¦       +---generateJsonModelDebug
+¦   ¦       +---generateJsonModelProfile
+¦   ¦       +---generateJsonModelRelease
+¦   ¦       +---generatePgpKeys
+¦   ¦       +---generateProfileAssets
+¦   ¦       +---generateProfileFeatureMetadata
+¦   ¦       +---generateProfileFeatureTransitiveDeps
+¦   ¦       +---generateProfileLintModel
+¦   ¦       +---generateProfileLintReportModel
+¦   ¦       +---generateProfileManifestClass
+¦   ¦       +---generateProfileResources
+¦   ¦       +---generateProfileResValues
+¦   ¦       +---generateProfileSources
+¦   ¦       +---generateProfileUnitTestAssets
+¦   ¦       +---generateProfileUnitTestLintModel
+¦   ¦       +---generateProfileUnitTestResources
+¦   ¦       +---generateProfileUnitTestSources
+¦   ¦       +---generateReleaseAssets
+¦   ¦       +---generateReleaseFeatureMetadata
+¦   ¦       +---generateReleaseFeatureTransitiveDeps
+¦   ¦       +---generateReleaseLintModel
+¦   ¦       +---generateReleaseLintReportModel
+¦   ¦       +---generateReleaseLintVitalReportModel
+¦   ¦       +---generateReleaseManifestClass
+¦   ¦       +---generateReleaseResources
+¦   ¦       +---generateReleaseResValues
+¦   ¦       +---generateReleaseSources
+¦   ¦       +---generateReleaseUnitTestAssets
+¦   ¦       +---generateReleaseUnitTestLintModel
+¦   ¦       +---generateReleaseUnitTestResources
+¦   ¦       +---generateReleaseUnitTestSources
+¦   ¦       +---help
+¦   ¦       +---installDebug
+¦   ¦       +---installDebugAndroidTest
+¦   ¦       +---installProfile
+¦   ¦       +---installRelease
+¦   ¦       +---javaPreCompileDebug
+¦   ¦       +---javaPreCompileDebugAndroidTest
+¦   ¦       +---javaPreCompileDebugUnitTest
+¦   ¦       +---javaPreCompileProfile
+¦   ¦       +---javaPreCompileProfileUnitTest
+¦   ¦       +---javaPreCompileRelease
+¦   ¦       +---javaPreCompileReleaseUnitTest
+¦   ¦       +---javaToolchains
+¦   ¦       +---javaVersion
+¦   ¦       +---kgpVersion
+¦   ¦       +---kotlinDslAccessorsReport
+¦   ¦       +---lint
+¦   ¦       +---lintAnalyzeDebug
+¦   ¦       +---lintAnalyzeDebugAndroidTest
+¦   ¦       +---lintAnalyzeDebugUnitTest
+¦   ¦       +---lintAnalyzeProfile
+¦   ¦       +---lintAnalyzeProfileUnitTest
+¦   ¦       +---lintAnalyzeRelease
+¦   ¦       +---lintAnalyzeReleaseUnitTest
+¦   ¦       +---lintDebug
+¦   ¦       +---lintFix
+¦   ¦       +---lintFixDebug
+¦   ¦       +---lintFixProfile
+¦   ¦       +---lintFixRelease
+¦   ¦       +---lintProfile
+¦   ¦       +---lintRelease
+¦   ¦       +---lintReportDebug
+¦   ¦       +---lintReportProfile
+¦   ¦       +---lintReportRelease
+¦   ¦       +---lintVitalAnalyzeRelease
+¦   ¦       +---lintVitalRelease
+¦   ¦       +---lintVitalReportRelease
+¦   ¦       +---makeApkFromBundleForDebug
+¦   ¦       +---makeApkFromBundleForProfile
+¦   ¦       +---makeApkFromBundleForRelease
+¦   ¦       +---mapDebugAndroidTestSourceSetPaths
+¦   ¦       +---mapDebugSourceSetPaths
+¦   ¦       +---mapProfileSourceSetPaths
+¦   ¦       +---mapReleaseSourceSetPaths
+¦   ¦       +---mergeDebugAndroidTestAssets
+¦   ¦       +---mergeDebugAndroidTestGeneratedProguardFiles
+¦   ¦       +---mergeDebugAndroidTestGlobalSynthetics
+¦   ¦       +---mergeDebugAndroidTestJavaResource
+¦   ¦       +---mergeDebugAndroidTestJniLibFolders
+¦   ¦       +---mergeDebugAndroidTestNativeLibs
+¦   ¦       +---mergeDebugAndroidTestResources
+¦   ¦       +---mergeDebugAndroidTestShaders
+¦   ¦       +---mergeDebugArtProfile
+¦   ¦       +---mergeDebugAssets
+¦   ¦       +---mergeDebugGeneratedProguardFiles
+¦   ¦       +---mergeDebugGlobalSynthetics
+¦   ¦       +---mergeDebugJavaResource
+¦   ¦       +---mergeDebugJniLibFolders
+¦   ¦       +---mergeDebugNativeDebugMetadata
+¦   ¦       +---mergeDebugNativeLibs
+¦   ¦       +---mergeDebugResources
+¦   ¦       +---mergeDebugShaders
+¦   ¦       +---mergeDebugStartupProfile
+¦   ¦       +---mergeExtDexDebug
+¦   ¦       +---mergeExtDexDebugAndroidTest
+¦   ¦       +---mergeExtDexProfile
+¦   ¦       +---mergeLibDexDebug
+¦   ¦       +---mergeLibDexDebugAndroidTest
+¦   ¦       +---mergeLibDexProfile
+¦   ¦       +---mergeProfileArtProfile
+¦   ¦       +---mergeProfileAssets
+¦   ¦       +---mergeProfileGeneratedProguardFiles
+¦   ¦       +---mergeProfileGlobalSynthetics
+¦   ¦       +---mergeProfileJavaResource
+¦   ¦       +---mergeProfileJniLibFolders
+¦   ¦       +---mergeProfileNativeDebugMetadata
+¦   ¦       +---mergeProfileNativeLibs
+¦   ¦       +---mergeProfileResources
+¦   ¦       +---mergeProfileShaders
+¦   ¦       +---mergeProfileStartupProfile
+¦   ¦       +---mergeProjectDexDebug
+¦   ¦       +---mergeProjectDexDebugAndroidTest
+¦   ¦       +---mergeProjectDexProfile
+¦   ¦       +---mergeReleaseArtProfile
+¦   ¦       +---mergeReleaseAssets
+¦   ¦       +---mergeReleaseGeneratedProguardFiles
+¦   ¦       +---mergeReleaseJavaResource
+¦   ¦       +---mergeReleaseJniLibFolders
+¦   ¦       +---mergeReleaseNativeDebugMetadata
+¦   ¦       +---mergeReleaseNativeLibs
+¦   ¦       +---mergeReleaseResources
+¦   ¦       +---mergeReleaseShaders
+¦   ¦       +---mergeReleaseStartupProfile
+¦   ¦       +---minifyReleaseWithR8
+¦   ¦       +---model
+¦   ¦       +---optimizeReleaseResources
+¦   ¦       +---outgoingVariants
+¦   ¦       +---outputDebugAppLinkSettings
+¦   ¦       +---outputProfileAppLinkSettings
+¦   ¦       +---outputReleaseAppLinkSettings
+¦   ¦       +---packageDebug
+¦   ¦       +---packageDebugAndroidTest
+¦   ¦       +---packageDebugBundle
+¦   ¦       +---packageDebugResources
+¦   ¦       +---packageDebugUniversalApk
+¦   ¦       +---packageProfile
+¦   ¦       +---packageProfileBundle
+¦   ¦       +---packageProfileResources
+¦   ¦       +---packageProfileUniversalApk
+¦   ¦       +---packageRelease
+¦   ¦       +---packageReleaseBundle
+¦   ¦       +---packageReleaseResources
+¦   ¦       +---packageReleaseUniversalApk
+¦   ¦       +---packJniLibsflutterBuildDebug
+¦   ¦       ¦       MANIFEST.MF
+¦   ¦       ¦       
+¦   ¦       +---packJniLibsflutterBuildProfile
+¦   ¦       ¦       MANIFEST.MF
+¦   ¦       ¦       
+¦   ¦       +---packJniLibsflutterBuildRelease
+¦   ¦       ¦       MANIFEST.MF
+¦   ¦       ¦       
+¦   ¦       +---parseDebugIntegrityConfig
+¦   ¦       +---parseDebugLocalResources
+¦   ¦       +---parseProfileIntegrityConfig
+¦   ¦       +---parseProfileLocalResources
+¦   ¦       +---parseReleaseIntegrityConfig
+¦   ¦       +---parseReleaseLocalResources
+¦   ¦       +---preBuild
+¦   ¦       +---preDebugAndroidTestBuild
+¦   ¦       +---preDebugBuild
+¦   ¦       +---preDebugUnitTestBuild
+¦   ¦       +---prepareLintJarForPublish
+¦   ¦       +---preProfileBuild
+¦   ¦       +---preProfileUnitTestBuild
+¦   ¦       +---preReleaseBuild
+¦   ¦       +---preReleaseUnitTestBuild
+¦   ¦       +---printBuildVariants
+¦   ¦       +---processApplicationManifestDebugForBundle
+¦   ¦       +---processApplicationManifestProfileForBundle
+¦   ¦       +---processApplicationManifestReleaseForBundle
+¦   ¦       +---processDebugAndroidTestJavaRes
+¦   ¦       +---processDebugAndroidTestManifest
+¦   ¦       +---processDebugAndroidTestResources
+¦   ¦       +---processDebugGoogleServices
+¦   ¦       +---processDebugJavaRes
+¦   ¦       +---processDebugMainManifest
+¦   ¦       +---processDebugManifest
+¦   ¦       +---processDebugManifestForPackage
+¦   ¦       +---processDebugResources
+¦   ¦       +---processDebugUnitTestJavaRes
+¦   ¦       +---processManifestDebugForFeature
+¦   ¦       +---processManifestProfileForFeature
+¦   ¦       +---processManifestReleaseForFeature
+¦   ¦       +---processProfileGoogleServices
+¦   ¦       +---processProfileJavaRes
+¦   ¦       +---processProfileMainManifest
+¦   ¦       +---processProfileManifest
+¦   ¦       +---processProfileManifestForPackage
+¦   ¦       +---processProfileResources
+¦   ¦       +---processProfileUnitTestJavaRes
+¦   ¦       +---processReleaseGoogleServices
+¦   ¦       +---processReleaseJavaRes
+¦   ¦       +---processReleaseMainManifest
+¦   ¦       +---processReleaseManifest
+¦   ¦       +---processReleaseManifestForPackage
+¦   ¦       +---processReleaseResources
+¦   ¦       +---processReleaseUnitTestJavaRes
+¦   ¦       +---produceDebugBundleIdeListingFile
+¦   ¦       +---produceProfileBundleIdeListingFile
+¦   ¦       +---produceReleaseBundleIdeListingFile
+¦   ¦       +---ProfileMinSdkCheck
+¦   ¦       +---projects
+¦   ¦       +---properties
+¦   ¦       +---ReleaseMinSdkCheck
+¦   ¦       +---resolvableConfigurations
+¦   ¦       +---resolveConfigAttr
+¦   ¦       +---sdkReleaseDependencyData
+¦   ¦       +---signDebugBundle
+¦   ¦       +---signingConfigWriterDebug
+¦   ¦       +---signingConfigWriterDebugAndroidTest
+¦   ¦       +---signingConfigWriterProfile
+¦   ¦       +---signingConfigWriterRelease
+¦   ¦       +---signingReport
+¦   ¦       +---signProfileBundle
+¦   ¦       +---signReleaseBundle
+¦   ¦       +---sourceSets
+¦   ¦       +---stripDebugAndroidTestDebugSymbols
+¦   ¦       +---stripDebugDebugSymbols
+¦   ¦       +---stripProfileDebugSymbols
+¦   ¦       +---stripReleaseDebugSymbols
+¦   ¦       +---tasks
+¦   ¦       +---test
+¦   ¦       +---testDebugUnitTest
+¦   ¦       +---testProfileUnitTest
+¦   ¦       +---testReleaseUnitTest
+¦   ¦       +---uninstallAll
+¦   ¦       +---uninstallDebug
+¦   ¦       +---uninstallDebugAndroidTest
+¦   ¦       +---uninstallProfile
+¦   ¦       +---uninstallRelease
+¦   ¦       +---updateLegacyAbi
+¦   ¦       +---updateLintBaseline
+¦   ¦       +---updateLintBaselineDebug
+¦   ¦       +---updateLintBaselineProfile
+¦   ¦       +---updateLintBaselineRelease
+¦   ¦       +---validateSigningDebug
+¦   ¦       +---validateSigningDebugAndroidTest
+¦   ¦       +---validateSigningProfile
+¦   ¦       +---validateSigningRelease
+¦   ¦       +---writeDebugAndroidTestSigningConfigVersions
+¦   ¦       +---writeDebugApplicationId
+¦   ¦       +---writeDebugAppMetadata
+¦   ¦       +---writeDebugModuleMetadata
+¦   ¦       +---writeDebugSigningConfigVersions
+¦   ¦       +---writeProfileApplicationId
+¦   ¦       +---writeProfileAppMetadata
+¦   ¦       +---writeProfileModuleMetadata
+¦   ¦       +---writeProfileSigningConfigVersions
+¦   ¦       +---writeReleaseApplicationId
+¦   ¦       +---writeReleaseAppMetadata
+¦   ¦       +---writeReleaseModuleMetadata
+¦   ¦       +---writeReleaseSigningConfigVersions
+¦   ¦       +---zipApksForDebug
+¦   ¦       +---zipApksForProfile
+¦   ¦       +---zipApksForRelease
+¦   +---flutter_assets
+¦   ¦   ¦   AssetManifest.bin
+¦   ¦   ¦   AssetManifest.bin.json
+¦   ¦   ¦   FontManifest.json
+¦   ¦   ¦   NOTICES
+¦   ¦   ¦   
+¦   ¦   +---fonts
+¦   ¦   ¦       MaterialIcons-Regular.otf
+¦   ¦   ¦       
+¦   ¦   +---packages
+¦   ¦   ¦   +---cupertino_icons
+¦   ¦   ¦       +---assets
+¦   ¦   ¦               CupertinoIcons.ttf
+¦   ¦   ¦               
+¦   ¦   +---shaders
+¦   ¦           ink_sparkle.frag
+¦   ¦           stretch_effect.frag
+¦   ¦           
+¦   +---native_assets
+¦   ¦   +---web
+¦   +---native_hooks
+¦   ¦       .last_build_id
+¦   ¦       
+¦   +---reports
+¦   ¦   +---problems
+¦   ¦           problems-report.html
+¦   ¦           
+¦   +---tmp
+¦       +---artifactTransforms
+¦       +---buildEnvironment
+¦       +---clean
+¦       +---components
+¦       +---dependencies
+¦       +---dependencyInsight
+¦       +---dependentComponents
+¦       +---generateLockfiles
+¦       +---help
+¦       +---init
+¦       +---javaToolchains
+¦       +---kotlinDslAccessorsReport
+¦       +---model
+¦       +---outgoingVariants
+¦       +---prepareKotlinBuildScriptModel
+¦       +---projects
+¦       +---properties
+¦       +---resolvableConfigurations
+¦       +---tasks
+¦       +---updateDaemonJvm
+¦       +---wrapper
++---flutter_application_1
+¦   ¦   .gitignore
+¦   ¦   .metadata
+¦   ¦   analysis_options.yaml
+¦   ¦   flutter_application_1.iml
+¦   ¦   pubspec.lock
+¦   ¦   pubspec.yaml
+¦   ¦   README.md
+¦   ¦   
+¦   +---.dart_tool
+¦   ¦   ¦   package_config.json
+¦   ¦   ¦   package_graph.json
+¦   ¦   ¦   version
+¦   ¦   ¦   
+¦   ¦   +---dartpad
+¦   ¦   ¦       web_plugin_registrant.dart
+¦   ¦   ¦       
+¦   ¦   +---extension_discovery
+¦   ¦           vs_code.json
+¦   ¦           
+¦   +---.idea
+¦   ¦   ¦   modules.xml
+¦   ¦   ¦   workspace.xml
+¦   ¦   ¦   
+¦   ¦   +---libraries
+¦   ¦   ¦       Dart_SDK.xml
+¦   ¦   ¦       KotlinJavaRuntime.xml
+¦   ¦   ¦       
+¦   ¦   +---runConfigurations
+¦   ¦           main_dart.xml
+¦   ¦           
+¦   +---android
+¦   ¦   ¦   .gitignore
+¦   ¦   ¦   build.gradle.kts
+¦   ¦   ¦   flutter_application_1_android.iml
+¦   ¦   ¦   gradle.properties
+¦   ¦   ¦   gradlew
+¦   ¦   ¦   gradlew.bat
+¦   ¦   ¦   local.properties
+¦   ¦   ¦   settings.gradle.kts
+¦   ¦   ¦   
+¦   ¦   +---.gradle
+¦   ¦   ¦   +---8.14
+¦   ¦   ¦   ¦   ¦   gc.properties
+¦   ¦   ¦   ¦   ¦   
+¦   ¦   ¦   ¦   +---checksums
+¦   ¦   ¦   ¦   ¦       checksums.lock
+¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   +---executionHistory
+¦   ¦   ¦   ¦   ¦       executionHistory.lock
+¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   +---expanded
+¦   ¦   ¦   ¦   +---fileChanges
+¦   ¦   ¦   ¦   ¦       last-build.bin
+¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   +---fileHashes
+¦   ¦   ¦   ¦   ¦       fileHashes.bin
+¦   ¦   ¦   ¦   ¦       fileHashes.lock
+¦   ¦   ¦   ¦   ¦       resourceHashesCache.bin
+¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   +---vcsMetadata
+¦   ¦   ¦   +---buildOutputCleanup
+¦   ¦   ¦   ¦       buildOutputCleanup.lock
+¦   ¦   ¦   ¦       cache.properties
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---nb-cache
+¦   ¦   ¦   ¦   ¦   subprojects.ser
+¦   ¦   ¦   ¦   ¦   
+¦   ¦   ¦   ¦   +---android-108444448
+¦   ¦   ¦   ¦   ¦       project-info.ser
+¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   +---app-674815707
+¦   ¦   ¦   ¦   ¦       project-info.ser
+¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   +---trust
+¦   ¦   ¦   ¦           32DFBECE5FD2A615779051F7891CA5A482F24A7E420922B87EDFC79CD844503F
+¦   ¦   ¦   ¦           
+¦   ¦   ¦   +---noVersion
+¦   ¦   ¦   ¦       buildLogic.lock
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---vcs-1
+¦   ¦   ¦           gc.properties
+¦   ¦   ¦           
+¦   ¦   +---app
+¦   ¦   ¦   ¦   build.gradle.kts
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +---src
+¦   ¦   ¦       +---debug
+¦   ¦   ¦       ¦       AndroidManifest.xml
+¦   ¦   ¦       ¦       
+¦   ¦   ¦       +---main
+¦   ¦   ¦       ¦   ¦   AndroidManifest.xml
+¦   ¦   ¦       ¦   ¦   
+¦   ¦   ¦       ¦   +---java
+¦   ¦   ¦       ¦   ¦   +---io
+¦   ¦   ¦       ¦   ¦       +---flutter
+¦   ¦   ¦       ¦   ¦           +---plugins
+¦   ¦   ¦       ¦   ¦                   GeneratedPluginRegistrant.java
+¦   ¦   ¦       ¦   ¦                   
+¦   ¦   ¦       ¦   +---kotlin
+¦   ¦   ¦       ¦   ¦   +---com
+¦   ¦   ¦       ¦   ¦       +---example
+¦   ¦   ¦       ¦   ¦           +---flutter_application_1
+¦   ¦   ¦       ¦   ¦                   MainActivity.kt
+¦   ¦   ¦       ¦   ¦                   
+¦   ¦   ¦       ¦   +---res
+¦   ¦   ¦       ¦       +---drawable
+¦   ¦   ¦       ¦       ¦       launch_background.xml
+¦   ¦   ¦       ¦       ¦       
+¦   ¦   ¦       ¦       +---drawable-v21
+¦   ¦   ¦       ¦       ¦       launch_background.xml
+¦   ¦   ¦       ¦       ¦       
+¦   ¦   ¦       ¦       +---mipmap-hdpi
+¦   ¦   ¦       ¦       ¦       ic_launcher.png
+¦   ¦   ¦       ¦       ¦       
+¦   ¦   ¦       ¦       +---mipmap-mdpi
+¦   ¦   ¦       ¦       ¦       ic_launcher.png
+¦   ¦   ¦       ¦       ¦       
+¦   ¦   ¦       ¦       +---mipmap-xhdpi
+¦   ¦   ¦       ¦       ¦       ic_launcher.png
+¦   ¦   ¦       ¦       ¦       
+¦   ¦   ¦       ¦       +---mipmap-xxhdpi
+¦   ¦   ¦       ¦       ¦       ic_launcher.png
+¦   ¦   ¦       ¦       ¦       
+¦   ¦   ¦       ¦       +---mipmap-xxxhdpi
+¦   ¦   ¦       ¦       ¦       ic_launcher.png
+¦   ¦   ¦       ¦       ¦       
+¦   ¦   ¦       ¦       +---values
+¦   ¦   ¦       ¦       ¦       styles.xml
+¦   ¦   ¦       ¦       ¦       
+¦   ¦   ¦       ¦       +---values-night
+¦   ¦   ¦       ¦               styles.xml
+¦   ¦   ¦       ¦               
+¦   ¦   ¦       +---profile
+¦   ¦   ¦               AndroidManifest.xml
+¦   ¦   ¦               
+¦   ¦   +---gradle
+¦   ¦       +---wrapper
+¦   ¦               gradle-wrapper.jar
+¦   ¦               gradle-wrapper.properties
+¦   ¦               
+¦   +---build
+¦   ¦   +---app
+¦   ¦   ¦   +---tmp
+¦   ¦   ¦       +---allTests
+¦   ¦   ¦       +---analyzeDebugAndroidTestDependencies
+¦   ¦   ¦       +---analyzeDebugDependencies
+¦   ¦   ¦       +---analyzeDebugUnitTestDependencies
+¦   ¦   ¦       +---analyzeProfileDependencies
+¦   ¦   ¦       +---analyzeProfileUnitTestDependencies
+¦   ¦   ¦       +---analyzeReleaseDependencies
+¦   ¦   ¦       +---analyzeReleaseUnitTestDependencies
+¦   ¦   ¦       +---androidDependencies
+¦   ¦   ¦       +---artifactTransforms
+¦   ¦   ¦       +---asarToCompatSplitsForDebug
+¦   ¦   ¦       +---asarToCompatSplitsForProfile
+¦   ¦   ¦       +---asarToCompatSplitsForRelease
+¦   ¦   ¦       +---assemble
+¦   ¦   ¦       +---assembleAndroidTest
+¦   ¦   ¦       +---assembleDebug
+¦   ¦   ¦       +---assembleDebugAndroidTest
+¦   ¦   ¦       +---assembleDebugUnitTest
+¦   ¦   ¦       +---assembleProfile
+¦   ¦   ¦       +---assembleProfileUnitTest
+¦   ¦   ¦       +---assembleRelease
+¦   ¦   ¦       +---assembleReleaseUnitTest
+¦   ¦   ¦       +---assembleUnitTest
+¦   ¦   ¦       +---build
+¦   ¦   ¦       +---buildCMakeDebug
+¦   ¦   ¦       +---buildCMakeDebug[arm64-v8a]
+¦   ¦   ¦       +---buildCMakeDebug[armeabi-v7a]
+¦   ¦   ¦       +---buildCMakeDebug[x86_64]
+¦   ¦   ¦       +---buildCMakeProfile
+¦   ¦   ¦       +---buildCMakeProfile[arm64-v8a]
+¦   ¦   ¦       +---buildCMakeProfile[armeabi-v7a]
+¦   ¦   ¦       +---buildCMakeProfile[x86_64]
+¦   ¦   ¦       +---buildCMakeRelease
+¦   ¦   ¦       +---buildCMakeRelease[arm64-v8a]
+¦   ¦   ¦       +---buildCMakeRelease[armeabi-v7a]
+¦   ¦   ¦       +---buildCMakeRelease[x86_64]
+¦   ¦   ¦       +---buildDebugPreBundle
+¦   ¦   ¦       +---buildDependents
+¦   ¦   ¦       +---buildEnvironment
+¦   ¦   ¦       +---buildKotlinToolingMetadata
+¦   ¦   ¦       +---buildNeeded
+¦   ¦   ¦       +---buildProfilePreBundle
+¦   ¦   ¦       +---buildReleasePreBundle
+¦   ¦   ¦       +---bundle
+¦   ¦   ¦       +---bundleDebug
+¦   ¦   ¦       +---bundleDebugClassesToCompileJar
+¦   ¦   ¦       +---bundleDebugClassesToRuntimeJar
+¦   ¦   ¦       +---bundleDebugResources
+¦   ¦   ¦       +---bundleProfile
+¦   ¦   ¦       +---bundleProfileClassesToCompileJar
+¦   ¦   ¦       +---bundleProfileClassesToRuntimeJar
+¦   ¦   ¦       +---bundleProfileResources
+¦   ¦   ¦       +---bundleRelease
+¦   ¦   ¦       +---bundleReleaseClassesToCompileJar
+¦   ¦   ¦       +---bundleReleaseClassesToRuntimeJar
+¦   ¦   ¦       +---bundleReleaseResources
+¦   ¦   ¦       +---check
+¦   ¦   ¦       +---checkDebugAarMetadata
+¦   ¦   ¦       +---checkDebugAndroidTestAarMetadata
+¦   ¦   ¦       +---checkDebugAndroidTestDuplicateClasses
+¦   ¦   ¦       +---checkDebugDuplicateClasses
+¦   ¦   ¦       +---checkDebugManifest
+¦   ¦   ¦       +---checkJetifier
+¦   ¦   ¦       +---checkKotlinGradlePluginConfigurationErrors
+¦   ¦   ¦       +---checkLegacyAbi
+¦   ¦   ¦       +---checkProfileAarMetadata
+¦   ¦   ¦       +---checkProfileDuplicateClasses
+¦   ¦   ¦       +---checkProfileManifest
+¦   ¦   ¦       +---checkReleaseAarMetadata
+¦   ¦   ¦       +---checkReleaseDuplicateClasses
+¦   ¦   ¦       +---checkReleaseManifest
+¦   ¦   ¦       +---checkSigningConfiguration
+¦   ¦   ¦       +---clean
+¦   ¦   ¦       +---cleanMergeDebugAssets
+¦   ¦   ¦       +---cleanMergeProfileAssets
+¦   ¦   ¦       +---cleanMergeReleaseAssets
+¦   ¦   ¦       +---collectReleaseDependencies
+¦   ¦   ¦       +---compileDebugAndroidTestJavaWithJavac
+¦   ¦   ¦       +---compileDebugAndroidTestKotlin
+¦   ¦   ¦       +---compileDebugAndroidTestShaders
+¦   ¦   ¦       +---compileDebugAndroidTestSources
+¦   ¦   ¦       +---compileDebugArtProfile
+¦   ¦   ¦       +---compileDebugJavaWithJavac
+¦   ¦   ¦       +---compileDebugKotlin
+¦   ¦   ¦       +---compileDebugShaders
+¦   ¦   ¦       +---compileDebugSources
+¦   ¦   ¦       +---compileDebugUnitTestJavaWithJavac
+¦   ¦   ¦       +---compileDebugUnitTestKotlin
+¦   ¦   ¦       +---compileDebugUnitTestSources
+¦   ¦   ¦       +---compileFlutterBuildDebug
+¦   ¦   ¦       +---compileFlutterBuildProfile
+¦   ¦   ¦       +---compileFlutterBuildRelease
+¦   ¦   ¦       +---compileLint
+¦   ¦   ¦       +---compileLintChecks
+¦   ¦   ¦       +---compileProfileArtProfile
+¦   ¦   ¦       +---compileProfileJavaWithJavac
+¦   ¦   ¦       +---compileProfileKotlin
+¦   ¦   ¦       +---compileProfileShaders
+¦   ¦   ¦       +---compileProfileSources
+¦   ¦   ¦       +---compileProfileUnitTestJavaWithJavac
+¦   ¦   ¦       +---compileProfileUnitTestKotlin
+¦   ¦   ¦       +---compileProfileUnitTestSources
+¦   ¦   ¦       +---compileReleaseArtProfile
+¦   ¦   ¦       +---compileReleaseJavaWithJavac
+¦   ¦   ¦       +---compileReleaseKotlin
+¦   ¦   ¦       +---compileReleaseShaders
+¦   ¦   ¦       +---compileReleaseSources
+¦   ¦   ¦       +---compileReleaseUnitTestJavaWithJavac
+¦   ¦   ¦       +---compileReleaseUnitTestKotlin
+¦   ¦   ¦       +---compileReleaseUnitTestSources
+¦   ¦   ¦       +---components
+¦   ¦   ¦       +---compressDebugAndroidTestAssets
+¦   ¦   ¦       +---compressDebugAssets
+¦   ¦   ¦       +---compressProfileAssets
+¦   ¦   ¦       +---compressReleaseAssets
+¦   ¦   ¦       +---configureCMakeDebug
+¦   ¦   ¦       +---configureCMakeDebug[arm64-v8a]
+¦   ¦   ¦       +---configureCMakeDebug[armeabi-v7a]
+¦   ¦   ¦       +---configureCMakeDebug[x86_64]
+¦   ¦   ¦       +---configureCMakeProfile
+¦   ¦   ¦       +---configureCMakeProfile[arm64-v8a]
+¦   ¦   ¦       +---configureCMakeProfile[armeabi-v7a]
+¦   ¦   ¦       +---configureCMakeProfile[x86_64]
+¦   ¦   ¦       +---configureCMakeRelease
+¦   ¦   ¦       +---configureCMakeRelease[arm64-v8a]
+¦   ¦   ¦       +---configureCMakeRelease[armeabi-v7a]
+¦   ¦   ¦       +---configureCMakeRelease[x86_64]
+¦   ¦   ¦       +---configureReleaseDependencies
+¦   ¦   ¦       +---connectedAndroidTest
+¦   ¦   ¦       +---connectedCheck
+¦   ¦   ¦       +---connectedDebugAndroidTest
+¦   ¦   ¦       +---consumeConfigAttr
+¦   ¦   ¦       +---convertLinkedResourcesToBinaryRelease
+¦   ¦   ¦       +---convertShrunkResourcesToBinaryRelease
+¦   ¦   ¦       +---copyFlutterAssetsDebug
+¦   ¦   ¦       +---copyFlutterAssetsProfile
+¦   ¦   ¦       +---copyFlutterAssetsRelease
+¦   ¦   ¦       +---createDebugAndroidTestApkListingFileRedirect
+¦   ¦   ¦       +---createDebugApkListingFileRedirect
+¦   ¦   ¦       +---createDebugApksFromBundleListingFileRedirect
+¦   ¦   ¦       +---createDebugBundleListingFileRedirect
+¦   ¦   ¦       +---createDebugCompatibleScreenManifests
+¦   ¦   ¦       +---createMockableJar
+¦   ¦   ¦       +---createProfileApkListingFileRedirect
+¦   ¦   ¦       +---createProfileApksFromBundleListingFileRedirect
+¦   ¦   ¦       +---createProfileBundleListingFileRedirect
+¦   ¦   ¦       +---createProfileCompatibleScreenManifests
+¦   ¦   ¦       +---createReleaseApkListingFileRedirect
+¦   ¦   ¦       +---createReleaseApksFromBundleListingFileRedirect
+¦   ¦   ¦       +---createReleaseBundleListingFileRedirect
+¦   ¦   ¦       +---createReleaseCompatibleScreenManifests
+¦   ¦   ¦       +---DebugMinSdkCheck
+¦   ¦   ¦       +---dependencies
+¦   ¦   ¦       +---dependencyInsight
+¦   ¦   ¦       +---dependentComponents
+¦   ¦   ¦       +---desugarDebugAndroidTestFileDependencies
+¦   ¦   ¦       +---desugarDebugFileDependencies
+¦   ¦   ¦       +---desugarProfileFileDependencies
+¦   ¦   ¦       +---deviceAndroidTest
+¦   ¦   ¦       +---deviceCheck
+¦   ¦   ¦       +---dexBuilderDebug
+¦   ¦   ¦       +---dexBuilderDebugAndroidTest
+¦   ¦   ¦       +---dexBuilderProfile
+¦   ¦   ¦       +---dumpLegacyAbi
+¦   ¦   ¦       +---expandReleaseArtProfileWildcards
+¦   ¦   ¦       +---externalNativeBuildCleanDebug
+¦   ¦   ¦       +---externalNativeBuildCleanProfile
+¦   ¦   ¦       +---externalNativeBuildCleanRelease
+¦   ¦   ¦       +---externalNativeBuildDebug
+¦   ¦   ¦       +---externalNativeBuildProfile
+¦   ¦   ¦       +---externalNativeBuildRelease
+¦   ¦   ¦       +---extractApksForDebug
+¦   ¦   ¦       +---extractApksForProfile
+¦   ¦   ¦       +---extractApksForRelease
+¦   ¦   ¦       +---extractApksFromBundleForDebug
+¦   ¦   ¦       +---extractApksFromBundleForProfile
+¦   ¦   ¦       +---extractApksFromBundleForRelease
+¦   ¦   ¦       +---extractDebugNativeDebugMetadata
+¦   ¦   ¦       +---extractDebugNativeSymbolTables
+¦   ¦   ¦       +---extractDeepLinksDebug
+¦   ¦   ¦       +---extractDeepLinksProfile
+¦   ¦   ¦       +---extractDeepLinksRelease
+¦   ¦   ¦       +---extractProfileNativeDebugMetadata
+¦   ¦   ¦       +---extractProfileNativeSymbolTables
+¦   ¦   ¦       +---extractProguardFiles
+¦   ¦   ¦       +---extractReleaseNativeDebugMetadata
+¦   ¦   ¦       +---extractReleaseNativeSymbolTables
+¦   ¦   ¦       +---extractReleaseVersionControlInfo
+¦   ¦   ¦       +---generateDebugAndroidTestAssets
+¦   ¦   ¦       +---generateDebugAndroidTestLintModel
+¦   ¦   ¦       +---generateDebugAndroidTestResources
+¦   ¦   ¦       +---generateDebugAndroidTestResValues
+¦   ¦   ¦       +---generateDebugAndroidTestSources
+¦   ¦   ¦       +---generateDebugAssets
+¦   ¦   ¦       +---generateDebugFeatureMetadata
+¦   ¦   ¦       +---generateDebugFeatureTransitiveDeps
+¦   ¦   ¦       +---generateDebugLintModel
+¦   ¦   ¦       +---generateDebugLintReportModel
+¦   ¦   ¦       +---generateDebugManifestClass
+¦   ¦   ¦       +---generateDebugResources
+¦   ¦   ¦       +---generateDebugResValues
+¦   ¦   ¦       +---generateDebugSources
+¦   ¦   ¦       +---generateDebugUnitTestAssets
+¦   ¦   ¦       +---generateDebugUnitTestLintModel
+¦   ¦   ¦       +---generateDebugUnitTestResources
+¦   ¦   ¦       +---generateDebugUnitTestSources
+¦   ¦   ¦       +---generateJsonModelDebug
+¦   ¦   ¦       +---generateJsonModelProfile
+¦   ¦   ¦       +---generateJsonModelRelease
+¦   ¦   ¦       +---generatePgpKeys
+¦   ¦   ¦       +---generateProfileAssets
+¦   ¦   ¦       +---generateProfileFeatureMetadata
+¦   ¦   ¦       +---generateProfileFeatureTransitiveDeps
+¦   ¦   ¦       +---generateProfileLintModel
+¦   ¦   ¦       +---generateProfileLintReportModel
+¦   ¦   ¦       +---generateProfileManifestClass
+¦   ¦   ¦       +---generateProfileResources
+¦   ¦   ¦       +---generateProfileResValues
+¦   ¦   ¦       +---generateProfileSources
+¦   ¦   ¦       +---generateProfileUnitTestAssets
+¦   ¦   ¦       +---generateProfileUnitTestLintModel
+¦   ¦   ¦       +---generateProfileUnitTestResources
+¦   ¦   ¦       +---generateProfileUnitTestSources
+¦   ¦   ¦       +---generateReleaseAssets
+¦   ¦   ¦       +---generateReleaseFeatureMetadata
+¦   ¦   ¦       +---generateReleaseFeatureTransitiveDeps
+¦   ¦   ¦       +---generateReleaseLintModel
+¦   ¦   ¦       +---generateReleaseLintReportModel
+¦   ¦   ¦       +---generateReleaseLintVitalReportModel
+¦   ¦   ¦       +---generateReleaseManifestClass
+¦   ¦   ¦       +---generateReleaseResources
+¦   ¦   ¦       +---generateReleaseResValues
+¦   ¦   ¦       +---generateReleaseSources
+¦   ¦   ¦       +---generateReleaseUnitTestAssets
+¦   ¦   ¦       +---generateReleaseUnitTestLintModel
+¦   ¦   ¦       +---generateReleaseUnitTestResources
+¦   ¦   ¦       +---generateReleaseUnitTestSources
+¦   ¦   ¦       +---help
+¦   ¦   ¦       +---installDebug
+¦   ¦   ¦       +---installDebugAndroidTest
+¦   ¦   ¦       +---installProfile
+¦   ¦   ¦       +---installRelease
+¦   ¦   ¦       +---javaPreCompileDebug
+¦   ¦   ¦       +---javaPreCompileDebugAndroidTest
+¦   ¦   ¦       +---javaPreCompileDebugUnitTest
+¦   ¦   ¦       +---javaPreCompileProfile
+¦   ¦   ¦       +---javaPreCompileProfileUnitTest
+¦   ¦   ¦       +---javaPreCompileRelease
+¦   ¦   ¦       +---javaPreCompileReleaseUnitTest
+¦   ¦   ¦       +---javaToolchains
+¦   ¦   ¦       +---javaVersion
+¦   ¦   ¦       +---kgpVersion
+¦   ¦   ¦       +---kotlinDslAccessorsReport
+¦   ¦   ¦       +---lint
+¦   ¦   ¦       +---lintAnalyzeDebug
+¦   ¦   ¦       +---lintAnalyzeDebugAndroidTest
+¦   ¦   ¦       +---lintAnalyzeDebugUnitTest
+¦   ¦   ¦       +---lintAnalyzeProfile
+¦   ¦   ¦       +---lintAnalyzeProfileUnitTest
+¦   ¦   ¦       +---lintAnalyzeRelease
+¦   ¦   ¦       +---lintAnalyzeReleaseUnitTest
+¦   ¦   ¦       +---lintDebug
+¦   ¦   ¦       +---lintFix
+¦   ¦   ¦       +---lintFixDebug
+¦   ¦   ¦       +---lintFixProfile
+¦   ¦   ¦       +---lintFixRelease
+¦   ¦   ¦       +---lintProfile
+¦   ¦   ¦       +---lintRelease
+¦   ¦   ¦       +---lintReportDebug
+¦   ¦   ¦       +---lintReportProfile
+¦   ¦   ¦       +---lintReportRelease
+¦   ¦   ¦       +---lintVitalAnalyzeRelease
+¦   ¦   ¦       +---lintVitalRelease
+¦   ¦   ¦       +---lintVitalReportRelease
+¦   ¦   ¦       +---makeApkFromBundleForDebug
+¦   ¦   ¦       +---makeApkFromBundleForProfile
+¦   ¦   ¦       +---makeApkFromBundleForRelease
+¦   ¦   ¦       +---mapDebugAndroidTestSourceSetPaths
+¦   ¦   ¦       +---mapDebugSourceSetPaths
+¦   ¦   ¦       +---mapProfileSourceSetPaths
+¦   ¦   ¦       +---mapReleaseSourceSetPaths
+¦   ¦   ¦       +---mergeDebugAndroidTestAssets
+¦   ¦   ¦       +---mergeDebugAndroidTestGeneratedProguardFiles
+¦   ¦   ¦       +---mergeDebugAndroidTestGlobalSynthetics
+¦   ¦   ¦       +---mergeDebugAndroidTestJavaResource
+¦   ¦   ¦       +---mergeDebugAndroidTestJniLibFolders
+¦   ¦   ¦       +---mergeDebugAndroidTestNativeLibs
+¦   ¦   ¦       +---mergeDebugAndroidTestResources
+¦   ¦   ¦       +---mergeDebugAndroidTestShaders
+¦   ¦   ¦       +---mergeDebugArtProfile
+¦   ¦   ¦       +---mergeDebugAssets
+¦   ¦   ¦       +---mergeDebugGeneratedProguardFiles
+¦   ¦   ¦       +---mergeDebugGlobalSynthetics
+¦   ¦   ¦       +---mergeDebugJavaResource
+¦   ¦   ¦       +---mergeDebugJniLibFolders
+¦   ¦   ¦       +---mergeDebugNativeDebugMetadata
+¦   ¦   ¦       +---mergeDebugNativeLibs
+¦   ¦   ¦       +---mergeDebugResources
+¦   ¦   ¦       +---mergeDebugShaders
+¦   ¦   ¦       +---mergeDebugStartupProfile
+¦   ¦   ¦       +---mergeExtDexDebug
+¦   ¦   ¦       +---mergeExtDexDebugAndroidTest
+¦   ¦   ¦       +---mergeExtDexProfile
+¦   ¦   ¦       +---mergeLibDexDebug
+¦   ¦   ¦       +---mergeLibDexDebugAndroidTest
+¦   ¦   ¦       +---mergeLibDexProfile
+¦   ¦   ¦       +---mergeProfileArtProfile
+¦   ¦   ¦       +---mergeProfileAssets
+¦   ¦   ¦       +---mergeProfileGeneratedProguardFiles
+¦   ¦   ¦       +---mergeProfileGlobalSynthetics
+¦   ¦   ¦       +---mergeProfileJavaResource
+¦   ¦   ¦       +---mergeProfileJniLibFolders
+¦   ¦   ¦       +---mergeProfileNativeDebugMetadata
+¦   ¦   ¦       +---mergeProfileNativeLibs
+¦   ¦   ¦       +---mergeProfileResources
+¦   ¦   ¦       +---mergeProfileShaders
+¦   ¦   ¦       +---mergeProfileStartupProfile
+¦   ¦   ¦       +---mergeProjectDexDebug
+¦   ¦   ¦       +---mergeProjectDexDebugAndroidTest
+¦   ¦   ¦       +---mergeProjectDexProfile
+¦   ¦   ¦       +---mergeReleaseArtProfile
+¦   ¦   ¦       +---mergeReleaseAssets
+¦   ¦   ¦       +---mergeReleaseGeneratedProguardFiles
+¦   ¦   ¦       +---mergeReleaseJavaResource
+¦   ¦   ¦       +---mergeReleaseJniLibFolders
+¦   ¦   ¦       +---mergeReleaseNativeDebugMetadata
+¦   ¦   ¦       +---mergeReleaseNativeLibs
+¦   ¦   ¦       +---mergeReleaseResources
+¦   ¦   ¦       +---mergeReleaseShaders
+¦   ¦   ¦       +---mergeReleaseStartupProfile
+¦   ¦   ¦       +---minifyReleaseWithR8
+¦   ¦   ¦       +---model
+¦   ¦   ¦       +---optimizeReleaseResources
+¦   ¦   ¦       +---outgoingVariants
+¦   ¦   ¦       +---outputDebugAppLinkSettings
+¦   ¦   ¦       +---outputProfileAppLinkSettings
+¦   ¦   ¦       +---outputReleaseAppLinkSettings
+¦   ¦   ¦       +---packageDebug
+¦   ¦   ¦       +---packageDebugAndroidTest
+¦   ¦   ¦       +---packageDebugBundle
+¦   ¦   ¦       +---packageDebugResources
+¦   ¦   ¦       +---packageDebugUniversalApk
+¦   ¦   ¦       +---packageProfile
+¦   ¦   ¦       +---packageProfileBundle
+¦   ¦   ¦       +---packageProfileResources
+¦   ¦   ¦       +---packageProfileUniversalApk
+¦   ¦   ¦       +---packageRelease
+¦   ¦   ¦       +---packageReleaseBundle
+¦   ¦   ¦       +---packageReleaseResources
+¦   ¦   ¦       +---packageReleaseUniversalApk
+¦   ¦   ¦       +---packJniLibsflutterBuildDebug
+¦   ¦   ¦       ¦       MANIFEST.MF
+¦   ¦   ¦       ¦       
+¦   ¦   ¦       +---packJniLibsflutterBuildProfile
+¦   ¦   ¦       ¦       MANIFEST.MF
+¦   ¦   ¦       ¦       
+¦   ¦   ¦       +---packJniLibsflutterBuildRelease
+¦   ¦   ¦       ¦       MANIFEST.MF
+¦   ¦   ¦       ¦       
+¦   ¦   ¦       +---parseDebugIntegrityConfig
+¦   ¦   ¦       +---parseDebugLocalResources
+¦   ¦   ¦       +---parseProfileIntegrityConfig
+¦   ¦   ¦       +---parseProfileLocalResources
+¦   ¦   ¦       +---parseReleaseIntegrityConfig
+¦   ¦   ¦       +---parseReleaseLocalResources
+¦   ¦   ¦       +---preBuild
+¦   ¦   ¦       +---preDebugAndroidTestBuild
+¦   ¦   ¦       +---preDebugBuild
+¦   ¦   ¦       +---preDebugUnitTestBuild
+¦   ¦   ¦       +---prepareLintJarForPublish
+¦   ¦   ¦       +---preProfileBuild
+¦   ¦   ¦       +---preProfileUnitTestBuild
+¦   ¦   ¦       +---preReleaseBuild
+¦   ¦   ¦       +---preReleaseUnitTestBuild
+¦   ¦   ¦       +---printBuildVariants
+¦   ¦   ¦       +---processApplicationManifestDebugForBundle
+¦   ¦   ¦       +---processApplicationManifestProfileForBundle
+¦   ¦   ¦       +---processApplicationManifestReleaseForBundle
+¦   ¦   ¦       +---processDebugAndroidTestJavaRes
+¦   ¦   ¦       +---processDebugAndroidTestManifest
+¦   ¦   ¦       +---processDebugAndroidTestResources
+¦   ¦   ¦       +---processDebugJavaRes
+¦   ¦   ¦       +---processDebugMainManifest
+¦   ¦   ¦       +---processDebugManifest
+¦   ¦   ¦       +---processDebugManifestForPackage
+¦   ¦   ¦       +---processDebugResources
+¦   ¦   ¦       +---processDebugUnitTestJavaRes
+¦   ¦   ¦       +---processManifestDebugForFeature
+¦   ¦   ¦       +---processManifestProfileForFeature
+¦   ¦   ¦       +---processManifestReleaseForFeature
+¦   ¦   ¦       +---processProfileJavaRes
+¦   ¦   ¦       +---processProfileMainManifest
+¦   ¦   ¦       +---processProfileManifest
+¦   ¦   ¦       +---processProfileManifestForPackage
+¦   ¦   ¦       +---processProfileResources
+¦   ¦   ¦       +---processProfileUnitTestJavaRes
+¦   ¦   ¦       +---processReleaseJavaRes
+¦   ¦   ¦       +---processReleaseMainManifest
+¦   ¦   ¦       +---processReleaseManifest
+¦   ¦   ¦       +---processReleaseManifestForPackage
+¦   ¦   ¦       +---processReleaseResources
+¦   ¦   ¦       +---processReleaseUnitTestJavaRes
+¦   ¦   ¦       +---produceDebugBundleIdeListingFile
+¦   ¦   ¦       +---produceProfileBundleIdeListingFile
+¦   ¦   ¦       +---produceReleaseBundleIdeListingFile
+¦   ¦   ¦       +---ProfileMinSdkCheck
+¦   ¦   ¦       +---projects
+¦   ¦   ¦       +---properties
+¦   ¦   ¦       +---ReleaseMinSdkCheck
+¦   ¦   ¦       +---resolvableConfigurations
+¦   ¦   ¦       +---resolveConfigAttr
+¦   ¦   ¦       +---sdkReleaseDependencyData
+¦   ¦   ¦       +---signDebugBundle
+¦   ¦   ¦       +---signingConfigWriterDebug
+¦   ¦   ¦       +---signingConfigWriterDebugAndroidTest
+¦   ¦   ¦       +---signingConfigWriterProfile
+¦   ¦   ¦       +---signingConfigWriterRelease
+¦   ¦   ¦       +---signingReport
+¦   ¦   ¦       +---signProfileBundle
+¦   ¦   ¦       +---signReleaseBundle
+¦   ¦   ¦       +---sourceSets
+¦   ¦   ¦       +---stripDebugAndroidTestDebugSymbols
+¦   ¦   ¦       +---stripDebugDebugSymbols
+¦   ¦   ¦       +---stripProfileDebugSymbols
+¦   ¦   ¦       +---stripReleaseDebugSymbols
+¦   ¦   ¦       +---tasks
+¦   ¦   ¦       +---test
+¦   ¦   ¦       +---testDebugUnitTest
+¦   ¦   ¦       +---testProfileUnitTest
+¦   ¦   ¦       +---testReleaseUnitTest
+¦   ¦   ¦       +---uninstallAll
+¦   ¦   ¦       +---uninstallDebug
+¦   ¦   ¦       +---uninstallDebugAndroidTest
+¦   ¦   ¦       +---uninstallProfile
+¦   ¦   ¦       +---uninstallRelease
+¦   ¦   ¦       +---updateLegacyAbi
+¦   ¦   ¦       +---updateLintBaseline
+¦   ¦   ¦       +---updateLintBaselineDebug
+¦   ¦   ¦       +---updateLintBaselineProfile
+¦   ¦   ¦       +---updateLintBaselineRelease
+¦   ¦   ¦       +---uploadPublicPgpKey
+¦   ¦   ¦       +---validateSigningDebug
+¦   ¦   ¦       +---validateSigningDebugAndroidTest
+¦   ¦   ¦       +---validateSigningProfile
+¦   ¦   ¦       +---validateSigningRelease
+¦   ¦   ¦       +---writeDebugAndroidTestSigningConfigVersions
+¦   ¦   ¦       +---writeDebugApplicationId
+¦   ¦   ¦       +---writeDebugAppMetadata
+¦   ¦   ¦       +---writeDebugModuleMetadata
+¦   ¦   ¦       +---writeDebugSigningConfigVersions
+¦   ¦   ¦       +---writeProfileApplicationId
+¦   ¦   ¦       +---writeProfileAppMetadata
+¦   ¦   ¦       +---writeProfileModuleMetadata
+¦   ¦   ¦       +---writeProfileSigningConfigVersions
+¦   ¦   ¦       +---writeReleaseApplicationId
+¦   ¦   ¦       +---writeReleaseAppMetadata
+¦   ¦   ¦       +---writeReleaseModuleMetadata
+¦   ¦   ¦       +---writeReleaseSigningConfigVersions
+¦   ¦   ¦       +---zipApksForDebug
+¦   ¦   ¦       +---zipApksForProfile
+¦   ¦   ¦       +---zipApksForRelease
+¦   ¦   +---reports
+¦   ¦   ¦   +---problems
+¦   ¦   ¦           problems-report.html
+¦   ¦   ¦           
+¦   ¦   +---tmp
+¦   ¦       +---artifactTransforms
+¦   ¦       +---buildEnvironment
+¦   ¦       +---clean
+¦   ¦       +---components
+¦   ¦       +---dependencies
+¦   ¦       +---dependencyInsight
+¦   ¦       +---dependentComponents
+¦   ¦       +---generateLockfiles
+¦   ¦       +---help
+¦   ¦       +---init
+¦   ¦       +---javaToolchains
+¦   ¦       +---kotlinDslAccessorsReport
+¦   ¦       +---model
+¦   ¦       +---outgoingVariants
+¦   ¦       +---prepareKotlinBuildScriptModel
+¦   ¦       +---projects
+¦   ¦       +---properties
+¦   ¦       +---resolvableConfigurations
+¦   ¦       +---tasks
+¦   ¦       +---updateDaemonJvm
+¦   ¦       +---wrapper
+¦   +---ios
+¦   ¦   ¦   .gitignore
+¦   ¦   ¦   
+¦   ¦   +---Flutter
+¦   ¦   ¦   ¦   AppFrameworkInfo.plist
+¦   ¦   ¦   ¦   Debug.xcconfig
+¦   ¦   ¦   ¦   flutter_export_environment.sh
+¦   ¦   ¦   ¦   Generated.xcconfig
+¦   ¦   ¦   ¦   Release.xcconfig
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +---ephemeral
+¦   ¦   ¦           flutter_lldbinit
+¦   ¦   ¦           flutter_lldb_helper.py
+¦   ¦   ¦           
+¦   ¦   +---Runner
+¦   ¦   ¦   ¦   AppDelegate.swift
+¦   ¦   ¦   ¦   GeneratedPluginRegistrant.h
+¦   ¦   ¦   ¦   GeneratedPluginRegistrant.m
+¦   ¦   ¦   ¦   Info.plist
+¦   ¦   ¦   ¦   Runner-Bridging-Header.h
+¦   ¦   ¦   ¦   SceneDelegate.swift
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +---Assets.xcassets
+¦   ¦   ¦   ¦   +---AppIcon.appiconset
+¦   ¦   ¦   ¦   ¦       Contents.json
+¦   ¦   ¦   ¦   ¦       Icon-App-1024x1024@1x.png
+¦   ¦   ¦   ¦   ¦       Icon-App-20x20@1x.png
+¦   ¦   ¦   ¦   ¦       Icon-App-20x20@2x.png
+¦   ¦   ¦   ¦   ¦       Icon-App-20x20@3x.png
+¦   ¦   ¦   ¦   ¦       Icon-App-29x29@1x.png
+¦   ¦   ¦   ¦   ¦       Icon-App-29x29@2x.png
+¦   ¦   ¦   ¦   ¦       Icon-App-29x29@3x.png
+¦   ¦   ¦   ¦   ¦       Icon-App-40x40@1x.png
+¦   ¦   ¦   ¦   ¦       Icon-App-40x40@2x.png
+¦   ¦   ¦   ¦   ¦       Icon-App-40x40@3x.png
+¦   ¦   ¦   ¦   ¦       Icon-App-60x60@2x.png
+¦   ¦   ¦   ¦   ¦       Icon-App-60x60@3x.png
+¦   ¦   ¦   ¦   ¦       Icon-App-76x76@1x.png
+¦   ¦   ¦   ¦   ¦       Icon-App-76x76@2x.png
+¦   ¦   ¦   ¦   ¦       Icon-App-83.5x83.5@2x.png
+¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   +---LaunchImage.imageset
+¦   ¦   ¦   ¦           Contents.json
+¦   ¦   ¦   ¦           LaunchImage.png
+¦   ¦   ¦   ¦           LaunchImage@2x.png
+¦   ¦   ¦   ¦           LaunchImage@3x.png
+¦   ¦   ¦   ¦           README.md
+¦   ¦   ¦   ¦           
+¦   ¦   ¦   +---Base.lproj
+¦   ¦   ¦           LaunchScreen.storyboard
+¦   ¦   ¦           Main.storyboard
+¦   ¦   ¦           
+¦   ¦   +---Runner.xcodeproj
+¦   ¦   ¦   ¦   project.pbxproj
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +---project.xcworkspace
+¦   ¦   ¦   ¦   ¦   contents.xcworkspacedata
+¦   ¦   ¦   ¦   ¦   
+¦   ¦   ¦   ¦   +---xcshareddata
+¦   ¦   ¦   ¦           IDEWorkspaceChecks.plist
+¦   ¦   ¦   ¦           WorkspaceSettings.xcsettings
+¦   ¦   ¦   ¦           
+¦   ¦   ¦   +---xcshareddata
+¦   ¦   ¦       +---xcschemes
+¦   ¦   ¦               Runner.xcscheme
+¦   ¦   ¦               
+¦   ¦   +---Runner.xcworkspace
+¦   ¦   ¦   ¦   contents.xcworkspacedata
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +---xcshareddata
+¦   ¦   ¦           IDEWorkspaceChecks.plist
+¦   ¦   ¦           WorkspaceSettings.xcsettings
+¦   ¦   ¦           
+¦   ¦   +---RunnerTests
+¦   ¦           RunnerTests.swift
+¦   ¦           
+¦   +---lib
+¦   ¦       main.dart
+¦   ¦       
+¦   +---linux
+¦   ¦   ¦   .gitignore
+¦   ¦   ¦   CMakeLists.txt
+¦   ¦   ¦   
+¦   ¦   +---flutter
+¦   ¦   ¦       CMakeLists.txt
+¦   ¦   ¦       generated_plugins.cmake
+¦   ¦   ¦       generated_plugin_registrant.cc
+¦   ¦   ¦       generated_plugin_registrant.h
+¦   ¦   ¦       
+¦   ¦   +---runner
+¦   ¦           CMakeLists.txt
+¦   ¦           main.cc
+¦   ¦           my_application.cc
+¦   ¦           my_application.h
+¦   ¦           
+¦   +---macos
+¦   ¦   ¦   .gitignore
+¦   ¦   ¦   
+¦   ¦   +---Flutter
+¦   ¦   ¦   ¦   Flutter-Debug.xcconfig
+¦   ¦   ¦   ¦   Flutter-Release.xcconfig
+¦   ¦   ¦   ¦   GeneratedPluginRegistrant.swift
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +---ephemeral
+¦   ¦   ¦           Flutter-Generated.xcconfig
+¦   ¦   ¦           flutter_export_environment.sh
+¦   ¦   ¦           
+¦   ¦   +---Runner
+¦   ¦   ¦   ¦   AppDelegate.swift
+¦   ¦   ¦   ¦   DebugProfile.entitlements
+¦   ¦   ¦   ¦   Info.plist
+¦   ¦   ¦   ¦   MainFlutterWindow.swift
+¦   ¦   ¦   ¦   Release.entitlements
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +---Assets.xcassets
+¦   ¦   ¦   ¦   +---AppIcon.appiconset
+¦   ¦   ¦   ¦           app_icon_1024.png
+¦   ¦   ¦   ¦           app_icon_128.png
+¦   ¦   ¦   ¦           app_icon_16.png
+¦   ¦   ¦   ¦           app_icon_256.png
+¦   ¦   ¦   ¦           app_icon_32.png
+¦   ¦   ¦   ¦           app_icon_512.png
+¦   ¦   ¦   ¦           app_icon_64.png
+¦   ¦   ¦   ¦           Contents.json
+¦   ¦   ¦   ¦           
+¦   ¦   ¦   +---Base.lproj
+¦   ¦   ¦   ¦       MainMenu.xib
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---Configs
+¦   ¦   ¦           AppInfo.xcconfig
+¦   ¦   ¦           Debug.xcconfig
+¦   ¦   ¦           Release.xcconfig
+¦   ¦   ¦           Warnings.xcconfig
+¦   ¦   ¦           
+¦   ¦   +---Runner.xcodeproj
+¦   ¦   ¦   ¦   project.pbxproj
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +---project.xcworkspace
+¦   ¦   ¦   ¦   +---xcshareddata
+¦   ¦   ¦   ¦           IDEWorkspaceChecks.plist
+¦   ¦   ¦   ¦           
+¦   ¦   ¦   +---xcshareddata
+¦   ¦   ¦       +---xcschemes
+¦   ¦   ¦               Runner.xcscheme
+¦   ¦   ¦               
+¦   ¦   +---Runner.xcworkspace
+¦   ¦   ¦   ¦   contents.xcworkspacedata
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +---xcshareddata
+¦   ¦   ¦           IDEWorkspaceChecks.plist
+¦   ¦   ¦           
+¦   ¦   +---RunnerTests
+¦   ¦           RunnerTests.swift
+¦   ¦           
+¦   +---test
+¦   ¦       widget_test.dart
+¦   ¦       
+¦   +---web
+¦   ¦   ¦   favicon.png
+¦   ¦   ¦   index.html
+¦   ¦   ¦   manifest.json
+¦   ¦   ¦   
+¦   ¦   +---icons
+¦   ¦           Icon-192.png
+¦   ¦           Icon-512.png
+¦   ¦           Icon-maskable-192.png
+¦   ¦           Icon-maskable-512.png
+¦   ¦           
+¦   +---windows
+¦       ¦   .gitignore
+¦       ¦   CMakeLists.txt
+¦       ¦   
+¦       +---flutter
+¦       ¦       CMakeLists.txt
+¦       ¦       generated_plugins.cmake
+¦       ¦       generated_plugin_registrant.cc
+¦       ¦       generated_plugin_registrant.h
+¦       ¦       
+¦       +---runner
+¦           ¦   CMakeLists.txt
+¦           ¦   flutter_window.cpp
+¦           ¦   flutter_window.h
+¦           ¦   main.cpp
+¦           ¦   resource.h
+¦           ¦   runner.exe.manifest
+¦           ¦   Runner.rc
+¦           ¦   utils.cpp
+¦           ¦   utils.h
+¦           ¦   win32_window.cpp
+¦           ¦   win32_window.h
+¦           ¦   
+¦           +---resources
+¦                   app_icon.ico
+¦                   
++---ios
+¦   ¦   .gitignore
+¦   ¦   
+¦   +---Flutter
+¦   ¦   ¦   AppFrameworkInfo.plist
+¦   ¦   ¦   Debug.xcconfig
+¦   ¦   ¦   flutter_export_environment.sh
+¦   ¦   ¦   Generated.xcconfig
+¦   ¦   ¦   Release.xcconfig
+¦   ¦   ¦   
+¦   ¦   +---ephemeral
+¦   ¦           flutter_lldbinit
+¦   ¦           flutter_lldb_helper.py
+¦   ¦           
+¦   +---Runner
+¦   ¦   ¦   AppDelegate.swift
+¦   ¦   ¦   GeneratedPluginRegistrant.h
+¦   ¦   ¦   GeneratedPluginRegistrant.m
+¦   ¦   ¦   Info.plist
+¦   ¦   ¦   Runner-Bridging-Header.h
+¦   ¦   ¦   SceneDelegate.swift
+¦   ¦   ¦   
+¦   ¦   +---Assets.xcassets
+¦   ¦   ¦   +---AppIcon.appiconset
+¦   ¦   ¦   ¦       Contents.json
+¦   ¦   ¦   ¦       Icon-App-1024x1024@1x.png
+¦   ¦   ¦   ¦       Icon-App-20x20@1x.png
+¦   ¦   ¦   ¦       Icon-App-20x20@2x.png
+¦   ¦   ¦   ¦       Icon-App-20x20@3x.png
+¦   ¦   ¦   ¦       Icon-App-29x29@1x.png
+¦   ¦   ¦   ¦       Icon-App-29x29@2x.png
+¦   ¦   ¦   ¦       Icon-App-29x29@3x.png
+¦   ¦   ¦   ¦       Icon-App-40x40@1x.png
+¦   ¦   ¦   ¦       Icon-App-40x40@2x.png
+¦   ¦   ¦   ¦       Icon-App-40x40@3x.png
+¦   ¦   ¦   ¦       Icon-App-60x60@2x.png
+¦   ¦   ¦   ¦       Icon-App-60x60@3x.png
+¦   ¦   ¦   ¦       Icon-App-76x76@1x.png
+¦   ¦   ¦   ¦       Icon-App-76x76@2x.png
+¦   ¦   ¦   ¦       Icon-App-83.5x83.5@2x.png
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---LaunchImage.imageset
+¦   ¦   ¦           Contents.json
+¦   ¦   ¦           LaunchImage.png
+¦   ¦   ¦           LaunchImage@2x.png
+¦   ¦   ¦           LaunchImage@3x.png
+¦   ¦   ¦           README.md
+¦   ¦   ¦           
+¦   ¦   +---Base.lproj
+¦   ¦           LaunchScreen.storyboard
+¦   ¦           Main.storyboard
+¦   ¦           
+¦   +---Runner.xcodeproj
+¦   ¦   ¦   project.pbxproj
+¦   ¦   ¦   
+¦   ¦   +---project.xcworkspace
+¦   ¦   ¦   ¦   contents.xcworkspacedata
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +---xcshareddata
+¦   ¦   ¦           IDEWorkspaceChecks.plist
+¦   ¦   ¦           WorkspaceSettings.xcsettings
+¦   ¦   ¦           
+¦   ¦   +---xcshareddata
+¦   ¦       +---xcschemes
+¦   ¦               Runner.xcscheme
+¦   ¦               
+¦   +---Runner.xcworkspace
+¦   ¦   ¦   contents.xcworkspacedata
+¦   ¦   ¦   
+¦   ¦   +---xcshareddata
+¦   ¦           IDEWorkspaceChecks.plist
+¦   ¦           WorkspaceSettings.xcsettings
+¦   ¦           
+¦   +---RunnerTests
+¦           RunnerTests.swift
+¦           
++---lib
+¦   ¦   firebase_options.dart
+¦   ¦   main.dart
+¦   ¦   
+¦   +---core
+¦   ¦   +---constants
+¦   ¦   ¦       app_colors.dart
+¦   ¦   ¦       app_strings.dart
+¦   ¦   ¦       
+¦   ¦   +---theme
+¦   ¦           app_theme.dart
+¦   ¦           
+¦   +---models
+¦   ¦       appointment_model.dart
+¦   ¦       medical_record_model.dart
+¦   ¦       prescription_model.dart
+¦   ¦       user_model.dart
+¦   ¦       
+¦   +---screens
+¦   ¦   +---admin
+¦   ¦   ¦       admin_dashboard.dart
+¦   ¦   ¦       
+¦   ¦   +---auth
+¦   ¦   ¦       landing_screen.dart
+¦   ¦   ¦       login_screen.dart
+¦   ¦   ¦       register_screen.dart
+¦   ¦   ¦       role_selector.dart
+¦   ¦   ¦       
+¦   ¦   +---doctor
+¦   ¦   ¦   +---appointments
+¦   ¦   ¦   ¦       appointment_details_screen.dart
+¦   ¦   ¦   ¦       doctor_appointments_screen.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---dashboard
+¦   ¦   ¦   ¦       doctor_dashboard.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---patients
+¦   ¦   ¦   ¦       patient_records_screen.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---prescriptions
+¦   ¦   ¦   ¦       create_prescription_screen.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---profile
+¦   ¦   ¦           doctor_profile_screen.dart
+¦   ¦   ¦           
+¦   ¦   +---patient
+¦   ¦   ¦   +---appointments
+¦   ¦   ¦   ¦       book_appointment_screen.dart
+¦   ¦   ¦   ¦       my_appointments_screen.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---dashboard
+¦   ¦   ¦   ¦       patient_dashboard.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---profile
+¦   ¦   ¦   ¦       patient_profile_screen.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---records
+¦   ¦   ¦           medical_records_screen.dart
+¦   ¦   ¦           prescriptions_screen.dart
+¦   ¦   ¦           
+¦   ¦   +---splash
+¦   ¦           splash_screen.dart
+¦   ¦           
+¦   +---services
+¦   ¦       auth_service.dart
+¦   ¦       firestore_service.dart
+¦   ¦       
+¦   +---widgets
+¦           appointment_card.dart
+¦           custom_button.dart
+¦           doctor_appointment_card.dart
+¦           medical_record_card.dart
+¦           prescription_card.dart
+¦           
++---linux
+¦   ¦   .gitignore
+¦   ¦   CMakeLists.txt
+¦   ¦   
+¦   +---flutter
+¦   ¦   ¦   CMakeLists.txt
+¦   ¦   ¦   generated_plugins.cmake
+¦   ¦   ¦   generated_plugin_registrant.cc
+¦   ¦   ¦   generated_plugin_registrant.h
+¦   ¦   ¦   
+¦   ¦   +---ephemeral
+¦   ¦       +---.plugin_symlinks
+¦   +---runner
+¦           CMakeLists.txt
+¦           main.cc
+¦           my_application.cc
+¦           my_application.h
+¦           
++---macos
+¦   ¦   .gitignore
+¦   ¦   
+¦   +---Flutter
+¦   ¦   ¦   Flutter-Debug.xcconfig
+¦   ¦   ¦   Flutter-Release.xcconfig
+¦   ¦   ¦   GeneratedPluginRegistrant.swift
+¦   ¦   ¦   
+¦   ¦   +---ephemeral
+¦   ¦           Flutter-Generated.xcconfig
+¦   ¦           flutter_export_environment.sh
+¦   ¦           
+¦   +---Runner
+¦   ¦   ¦   AppDelegate.swift
+¦   ¦   ¦   DebugProfile.entitlements
+¦   ¦   ¦   Info.plist
+¦   ¦   ¦   MainFlutterWindow.swift
+¦   ¦   ¦   Release.entitlements
+¦   ¦   ¦   
+¦   ¦   +---Assets.xcassets
+¦   ¦   ¦   +---AppIcon.appiconset
+¦   ¦   ¦           app_icon_1024.png
+¦   ¦   ¦           app_icon_128.png
+¦   ¦   ¦           app_icon_16.png
+¦   ¦   ¦           app_icon_256.png
+¦   ¦   ¦           app_icon_32.png
+¦   ¦   ¦           app_icon_512.png
+¦   ¦   ¦           app_icon_64.png
+¦   ¦   ¦           Contents.json
+¦   ¦   ¦           
+¦   ¦   +---Base.lproj
+¦   ¦   ¦       MainMenu.xib
+¦   ¦   ¦       
+¦   ¦   +---Configs
+¦   ¦           AppInfo.xcconfig
+¦   ¦           Debug.xcconfig
+¦   ¦           Release.xcconfig
+¦   ¦           Warnings.xcconfig
+¦   ¦           
+¦   +---Runner.xcodeproj
+¦   ¦   ¦   project.pbxproj
+¦   ¦   ¦   
+¦   ¦   +---project.xcworkspace
+¦   ¦   ¦   +---xcshareddata
+¦   ¦   ¦           IDEWorkspaceChecks.plist
+¦   ¦   ¦           
+¦   ¦   +---xcshareddata
+¦   ¦       +---xcschemes
+¦   ¦               Runner.xcscheme
+¦   ¦               
+¦   +---Runner.xcworkspace
+¦   ¦   ¦   contents.xcworkspacedata
+¦   ¦   ¦   
+¦   ¦   +---xcshareddata
+¦   ¦           IDEWorkspaceChecks.plist
+¦   ¦           
+¦   +---RunnerTests
+¦           RunnerTests.swift
+¦           
++---test
+¦       widget_test.dart
+¦       
++---web
+¦   ¦   favicon.png
+¦   ¦   index.html
+¦   ¦   manifest.json
+¦   ¦   
+¦   +---icons
+¦           Icon-192.png
+¦           Icon-512.png
+¦           Icon-maskable-192.png
+¦           Icon-maskable-512.png
+¦           
++---windows
+    ¦   .gitignore
+    ¦   CMakeLists.txt
+    ¦   
+    +---flutter
+    ¦   ¦   CMakeLists.txt
+    ¦   ¦   generated_plugins.cmake
+    ¦   ¦   generated_plugin_registrant.cc
+    ¦   ¦   generated_plugin_registrant.h
+    ¦   ¦   
+    ¦   +---ephemeral
+    ¦       +---.plugin_symlinks
+    ¦           +---cloud_firestore
+    ¦           ¦   ¦   CHANGELOG.md
+    ¦           ¦   ¦   LICENSE
+    ¦           ¦   ¦   pubspec.yaml
+    ¦           ¦   ¦   README.md
+    ¦           ¦   ¦   
+    ¦           ¦   +---android
+    ¦           ¦   ¦   ¦   build.gradle
+    ¦           ¦   ¦   ¦   local-config.gradle
+    ¦           ¦   ¦   ¦   settings.gradle
+    ¦           ¦   ¦   ¦   user-agent.gradle
+    ¦           ¦   ¦   ¦   
+    ¦           ¦   ¦   +---.gradle
+    ¦           ¦   ¦   ¦   +---8.9
+    ¦           ¦   ¦   ¦   ¦   ¦   gc.properties
+    ¦           ¦   ¦   ¦   ¦   ¦   
+    ¦           ¦   ¦   ¦   ¦   +---checksums
+    ¦           ¦   ¦   ¦   ¦   ¦       checksums.lock
+    ¦           ¦   ¦   ¦   ¦   ¦       
+    ¦           ¦   ¦   ¦   ¦   +---expanded
+    ¦           ¦   ¦   ¦   ¦   +---fileChanges
+    ¦           ¦   ¦   ¦   ¦   ¦       last-build.bin
+    ¦           ¦   ¦   ¦   ¦   ¦       
+    ¦           ¦   ¦   ¦   ¦   +---fileHashes
+    ¦           ¦   ¦   ¦   ¦   ¦       fileHashes.lock
+    ¦           ¦   ¦   ¦   ¦   ¦       
+    ¦           ¦   ¦   ¦   ¦   +---vcsMetadata
+    ¦           ¦   ¦   ¦   +---9.3.0
+    ¦           ¦   ¦   ¦   ¦   ¦   gc.properties
+    ¦           ¦   ¦   ¦   ¦   ¦   
+    ¦           ¦   ¦   ¦   ¦   +---checksums
+    ¦           ¦   ¦   ¦   ¦   ¦       checksums.lock
+    ¦           ¦   ¦   ¦   ¦   ¦       
+    ¦           ¦   ¦   ¦   ¦   +---expanded
+    ¦           ¦   ¦   ¦   ¦   +---fileChanges
+    ¦           ¦   ¦   ¦   ¦   ¦       last-build.bin
+    ¦           ¦   ¦   ¦   ¦   ¦       
+    ¦           ¦   ¦   ¦   ¦   +---fileHashes
+    ¦           ¦   ¦   ¦   ¦   ¦       fileHashes.bin
+    ¦           ¦   ¦   ¦   ¦   ¦       fileHashes.lock
+    ¦           ¦   ¦   ¦   ¦   ¦       
+    ¦           ¦   ¦   ¦   ¦   +---vcsMetadata
+    ¦           ¦   ¦   ¦   +---buildOutputCleanup
+    ¦           ¦   ¦   ¦   ¦       buildOutputCleanup.lock
+    ¦           ¦   ¦   ¦   ¦       cache.properties
+    ¦           ¦   ¦   ¦   ¦       
+    ¦           ¦   ¦   ¦   +---nb-cache
+    ¦           ¦   ¦   ¦   ¦   +---trust
+    ¦           ¦   ¦   ¦   ¦           6F4AF8308E92EC4A11B112905FB6F003DEA837731C3331FBA7D708C2D1A3AA02
+    ¦           ¦   ¦   ¦   ¦           
+    ¦           ¦   ¦   ¦   +---vcs-1
+    ¦           ¦   ¦   ¦           gc.properties
+    ¦           ¦   ¦   ¦           
+    ¦           ¦   ¦   +---build
+    ¦           ¦   ¦   ¦   +---reports
+    ¦           ¦   ¦   ¦       +---problems
+    ¦           ¦   ¦   ¦               problems-report.html
+    ¦           ¦   ¦   ¦               
+    ¦           ¦   ¦   +---src
+    ¦           ¦   ¦       +---main
+    ¦           ¦   ¦           ¦   AndroidManifest.xml
+    ¦           ¦   ¦           ¦   
+    ¦           ¦   ¦           +---java
+    ¦           ¦   ¦               +---io
+    ¦           ¦   ¦                   +---flutter
+    ¦           ¦   ¦                       +---plugins
+    ¦           ¦   ¦                           +---firebase
+    ¦           ¦   ¦                               +---firestore
+    ¦           ¦   ¦                                   ¦   FlutterFirebaseFirestoreException.java
+    ¦           ¦   ¦                                   ¦   FlutterFirebaseFirestoreExtension.java
+    ¦           ¦   ¦                                   ¦   FlutterFirebaseFirestoreMessageCodec.java
+    ¦           ¦   ¦                                   ¦   FlutterFirebaseFirestorePlugin.java
+    ¦           ¦   ¦                                   ¦   FlutterFirebaseFirestoreRegistrar.java
+    ¦           ¦   ¦                                   ¦   FlutterFirebaseFirestoreTransactionResult.java
+    ¦           ¦   ¦                                   ¦   GeneratedAndroidFirebaseFirestore.java
+    ¦           ¦   ¦                                   ¦   
+    ¦           ¦   ¦                                   +---streamhandler
+    ¦           ¦   ¦                                   ¦       DocumentSnapshotsStreamHandler.java
+    ¦           ¦   ¦                                   ¦       LoadBundleStreamHandler.java
+    ¦           ¦   ¦                                   ¦       OnTransactionResultListener.java
+    ¦           ¦   ¦                                   ¦       QuerySnapshotsStreamHandler.java
+    ¦           ¦   ¦                                   ¦       SnapshotsInSyncStreamHandler.java
+    ¦           ¦   ¦                                   ¦       TransactionStreamHandler.java
+    ¦           ¦   ¦                                   ¦       
+    ¦           ¦   ¦                                   +---utils
+    ¦           ¦   ¦                                           ExceptionConverter.java
+    ¦           ¦   ¦                                           PigeonParser.java
+    ¦           ¦   ¦                                           ServerTimestampBehaviorConverter.java
+    ¦           ¦   ¦                                           
+    ¦           ¦   +---dartpad
+    ¦           ¦   ¦   ¦   dartpad_metadata.yaml
+    ¦           ¦   ¦   ¦   
+    ¦           ¦   ¦   +---lib
+    ¦           ¦   ¦           main.dart
+    ¦           ¦   ¦           
+    ¦           ¦   +---example
+    ¦           ¦   ¦   ¦   analysis_options.yaml
+    ¦           ¦   ¦   ¦   firebase.json
+    ¦           ¦   ¦   ¦   pubspec.yaml
+    ¦           ¦   ¦   ¦   README.md
+    ¦           ¦   ¦   ¦   
+    ¦           ¦   ¦   +---android
+    ¦           ¦   ¦   ¦   ¦   build.gradle
+    ¦           ¦   ¦   ¦   ¦   gradle.properties
+    ¦           ¦   ¦   ¦   ¦   settings.gradle
+    ¦           ¦   ¦   ¦   ¦   
+    ¦           ¦   ¦   ¦   +---app
+    ¦           ¦   ¦   ¦   ¦   ¦   build.gradle
+    ¦           ¦   ¦   ¦   ¦   ¦   google-services.json
+    ¦           ¦   ¦   ¦   ¦   ¦   
+    ¦           ¦   ¦   ¦   ¦   +---src
+    ¦           ¦   ¦   ¦   ¦       +---debug
+    ¦           ¦   ¦   ¦   ¦       ¦       AndroidManifest.xml
+    ¦           ¦   ¦   ¦   ¦       ¦       
+    ¦           ¦   ¦   ¦   ¦       +---main
+    ¦           ¦   ¦   ¦   ¦       ¦   ¦   AndroidManifest.xml
+    ¦           ¦   ¦   ¦   ¦       ¦   ¦   
+    ¦           ¦   ¦   ¦   ¦       ¦   +---java
+    ¦           ¦   ¦   ¦   ¦       ¦   ¦   +---io
+    ¦           ¦   ¦   ¦   ¦       ¦   ¦       +---flutter
+    ¦           ¦   ¦   ¦   ¦       ¦   ¦           +---plugins
+    ¦           ¦   ¦   ¦   ¦       ¦   +---kotlin
+    ¦           ¦   ¦   ¦   ¦       ¦   ¦   +---io
+    ¦           ¦   ¦   ¦   ¦       ¦   ¦       +---flutter
+    ¦           ¦   ¦   ¦   ¦       ¦   ¦           +---plugins
+    ¦           ¦   ¦   ¦   ¦       ¦   ¦               +---firebase
+    ¦           ¦   ¦   ¦   ¦       ¦   ¦                   +---firestore
+    ¦           ¦   ¦   ¦   ¦       ¦   ¦                       +---example
+    ¦           ¦   ¦   ¦   ¦       ¦   ¦                               MainActivity.kt
+    ¦           ¦   ¦   ¦   ¦       ¦   ¦                               
+    ¦           ¦   ¦   ¦   ¦       ¦   +---res
+    ¦           ¦   ¦   ¦   ¦       ¦       +---drawable
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       launch_background.xml
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       
+    ¦           ¦   ¦   ¦   ¦       ¦       +---drawable-v21
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       launch_background.xml
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       
+    ¦           ¦   ¦   ¦   ¦       ¦       +---mipmap-hdpi
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       ic_launcher.png
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       
+    ¦           ¦   ¦   ¦   ¦       ¦       +---mipmap-mdpi
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       ic_launcher.png
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       
+    ¦           ¦   ¦   ¦   ¦       ¦       +---mipmap-xhdpi
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       ic_launcher.png
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       
+    ¦           ¦   ¦   ¦   ¦       ¦       +---mipmap-xxhdpi
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       ic_launcher.png
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       
+    ¦           ¦   ¦   ¦   ¦       ¦       +---mipmap-xxxhdpi
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       ic_launcher.png
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       
+    ¦           ¦   ¦   ¦   ¦       ¦       +---values
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       styles.xml
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       
+    ¦           ¦   ¦   ¦   ¦       ¦       +---values-night
+    ¦           ¦   ¦   ¦   ¦       ¦               styles.xml
+    ¦           ¦   ¦   ¦   ¦       ¦               
+    ¦           ¦   ¦   ¦   ¦       +---profile
+    ¦           ¦   ¦   ¦   ¦               AndroidManifest.xml
+    ¦           ¦   ¦   ¦   ¦               
+    ¦           ¦   ¦   ¦   +---gradle
+    ¦           ¦   ¦   ¦       +---wrapper
+    ¦           ¦   ¦   ¦               gradle-wrapper.properties
+    ¦           ¦   ¦   ¦               
+    ¦           ¦   ¦   +---integration_test
+    ¦           ¦   ¦   ¦       collection_reference_e2e.dart
+    ¦           ¦   ¦   ¦       document_change_e2e.dart
+    ¦           ¦   ¦   ¦       document_reference_e2e.dart
+    ¦           ¦   ¦   ¦       e2e_test.dart
+    ¦           ¦   ¦   ¦       field_value_e2e.dart
+    ¦           ¦   ¦   ¦       firebase_options.dart
+    ¦           ¦   ¦   ¦       firebase_options_secondary.dart
+    ¦           ¦   ¦   ¦       geo_point_e2e.dart
+    ¦           ¦   ¦   ¦       instance_e2e.dart
+    ¦           ¦   ¦   ¦       load_bundle_e2e.dart
+    ¦           ¦   ¦   ¦       query_e2e.dart
+    ¦           ¦   ¦   ¦       second_database.dart
+    ¦           ¦   ¦   ¦       settings_e2e.dart
+    ¦           ¦   ¦   ¦       snapshot_metadata_e2e.dart
+    ¦           ¦   ¦   ¦       timestamp_e2e.dart
+    ¦           ¦   ¦   ¦       transaction_e2e.dart
+    ¦           ¦   ¦   ¦       vector_value_e2e.dart
+    ¦           ¦   ¦   ¦       web_snapshot_listeners.dart
+    ¦           ¦   ¦   ¦       write_batch_e2e.dart
+    ¦           ¦   ¦   ¦       
+    ¦           ¦   ¦   +---ios
+    ¦           ¦   ¦   ¦   ¦   firebase_app_id_file.json
+    ¦           ¦   ¦   ¦   ¦   Podfile
+    ¦           ¦   ¦   ¦   ¦   
+    ¦           ¦   ¦   ¦   +---Flutter
+    ¦           ¦   ¦   ¦   ¦       AppFrameworkInfo.plist
+    ¦           ¦   ¦   ¦   ¦       Debug.xcconfig
+    ¦           ¦   ¦   ¦   ¦       Release.xcconfig
+    ¦           ¦   ¦   ¦   ¦       
+    ¦           ¦   ¦   ¦   +---Runner
+    ¦           ¦   ¦   ¦   ¦   ¦   AppDelegate.swift
+    ¦           ¦   ¦   ¦   ¦   ¦   GoogleService-Info.plist
+    ¦           ¦   ¦   ¦   ¦   ¦   Info.plist
+    ¦           ¦   ¦   ¦   ¦   ¦   Runner-Bridging-Header.h
+    ¦           ¦   ¦   ¦   ¦   ¦   
+    ¦           ¦   ¦   ¦   ¦   +---Assets.xcassets
+    ¦           ¦   ¦   ¦   ¦   ¦   +---AppIcon.appiconset
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Contents.json
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Icon-App-1024x1024@1x.png
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Icon-App-20x20@1x.png
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Icon-App-20x20@2x.png
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Icon-App-20x20@3x.png
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Icon-App-29x29@1x.png
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Icon-App-29x29@2x.png
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Icon-App-29x29@3x.png
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Icon-App-40x40@1x.png
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Icon-App-40x40@2x.png
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Icon-App-40x40@3x.png
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Icon-App-60x60@2x.png
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Icon-App-60x60@3x.png
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Icon-App-76x76@1x.png
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Icon-App-76x76@2x.png
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Icon-App-83.5x83.5@2x.png
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       
+    ¦           ¦   ¦   ¦   ¦   ¦   +---LaunchImage.imageset
+    ¦           ¦   ¦   ¦   ¦   ¦           Contents.json
+    ¦           ¦   ¦   ¦   ¦   ¦           LaunchImage.png
+    ¦           ¦   ¦   ¦   ¦   ¦           LaunchImage@2x.png
+    ¦           ¦   ¦   ¦   ¦   ¦           LaunchImage@3x.png
+    ¦           ¦   ¦   ¦   ¦   ¦           README.md
+    ¦           ¦   ¦   ¦   ¦   ¦           
+    ¦           ¦   ¦   ¦   ¦   +---Base.lproj
+    ¦           ¦   ¦   ¦   ¦           LaunchScreen.storyboard
+    ¦           ¦   ¦   ¦   ¦           Main.storyboard
+    ¦           ¦   ¦   ¦   ¦           
+    ¦           ¦   ¦   ¦   +---Runner.xcodeproj
+    ¦           ¦   ¦   ¦   ¦   ¦   project.pbxproj
+    ¦           ¦   ¦   ¦   ¦   ¦   
+    ¦           ¦   ¦   ¦   ¦   +---project.xcworkspace
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦   contents.xcworkspacedata
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦   
+    ¦           ¦   ¦   ¦   ¦   ¦   +---xcshareddata
+    ¦           ¦   ¦   ¦   ¦   ¦       ¦   IDEWorkspaceChecks.plist
+    ¦           ¦   ¦   ¦   ¦   ¦       ¦   WorkspaceSettings.xcsettings
+    ¦           ¦   ¦   ¦   ¦   ¦       ¦   
+    ¦           ¦   ¦   ¦   ¦   ¦       +---swiftpm
+    ¦           ¦   ¦   ¦   ¦   ¦           +---configuration
+    ¦           ¦   ¦   ¦   ¦   +---xcshareddata
+    ¦           ¦   ¦   ¦   ¦       +---xcschemes
+    ¦           ¦   ¦   ¦   ¦               Runner.xcscheme
+    ¦           ¦   ¦   ¦   ¦               
+    ¦           ¦   ¦   ¦   +---Runner.xcworkspace
+    ¦           ¦   ¦   ¦       ¦   contents.xcworkspacedata
+    ¦           ¦   ¦   ¦       ¦   
+    ¦           ¦   ¦   ¦       +---xcshareddata
+    ¦           ¦   ¦   ¦           ¦   IDEWorkspaceChecks.plist
+    ¦           ¦   ¦   ¦           ¦   WorkspaceSettings.xcsettings
+    ¦           ¦   ¦   ¦           ¦   
+    ¦           ¦   ¦   ¦           +---swiftpm
+    ¦           ¦   ¦   ¦               +---configuration
+    ¦           ¦   ¦   +---lib
+    ¦           ¦   ¦   ¦       firebase_options.dart
+    ¦           ¦   ¦   ¦       main.dart
+    ¦           ¦   ¦   ¦       
+    ¦           ¦   ¦   +---macos
+    ¦           ¦   ¦   ¦   ¦   firebase_app_id_file.json
+    ¦           ¦   ¦   ¦   ¦   Podfile
+    ¦           ¦   ¦   ¦   ¦   
+    ¦           ¦   ¦   ¦   +---Flutter
+    ¦           ¦   ¦   ¦   ¦       Flutter-Debug.xcconfig
+    ¦           ¦   ¦   ¦   ¦       Flutter-Release.xcconfig
+    ¦           ¦   ¦   ¦   ¦       
+    ¦           ¦   ¦   ¦   +---Runner
+    ¦           ¦   ¦   ¦   ¦   ¦   AppDelegate.swift
+    ¦           ¦   ¦   ¦   ¦   ¦   DebugProfile.entitlements
+    ¦           ¦   ¦   ¦   ¦   ¦   GoogleService-Info.plist
+    ¦           ¦   ¦   ¦   ¦   ¦   Info.plist
+    ¦           ¦   ¦   ¦   ¦   ¦   MainFlutterWindow.swift
+    ¦           ¦   ¦   ¦   ¦   ¦   Release.entitlements
+    ¦           ¦   ¦   ¦   ¦   ¦   
+    ¦           ¦   ¦   ¦   ¦   +---Assets.xcassets
+    ¦           ¦   ¦   ¦   ¦   ¦   +---AppIcon.appiconset
+    ¦           ¦   ¦   ¦   ¦   ¦           app_icon_1024.png
+    ¦           ¦   ¦   ¦   ¦   ¦           app_icon_128.png
+    ¦           ¦   ¦   ¦   ¦   ¦           app_icon_16.png
+    ¦           ¦   ¦   ¦   ¦   ¦           app_icon_256.png
+    ¦           ¦   ¦   ¦   ¦   ¦           app_icon_32.png
+    ¦           ¦   ¦   ¦   ¦   ¦           app_icon_512.png
+    ¦           ¦   ¦   ¦   ¦   ¦           app_icon_64.png
+    ¦           ¦   ¦   ¦   ¦   ¦           Contents.json
+    ¦           ¦   ¦   ¦   ¦   ¦           
+    ¦           ¦   ¦   ¦   ¦   +---Base.lproj
+    ¦           ¦   ¦   ¦   ¦   ¦       MainMenu.xib
+    ¦           ¦   ¦   ¦   ¦   ¦       
+    ¦           ¦   ¦   ¦   ¦   +---Configs
+    ¦           ¦   ¦   ¦   ¦           AppInfo.xcconfig
+    ¦           ¦   ¦   ¦   ¦           Debug.xcconfig
+    ¦           ¦   ¦   ¦   ¦           Release.xcconfig
+    ¦           ¦   ¦   ¦   ¦           Warnings.xcconfig
+    ¦           ¦   ¦   ¦   ¦           
+    ¦           ¦   ¦   ¦   +---Runner.xcodeproj
+    ¦           ¦   ¦   ¦   ¦   ¦   project.pbxproj
+    ¦           ¦   ¦   ¦   ¦   ¦   
+    ¦           ¦   ¦   ¦   ¦   +---project.xcworkspace
+    ¦           ¦   ¦   ¦   ¦   ¦   +---xcshareddata
+    ¦           ¦   ¦   ¦   ¦   ¦       ¦   IDEWorkspaceChecks.plist
+    ¦           ¦   ¦   ¦   ¦   ¦       ¦   
+    ¦           ¦   ¦   ¦   ¦   ¦       +---swiftpm
+    ¦           ¦   ¦   ¦   ¦   ¦           +---configuration
+    ¦           ¦   ¦   ¦   ¦   +---xcshareddata
+    ¦           ¦   ¦   ¦   ¦       +---xcschemes
+    ¦           ¦   ¦   ¦   ¦               Runner.xcscheme
+    ¦           ¦   ¦   ¦   ¦               
+    ¦           ¦   ¦   ¦   +---Runner.xcworkspace
+    ¦           ¦   ¦   ¦   ¦   ¦   contents.xcworkspacedata
+    ¦           ¦   ¦   ¦   ¦   ¦   
+    ¦           ¦   ¦   ¦   ¦   +---xcshareddata
+    ¦           ¦   ¦   ¦   ¦       ¦   IDEWorkspaceChecks.plist
+    ¦           ¦   ¦   ¦   ¦       ¦   
+    ¦           ¦   ¦   ¦   ¦       +---swiftpm
+    ¦           ¦   ¦   ¦   ¦           +---configuration
+    ¦           ¦   ¦   ¦   +---RunnerTests
+    ¦           ¦   ¦   ¦           RunnerTests.swift
+    ¦           ¦   ¦   ¦           
+    ¦           ¦   ¦   +---test_driver
+    ¦           ¦   ¦   ¦       integration_test.dart
+    ¦           ¦   ¦   ¦       
+    ¦           ¦   ¦   +---web
+    ¦           ¦   ¦   ¦   ¦   favicon.png
+    ¦           ¦   ¦   ¦   ¦   index.html
+    ¦           ¦   ¦   ¦   ¦   manifest.json
+    ¦           ¦   ¦   ¦   ¦   wasm_index.html
+    ¦           ¦   ¦   ¦   ¦   
+    ¦           ¦   ¦   ¦   +---icons
+    ¦           ¦   ¦   ¦           Icon-192.png
+    ¦           ¦   ¦   ¦           Icon-512.png
+    ¦           ¦   ¦   ¦           Icon-maskable-192.png
+    ¦           ¦   ¦   ¦           Icon-maskable-512.png
+    ¦           ¦   ¦   ¦           
+    ¦           ¦   ¦   +---windows
+    ¦           ¦   ¦       ¦   CMakeLists.txt
+    ¦           ¦   ¦       ¦   
+    ¦           ¦   ¦       +---flutter
+    ¦           ¦   ¦       ¦       CMakeLists.txt
+    ¦           ¦   ¦       ¦       
+    ¦           ¦   ¦       +---runner
+    ¦           ¦   ¦           ¦   CMakeLists.txt
+    ¦           ¦   ¦           ¦   flutter_window.cpp
+    ¦           ¦   ¦           ¦   flutter_window.h
+    ¦           ¦   ¦           ¦   main.cpp
+    ¦           ¦   ¦           ¦   resource.h
+    ¦           ¦   ¦           ¦   runner.exe.manifest
+    ¦           ¦   ¦           ¦   Runner.rc
+    ¦           ¦   ¦           ¦   utils.cpp
+    ¦           ¦   ¦           ¦   utils.h
+    ¦           ¦   ¦           ¦   win32_window.cpp
+    ¦           ¦   ¦           ¦   win32_window.h
+    ¦           ¦   ¦           ¦   
+    ¦           ¦   ¦           +---resources
+    ¦           ¦   ¦                   app_icon.ico
+    ¦           ¦   ¦                   
+    ¦           ¦   +---ios
+    ¦           ¦   ¦   ¦   cloud_firestore.podspec
+    ¦           ¦   ¦   ¦   generated_firebase_sdk_version.txt
+    ¦           ¦   ¦   ¦   
+    ¦           ¦   ¦   +---cloud_firestore
+    ¦           ¦   ¦       ¦   Package.swift
+    ¦           ¦   ¦       ¦   
+    ¦           ¦   ¦       +---Sources
+    ¦           ¦   ¦           +---cloud_firestore
+    ¦           ¦   ¦               ¦   FirestoreMessages.g.m
+    ¦           ¦   ¦               ¦   FirestorePigeonParser.m
+    ¦           ¦   ¦               ¦   FLTDocumentSnapshotStreamHandler.m
+    ¦           ¦   ¦               ¦   FLTFirebaseFirestoreExtension.m
+    ¦           ¦   ¦               ¦   FLTFirebaseFirestorePlugin.m
+    ¦           ¦   ¦               ¦   FLTFirebaseFirestoreReader.m
+    ¦           ¦   ¦               ¦   FLTFirebaseFirestoreUtils.m
+    ¦           ¦   ¦               ¦   FLTFirebaseFirestoreWriter.m
+    ¦           ¦   ¦               ¦   FLTLoadBundleStreamHandler.m
+    ¦           ¦   ¦               ¦   FLTQuerySnapshotStreamHandler.m
+    ¦           ¦   ¦               ¦   FLTSnapshotsInSyncStreamHandler.m
+    ¦           ¦   ¦               ¦   FLTTransactionStreamHandler.m
+    ¦           ¦   ¦               ¦   
+    ¦           ¦   ¦               +---include
+    ¦           ¦   ¦               ¦   +---cloud_firestore
+    ¦           ¦   ¦               ¦       +---Private
+    ¦           ¦   ¦               ¦       ¦       FirestorePigeonParser.h
+    ¦           ¦   ¦               ¦       ¦       FLTDocumentSnapshotStreamHandler.h
+    ¦           ¦   ¦               ¦       ¦       FLTFirebaseFirestoreExtension.h
+    ¦           ¦   ¦               ¦       ¦       FLTFirebaseFirestoreReader.h
+    ¦           ¦   ¦               ¦       ¦       FLTFirebaseFirestoreUtils.h
+    ¦           ¦   ¦               ¦       ¦       FLTFirebaseFirestoreWriter.h
+    ¦           ¦   ¦               ¦       ¦       FLTLoadBundleStreamHandler.h
+    ¦           ¦   ¦               ¦       ¦       FLTQuerySnapshotStreamHandler.h
+    ¦           ¦   ¦               ¦       ¦       FLTSnapshotsInSyncStreamHandler.h
+    ¦           ¦   ¦               ¦       ¦       FLTTransactionStreamHandler.h
+    ¦           ¦   ¦               ¦       ¦       
+    ¦           ¦   ¦               ¦       +---Public
+    ¦           ¦   ¦               ¦               CustomPigeonHeaderFirestore.h
+    ¦           ¦   ¦               ¦               FirestoreMessages.g.h
+    ¦           ¦   ¦               ¦               FLTFirebaseFirestorePlugin.h
+    ¦           ¦   ¦               ¦               
+    ¦           ¦   ¦               +---Resources
+    ¦           ¦   +---lib
+    ¦           ¦   ¦   ¦   cloud_firestore.dart
+    ¦           ¦   ¦   ¦   
+    ¦           ¦   ¦   +---src
+    ¦           ¦   ¦       ¦   aggregate_query.dart
+    ¦           ¦   ¦       ¦   aggregate_query_snapshot.dart
+    ¦           ¦   ¦       ¦   collection_reference.dart
+    ¦           ¦   ¦       ¦   document_change.dart
+    ¦           ¦   ¦       ¦   document_reference.dart
+    ¦           ¦   ¦       ¦   document_snapshot.dart
+    ¦           ¦   ¦       ¦   field_value.dart
+    ¦           ¦   ¦       ¦   filters.dart
+    ¦           ¦   ¦       ¦   firestore.dart
+    ¦           ¦   ¦       ¦   load_bundle_task.dart
+    ¦           ¦   ¦       ¦   load_bundle_task_snapshot.dart
+    ¦           ¦   ¦       ¦   persistent_cache_index_manager.dart
+    ¦           ¦   ¦       ¦   query.dart
+    ¦           ¦   ¦       ¦   query_document_snapshot.dart
+    ¦           ¦   ¦       ¦   query_snapshot.dart
+    ¦           ¦   ¦       ¦   snapshot_metadata.dart
+    ¦           ¦   ¦       ¦   transaction.dart
+    ¦           ¦   ¦       ¦   write_batch.dart
+    ¦           ¦   ¦       ¦   
+    ¦           ¦   ¦       +---utils
+    ¦           ¦   ¦               codec_utility.dart
+    ¦           ¦   ¦               
+    ¦           ¦   +---macos
+    ¦           ¦   ¦   ¦   cloud_firestore.podspec
+    ¦           ¦   ¦   ¦   
+    ¦           ¦   ¦   +---cloud_firestore
+    ¦           ¦   ¦       ¦   Package.swift
+    ¦           ¦   ¦       ¦   
+    ¦           ¦   ¦       +---Sources
+    ¦           ¦   ¦           +---cloud_firestore
+    ¦           ¦   ¦               ¦   FirestoreMessages.g.m
+    ¦           ¦   ¦               ¦   FirestorePigeonParser.m
+    ¦           ¦   ¦               ¦   FLTDocumentSnapshotStreamHandler.m
+    ¦           ¦   ¦               ¦   FLTFirebaseFirestoreExtension.m
+    ¦           ¦   ¦               ¦   FLTFirebaseFirestorePlugin.m
+    ¦           ¦   ¦               ¦   FLTFirebaseFirestoreReader.m
+    ¦           ¦   ¦               ¦   FLTFirebaseFirestoreUtils.m
+    ¦           ¦   ¦               ¦   FLTFirebaseFirestoreWriter.m
+    ¦           ¦   ¦               ¦   FLTLoadBundleStreamHandler.m
+    ¦           ¦   ¦               ¦   FLTQuerySnapshotStreamHandler.m
+    ¦           ¦   ¦               ¦   FLTSnapshotsInSyncStreamHandler.m
+    ¦           ¦   ¦               ¦   FLTTransactionStreamHandler.m
+    ¦           ¦   ¦               ¦   
+    ¦           ¦   ¦               +---include
+    ¦           ¦   ¦               ¦   +---cloud_firestore
+    ¦           ¦   ¦               ¦       +---Private
+    ¦           ¦   ¦               ¦       ¦       FirestorePigeonParser.h
+    ¦           ¦   ¦               ¦       ¦       FLTDocumentSnapshotStreamHandler.h
+    ¦           ¦   ¦               ¦       ¦       FLTFirebaseFirestoreExtension.h
+    ¦           ¦   ¦               ¦       ¦       FLTFirebaseFirestoreReader.h
+    ¦           ¦   ¦               ¦       ¦       FLTFirebaseFirestoreUtils.h
+    ¦           ¦   ¦               ¦       ¦       FLTFirebaseFirestoreWriter.h
+    ¦           ¦   ¦               ¦       ¦       FLTLoadBundleStreamHandler.h
+    ¦           ¦   ¦               ¦       ¦       FLTQuerySnapshotStreamHandler.h
+    ¦           ¦   ¦               ¦       ¦       FLTSnapshotsInSyncStreamHandler.h
+    ¦           ¦   ¦               ¦       ¦       FLTTransactionStreamHandler.h
+    ¦           ¦   ¦               ¦       ¦       
+    ¦           ¦   ¦               ¦       +---Public
+    ¦           ¦   ¦               ¦               CustomPigeonHeaderFirestore.h
+    ¦           ¦   ¦               ¦               FirestoreMessages.g.h
+    ¦           ¦   ¦               ¦               FLTFirebaseFirestorePlugin.h
+    ¦           ¦   ¦               ¦               
+    ¦           ¦   ¦               +---Resources
+    ¦           ¦   +---test
+    ¦           ¦   ¦       cloud_firestore_test.dart
+    ¦           ¦   ¦       collection_reference_test.dart
+    ¦           ¦   ¦       field_value_test.dart
+    ¦           ¦   ¦       mock.dart
+    ¦           ¦   ¦       query_test.dart
+    ¦           ¦   ¦       test_firestore_message_codec.dart
+    ¦           ¦   ¦       
+    ¦           ¦   +---windows
+    ¦           ¦       ¦   cloud_firestore_plugin.cpp
+    ¦           ¦       ¦   cloud_firestore_plugin.h
+    ¦           ¦       ¦   cloud_firestore_plugin_c_api.cpp
+    ¦           ¦       ¦   CMakeLists.txt
+    ¦           ¦       ¦   firestore_codec.cpp
+    ¦           ¦       ¦   firestore_codec.h
+    ¦           ¦       ¦   messages.g.cpp
+    ¦           ¦       ¦   messages.g.h
+    ¦           ¦       ¦   plugin_version.h.in
+    ¦           ¦       ¦   
+    ¦           ¦       +---include
+    ¦           ¦       ¦   +---cloud_firestore
+    ¦           ¦       ¦           cloud_firestore_plugin_c_api.h
+    ¦           ¦       ¦           
+    ¦           ¦       +---test
+    ¦           ¦               cloud_firestore_plugin_test.cpp
+    ¦           ¦               
+    ¦           +---firebase_auth
+    ¦           ¦   ¦   CHANGELOG.md
+    ¦           ¦   ¦   LICENSE
+    ¦           ¦   ¦   pubspec.yaml
+    ¦           ¦   ¦   README.md
+    ¦           ¦   ¦   
+    ¦           ¦   +---android
+    ¦           ¦   ¦   ¦   build.gradle
+    ¦           ¦   ¦   ¦   gradle.properties
+    ¦           ¦   ¦   ¦   settings.gradle
+    ¦           ¦   ¦   ¦   user-agent.gradle
+    ¦           ¦   ¦   ¦   
+    ¦           ¦   ¦   +---.gradle
+    ¦           ¦   ¦   ¦   +---8.4
+    ¦           ¦   ¦   ¦   ¦   ¦   gc.properties
+    ¦           ¦   ¦   ¦   ¦   ¦   
+    ¦           ¦   ¦   ¦   ¦   +---checksums
+    ¦           ¦   ¦   ¦   ¦   ¦       checksums.lock
+    ¦           ¦   ¦   ¦   ¦   ¦       
+    ¦           ¦   ¦   ¦   ¦   +---fileChanges
+    ¦           ¦   ¦   ¦   ¦   ¦       last-build.bin
+    ¦           ¦   ¦   ¦   ¦   ¦       
+    ¦           ¦   ¦   ¦   ¦   +---fileHashes
+    ¦           ¦   ¦   ¦   ¦   ¦       fileHashes.lock
+    ¦           ¦   ¦   ¦   ¦   ¦       
+    ¦           ¦   ¦   ¦   ¦   +---vcsMetadata
+    ¦           ¦   ¦   ¦   +---nb-cache
+    ¦           ¦   ¦   ¦   ¦   +---trust
+    ¦           ¦   ¦   ¦   ¦           4C2D711779E13D087EDDD4874317239918FC13ACBB657953380B4F81C4D3F4FB
+    ¦           ¦   ¦   ¦   ¦           
+    ¦           ¦   ¦   ¦   +---vcs-1
+    ¦           ¦   ¦   ¦           gc.properties
+    ¦           ¦   ¦   ¦           
+    ¦           ¦   ¦   +---gradle
+    ¦           ¦   ¦   ¦   +---wrapper
+    ¦           ¦   ¦   ¦           gradle-wrapper.properties
+    ¦           ¦   ¦   ¦           
+    ¦           ¦   ¦   +---src
+    ¦           ¦   ¦       +---main
+    ¦           ¦   ¦           ¦   AndroidManifest.xml
+    ¦           ¦   ¦           ¦   
+    ¦           ¦   ¦           +---java
+    ¦           ¦   ¦               +---io
+    ¦           ¦   ¦                   +---flutter
+    ¦           ¦   ¦                       +---plugins
+    ¦           ¦   ¦                           +---firebase
+    ¦           ¦   ¦                               +---auth
+    ¦           ¦   ¦                                       AuthStateChannelStreamHandler.java
+    ¦           ¦   ¦                                       Constants.java
+    ¦           ¦   ¦                                       FlutterFirebaseAuthPlugin.java
+    ¦           ¦   ¦                                       FlutterFirebaseAuthPluginException.java
+    ¦           ¦   ¦                                       FlutterFirebaseAuthRegistrar.java
+    ¦           ¦   ¦                                       FlutterFirebaseAuthUser.java
+    ¦           ¦   ¦                                       FlutterFirebaseMultiFactor.java
+    ¦           ¦   ¦                                       FlutterFirebaseTotpMultiFactor.java
+    ¦           ¦   ¦                                       FlutterFirebaseTotpSecret.java
+    ¦           ¦   ¦                                       GeneratedAndroidFirebaseAuth.java
+    ¦           ¦   ¦                                       IdTokenChannelStreamHandler.java
+    ¦           ¦   ¦                                       PhoneNumberVerificationStreamHandler.java
+    ¦           ¦   ¦                                       PigeonParser.java
+    ¦           ¦   ¦                                       
+    ¦           ¦   +---example
+    ¦           ¦   ¦   ¦   analysis_options.yaml
+    ¦           ¦   ¦   ¦   pubspec.yaml
+    ¦           ¦   ¦   ¦   README.md
+    ¦           ¦   ¦   ¦   
+    ¦           ¦   ¦   +---android
+    ¦           ¦   ¦   ¦   ¦   build.gradle
+    ¦           ¦   ¦   ¦   ¦   gradle.properties
+    ¦           ¦   ¦   ¦   ¦   settings.gradle
+    ¦           ¦   ¦   ¦   ¦   
+    ¦           ¦   ¦   ¦   +---app
+    ¦           ¦   ¦   ¦   ¦   ¦   build.gradle
+    ¦           ¦   ¦   ¦   ¦   ¦   google-services.json
+    ¦           ¦   ¦   ¦   ¦   ¦   
+    ¦           ¦   ¦   ¦   ¦   +---src
+    ¦           ¦   ¦   ¦   ¦       +---debug
+    ¦           ¦   ¦   ¦   ¦       ¦       AndroidManifest.xml
+    ¦           ¦   ¦   ¦   ¦       ¦       
+    ¦           ¦   ¦   ¦   ¦       +---main
+    ¦           ¦   ¦   ¦   ¦       ¦   ¦   AndroidManifest.xml
+    ¦           ¦   ¦   ¦   ¦       ¦   ¦   
+    ¦           ¦   ¦   ¦   ¦       ¦   +---java
+    ¦           ¦   ¦   ¦   ¦       ¦   ¦   +---io
+    ¦           ¦   ¦   ¦   ¦       ¦   ¦       +---flutter
+    ¦           ¦   ¦   ¦   ¦       ¦   ¦           +---plugins
+    ¦           ¦   ¦   ¦   ¦       ¦   +---kotlin
+    ¦           ¦   ¦   ¦   ¦       ¦   ¦   +---io
+    ¦           ¦   ¦   ¦   ¦       ¦   ¦       +---flutter
+    ¦           ¦   ¦   ¦   ¦       ¦   ¦           +---plugins
+    ¦           ¦   ¦   ¦   ¦       ¦   ¦               +---firebase
+    ¦           ¦   ¦   ¦   ¦       ¦   ¦                   +---auth
+    ¦           ¦   ¦   ¦   ¦       ¦   ¦                       +---example
+    ¦           ¦   ¦   ¦   ¦       ¦   ¦                               MainActivity.kt
+    ¦           ¦   ¦   ¦   ¦       ¦   ¦                               
+    ¦           ¦   ¦   ¦   ¦       ¦   +---res
+    ¦           ¦   ¦   ¦   ¦       ¦       +---drawable
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       launch_background.xml
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       
+    ¦           ¦   ¦   ¦   ¦       ¦       +---drawable-v21
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       launch_background.xml
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       
+    ¦           ¦   ¦   ¦   ¦       ¦       +---mipmap-hdpi
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       ic_launcher.png
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       
+    ¦           ¦   ¦   ¦   ¦       ¦       +---mipmap-mdpi
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       ic_launcher.png
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       
+    ¦           ¦   ¦   ¦   ¦       ¦       +---mipmap-xhdpi
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       ic_launcher.png
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       
+    ¦           ¦   ¦   ¦   ¦       ¦       +---mipmap-xxhdpi
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       ic_launcher.png
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       
+    ¦           ¦   ¦   ¦   ¦       ¦       +---mipmap-xxxhdpi
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       ic_launcher.png
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       
+    ¦           ¦   ¦   ¦   ¦       ¦       +---values
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       styles.xml
+    ¦           ¦   ¦   ¦   ¦       ¦       ¦       
+    ¦           ¦   ¦   ¦   ¦       ¦       +---values-night
+    ¦           ¦   ¦   ¦   ¦       ¦               styles.xml
+    ¦           ¦   ¦   ¦   ¦       ¦               
+    ¦           ¦   ¦   ¦   ¦       +---profile
+    ¦           ¦   ¦   ¦   ¦               AndroidManifest.xml
+    ¦           ¦   ¦   ¦   ¦               
+    ¦           ¦   ¦   ¦   +---gradle
+    ¦           ¦   ¦   ¦       +---wrapper
+    ¦           ¦   ¦   ¦               gradle-wrapper.properties
+    ¦           ¦   ¦   ¦               
+    ¦           ¦   ¦   +---ios
+    ¦           ¦   ¦   ¦   ¦   firebase_app_id_file.json
+    ¦           ¦   ¦   ¦   ¦   Podfile
+    ¦           ¦   ¦   ¦   ¦   
+    ¦           ¦   ¦   ¦   +---Flutter
+    ¦           ¦   ¦   ¦   ¦       AppFrameworkInfo.plist
+    ¦           ¦   ¦   ¦   ¦       Debug.xcconfig
+    ¦           ¦   ¦   ¦   ¦       Release.xcconfig
+    ¦           ¦   ¦   ¦   ¦       
+    ¦           ¦   ¦   ¦   +---Runner
+    ¦           ¦   ¦   ¦   ¦   ¦   AppDelegate.h
+    ¦           ¦   ¦   ¦   ¦   ¦   AppDelegate.m
+    ¦           ¦   ¦   ¦   ¦   ¦   AppDelegate.swift
+    ¦           ¦   ¦   ¦   ¦   ¦   GoogleService-Info.plist
+    ¦           ¦   ¦   ¦   ¦   ¦   Info.plist
+    ¦           ¦   ¦   ¦   ¦   ¦   main.m
+    ¦           ¦   ¦   ¦   ¦   ¦   Runner-Bridging-Header.h
+    ¦           ¦   ¦   ¦   ¦   ¦   Runner.entitlements
+    ¦           ¦   ¦   ¦   ¦   ¦   
+    ¦           ¦   ¦   ¦   ¦   +---Assets.xcassets
+    ¦           ¦   ¦   ¦   ¦   ¦   +---AppIcon.appiconset
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Contents.json
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Icon-App-1024x1024@1x.png
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Icon-App-20x20@1x.png
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Icon-App-20x20@2x.png
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Icon-App-20x20@3x.png
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Icon-App-29x29@1x.png
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Icon-App-29x29@2x.png
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Icon-App-29x29@3x.png
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Icon-App-40x40@1x.png
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Icon-App-40x40@2x.png
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Icon-App-40x40@3x.png
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Icon-App-60x60@2x.png
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Icon-App-60x60@3x.png
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Icon-App-76x76@1x.png
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Icon-App-76x76@2x.png
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       Icon-App-83.5x83.5@2x.png
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦       
+    ¦           ¦   ¦   ¦   ¦   ¦   +---LaunchImage.imageset
+    ¦           ¦   ¦   ¦   ¦   ¦           Contents.json
+    ¦           ¦   ¦   ¦   ¦   ¦           LaunchImage.png
+    ¦           ¦   ¦   ¦   ¦   ¦           LaunchImage@2x.png
+    ¦           ¦   ¦   ¦   ¦   ¦           LaunchImage@3x.png
+    ¦           ¦   ¦   ¦   ¦   ¦           README.md
+    ¦           ¦   ¦   ¦   ¦   ¦           
+    ¦           ¦   ¦   ¦   ¦   +---Base.lproj
+    ¦           ¦   ¦   ¦   ¦           LaunchScreen.storyboard
+    ¦           ¦   ¦   ¦   ¦           Main.storyboard
+    ¦           ¦   ¦   ¦   ¦           
+    ¦           ¦   ¦   ¦   +---Runner.xcodeproj
+    ¦           ¦   ¦   ¦   ¦   ¦   project.pbxproj
+    ¦           ¦   ¦   ¦   ¦   ¦   
+    ¦           ¦   ¦   ¦   ¦   +---project.xcworkspace
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦   contents.xcworkspacedata
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦   
+    ¦           ¦   ¦   ¦   ¦   ¦   +---xcshareddata
+    ¦           ¦   ¦   ¦   ¦   ¦           IDEWorkspaceChecks.plist
+    ¦           ¦   ¦   ¦   ¦   ¦           WorkspaceSettings.xcsettings
+    ¦           ¦   ¦   ¦   ¦   ¦           
+    ¦           ¦   ¦   ¦   ¦   +---xcshareddata
+    ¦           ¦   ¦   ¦   ¦       +---xcschemes
+    ¦           ¦   ¦   ¦   ¦               Runner.xcscheme
+    ¦           ¦   ¦   ¦   ¦               
+    ¦           ¦   ¦   ¦   +---Runner.xcworkspace
+    ¦           ¦   ¦   ¦       ¦   contents.xcworkspacedata
+    ¦           ¦   ¦   ¦       ¦   
+    ¦           ¦   ¦   ¦       +---xcshareddata
+    ¦           ¦   ¦   ¦               IDEWorkspaceChecks.plist
+    ¦           ¦   ¦   ¦               WorkspaceSettings.xcsettings
+    ¦           ¦   ¦   ¦               
+    ¦           ¦   ¦   +---lib
+    ¦           ¦   ¦   ¦       auth.dart
+    ¦           ¦   ¦   ¦       firebase_options.dart
+    ¦           ¦   ¦   ¦       main.dart
+    ¦           ¦   ¦   ¦       profile.dart
+    ¦           ¦   ¦   ¦       
+    ¦           ¦   ¦   +---macos
+    ¦           ¦   ¦   ¦   ¦   firebase_app_id_file.json
+    ¦           ¦   ¦   ¦   ¦   Podfile
+    ¦           ¦   ¦   ¦   ¦   
+    ¦           ¦   ¦   ¦   +---Flutter
+    ¦           ¦   ¦   ¦   ¦       Flutter-Debug.xcconfig
+    ¦           ¦   ¦   ¦   ¦       Flutter-Release.xcconfig
+    ¦           ¦   ¦   ¦   ¦       
+    ¦           ¦   ¦   ¦   +---Runner
+    ¦           ¦   ¦   ¦   ¦   ¦   AppDelegate.swift
+    ¦           ¦   ¦   ¦   ¦   ¦   DebugProfile.entitlements
+    ¦           ¦   ¦   ¦   ¦   ¦   GoogleService-Info.plist
+    ¦           ¦   ¦   ¦   ¦   ¦   Info.plist
+    ¦           ¦   ¦   ¦   ¦   ¦   MainFlutterWindow.swift
+    ¦           ¦   ¦   ¦   ¦   ¦   Release.entitlements
+    ¦           ¦   ¦   ¦   ¦   ¦   
+    ¦           ¦   ¦   ¦   ¦   +---Assets.xcassets
+    ¦           ¦   ¦   ¦   ¦   ¦   +---AppIcon.appiconset
+    ¦           ¦   ¦   ¦   ¦   ¦           app_icon_1024.png
+    ¦           ¦   ¦   ¦   ¦   ¦           app_icon_128.png
+    ¦           ¦   ¦   ¦   ¦   ¦           app_icon_16.png
+    ¦           ¦   ¦   ¦   ¦   ¦           app_icon_256.png
+    ¦           ¦   ¦   ¦   ¦   ¦           app_icon_32.png
+    ¦           ¦   ¦   ¦   ¦   ¦           app_icon_512.png
+    ¦           ¦   ¦   ¦   ¦   ¦           app_icon_64.png
+    ¦           ¦   ¦   ¦   ¦   ¦           Contents.json
+    ¦           ¦   ¦   ¦   ¦   ¦           
+    ¦           ¦   ¦   ¦   ¦   +---Base.lproj
+    ¦           ¦   ¦   ¦   ¦   ¦       MainMenu.xib
+    ¦           ¦   ¦   ¦   ¦   ¦       
+    ¦           ¦   ¦   ¦   ¦   +---Configs
+    ¦           ¦   ¦   ¦   ¦           AppInfo.xcconfig
+    ¦           ¦   ¦   ¦   ¦           Debug.xcconfig
+    ¦           ¦   ¦   ¦   ¦           Release.xcconfig
+    ¦           ¦   ¦   ¦   ¦           Warnings.xcconfig
+    ¦           ¦   ¦   ¦   ¦           
+    ¦           ¦   ¦   ¦   +---Runner.xcodeproj
+    ¦           ¦   ¦   ¦   ¦   ¦   project.pbxproj
+    ¦           ¦   ¦   ¦   ¦   ¦   
+    ¦           ¦   ¦   ¦   ¦   +---project.xcworkspace
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦   contents.xcworkspacedata
+    ¦           ¦   ¦   ¦   ¦   ¦   ¦   
+    ¦           ¦   ¦   ¦   ¦   ¦   +---xcshareddata
+    ¦           ¦   ¦   ¦   ¦   ¦           IDEWorkspaceChecks.plist
+    ¦           ¦   ¦   ¦   ¦   ¦           
+    ¦           ¦   ¦   ¦   ¦   +---xcshareddata
+    ¦           ¦   ¦   ¦   ¦       +---xcschemes
+    ¦           ¦   ¦   ¦   ¦               Runner.xcscheme
+    ¦           ¦   ¦   ¦   ¦               
+    ¦           ¦   ¦   ¦   +---Runner.xcworkspace
+    ¦           ¦   ¦   ¦       ¦   contents.xcworkspacedata
+    ¦           ¦   ¦   ¦       ¦   
+    ¦           ¦   ¦   ¦       +---xcshareddata
+    ¦           ¦   ¦   ¦               IDEWorkspaceChecks.plist
+    ¦           ¦   ¦   ¦               WorkspaceSettings.xcsettings
+    ¦           ¦   ¦   ¦               
+    ¦           ¦   ¦   +---web
+    ¦           ¦   ¦   ¦   ¦   favicon.png
+    ¦           ¦   ¦   ¦   ¦   index.html
+    ¦           ¦   ¦   ¦   ¦   manifest.json
+    ¦           ¦   ¦   ¦   ¦   
+    ¦           ¦   ¦   ¦   +---icons
+    ¦           ¦   ¦   ¦           Icon-192.png
+    ¦           ¦   ¦   ¦           Icon-512.png
+    ¦           ¦   ¦   ¦           Icon-maskable-192.png
+    ¦           ¦   ¦   ¦           Icon-maskable-512.png
+    ¦           ¦   ¦   ¦           
+    ¦           ¦   ¦   +---windows
+    ¦           ¦   ¦       ¦   CMakeLists.txt
+    ¦           ¦   ¦       ¦   
+    ¦           ¦   ¦       +---flutter
+    ¦           ¦   ¦       ¦       CMakeLists.txt
+    ¦           ¦   ¦       ¦       
+    ¦           ¦   ¦       +---runner
+    ¦           ¦   ¦           ¦   CMakeLists.txt
+    ¦           ¦   ¦           ¦   flutter_window.cpp
+    ¦           ¦   ¦           ¦   flutter_window.h
+    ¦           ¦   ¦           ¦   main.cpp
+    ¦           ¦   ¦           ¦   resource.h
+    ¦           ¦   ¦           ¦   runner.exe.manifest
+    ¦           ¦   ¦           ¦   Runner.rc
+    ¦           ¦   ¦           ¦   utils.cpp
+    ¦           ¦   ¦           ¦   utils.h
+    ¦           ¦   ¦           ¦   win32_window.cpp
+    ¦           ¦   ¦           ¦   win32_window.h
+    ¦           ¦   ¦           ¦   
+    ¦           ¦   ¦           +---resources
+    ¦           ¦   ¦                   app_icon.ico
+    ¦           ¦   ¦                   
+    ¦           ¦   +---ios
+    ¦           ¦   ¦   ¦   firebase_auth.podspec
+    ¦           ¦   ¦   ¦   generated_firebase_sdk_version.txt
+    ¦           ¦   ¦   ¦   
+    ¦           ¦   ¦   +---firebase_auth
+    ¦           ¦   ¦       ¦   Package.swift
+    ¦           ¦   ¦       ¦   
+    ¦           ¦   ¦       +---Sources
+    ¦           ¦   ¦           +---firebase_auth
+    ¦           ¦   ¦               ¦   firebase_auth_messages.g.m
+    ¦           ¦   ¦               ¦   FLTAuthStateChannelStreamHandler.m
+    ¦           ¦   ¦               ¦   FLTFirebaseAuthPlugin.m
+    ¦           ¦   ¦               ¦   FLTIdTokenChannelStreamHandler.m
+    ¦           ¦   ¦               ¦   FLTPhoneNumberVerificationStreamHandler.m
+    ¦           ¦   ¦               ¦   PigeonParser.m
+    ¦           ¦   ¦               ¦   
+    ¦           ¦   ¦               +---include
+    ¦           ¦   ¦               ¦   +---Private
+    ¦           ¦   ¦               ¦   ¦       FLTAuthStateChannelStreamHandler.h
+    ¦           ¦   ¦               ¦   ¦       FLTIdTokenChannelStreamHandler.h
+    ¦           ¦   ¦               ¦   ¦       FLTPhoneNumberVerificationStreamHandler.h
+    ¦           ¦   ¦               ¦   ¦       PigeonParser.h
+    ¦           ¦   ¦               ¦   ¦       
+    ¦           ¦   ¦               ¦   +---Public
+    ¦           ¦   ¦               ¦           CustomPigeonHeader.h
+    ¦           ¦   ¦               ¦           firebase_auth_messages.g.h
+    ¦           ¦   ¦               ¦           FLTFirebaseAuthPlugin.h
+    ¦           ¦   ¦               ¦           
+    ¦           ¦   ¦               +---Resources
+    ¦           ¦   +---lib
+    ¦           ¦   ¦   ¦   firebase_auth.dart
+    ¦           ¦   ¦   ¦   
+    ¦           ¦   ¦   +---src
+    ¦           ¦   ¦           confirmation_result.dart
+    ¦           ¦   ¦           firebase_auth.dart
+    ¦           ¦   ¦           multi_factor.dart
+    ¦           ¦   ¦           recaptcha_verifier.dart
+    ¦           ¦   ¦           user.dart
+    ¦           ¦   ¦           user_credential.dart
+    ¦           ¦   ¦           
+    ¦           ¦   +---macos
+    ¦           ¦   ¦   ¦   firebase_auth.podspec
+    ¦           ¦   ¦   ¦   
+    ¦           ¦   ¦   +---firebase_auth
+    ¦           ¦   ¦       ¦   Package.swift
+    ¦           ¦   ¦       ¦   
+    ¦           ¦   ¦       +---Sources
+    ¦           ¦   ¦           +---firebase_auth
+    ¦           ¦   ¦               ¦   firebase_auth_messages.g.m
+    ¦           ¦   ¦               ¦   FLTAuthStateChannelStreamHandler.m
+    ¦           ¦   ¦               ¦   FLTFirebaseAuthPlugin.m
+    ¦           ¦   ¦               ¦   FLTIdTokenChannelStreamHandler.m
+    ¦           ¦   ¦               ¦   FLTPhoneNumberVerificationStreamHandler.m
+    ¦           ¦   ¦               ¦   PigeonParser.m
+    ¦           ¦   ¦               ¦   
+    ¦           ¦   ¦               +---include
+    ¦           ¦   ¦               ¦   +---Private
+    ¦           ¦   ¦               ¦   ¦       FLTAuthStateChannelStreamHandler.h
+    ¦           ¦   ¦               ¦   ¦       FLTIdTokenChannelStreamHandler.h
+    ¦           ¦   ¦               ¦   ¦       FLTPhoneNumberVerificationStreamHandler.h
+    ¦           ¦   ¦               ¦   ¦       PigeonParser.h
+    ¦           ¦   ¦               ¦   ¦       
+    ¦           ¦   ¦               ¦   +---Public
+    ¦           ¦   ¦               ¦           CustomPigeonHeader.h
+    ¦           ¦   ¦               ¦           firebase_auth_messages.g.h
+    ¦           ¦   ¦               ¦           FLTFirebaseAuthPlugin.h
+    ¦           ¦   ¦               ¦           
+    ¦           ¦   ¦               +---Resource
+    ¦           ¦   +---test
+    ¦           ¦   ¦       firebase_auth_test.dart
+    ¦           ¦   ¦       mock.dart
+    ¦           ¦   ¦       user_test.dart
+    ¦           ¦   ¦       
+    ¦           ¦   +---windows
+    ¦           ¦       ¦   CMakeLists.txt
+    ¦           ¦       ¦   firebase_auth_plugin.cpp
+    ¦           ¦       ¦   firebase_auth_plugin.h
+    ¦           ¦       ¦   firebase_auth_plugin_c_api.cpp
+    ¦           ¦       ¦   messages.g.cpp
+    ¦           ¦       ¦   messages.g.h
+    ¦           ¦       ¦   plugin_version.h.in
+    ¦           ¦       ¦   
+    ¦           ¦       +---include
+    ¦           ¦       ¦   +---firebase_auth
+    ¦           ¦       ¦           firebase_auth_plugin_c_api.h
+    ¦           ¦       ¦           
+    ¦           ¦       +---test
+    ¦           ¦               firebase_auth_plugin_test.cpp
+    ¦           ¦               
+    ¦           +---firebase_core
+    ¦               ¦   CHANGELOG.md
+    ¦               ¦   LICENSE
+    ¦               ¦   pubspec.yaml
+    ¦               ¦   README.md
+    ¦               ¦   
+    ¦               +---android
+    ¦               ¦   ¦   build.gradle
+    ¦               ¦   ¦   gradle.properties
+    ¦               ¦   ¦   local-config.gradle
+    ¦               ¦   ¦   settings.gradle
+    ¦               ¦   ¦   user-agent.gradle
+    ¦               ¦   ¦   
+    ¦               ¦   +---.gradle
+    ¦               ¦   ¦   +---8.4
+    ¦               ¦   ¦   ¦   ¦   gc.properties
+    ¦               ¦   ¦   ¦   ¦   
+    ¦               ¦   ¦   ¦   +---checksums
+    ¦               ¦   ¦   ¦   ¦       checksums.lock
+    ¦               ¦   ¦   ¦   ¦       
+    ¦               ¦   ¦   ¦   +---fileChanges
+    ¦               ¦   ¦   ¦   ¦       last-build.bin
+    ¦               ¦   ¦   ¦   ¦       
+    ¦               ¦   ¦   ¦   +---fileHashes
+    ¦               ¦   ¦   ¦   ¦       fileHashes.lock
+    ¦               ¦   ¦   ¦   ¦       
+    ¦               ¦   ¦   ¦   +---vcsMetadata
+    ¦               ¦   ¦   +---nb-cache
+    ¦               ¦   ¦   ¦   +---trust
+    ¦               ¦   ¦   ¦           2AA3C16A5E4907899316F6D047D9A4B46BCF367E91650546C97803A33B5C012A
+    ¦               ¦   ¦   ¦           
+    ¦               ¦   ¦   +---vcs-1
+    ¦               ¦   ¦           gc.properties
+    ¦               ¦   ¦           
+    ¦               ¦   +---gradle
+    ¦               ¦   ¦   +---wrapper
+    ¦               ¦   ¦           gradle-wrapper.properties
+    ¦               ¦   ¦           
+    ¦               ¦   +---src
+    ¦               ¦       +---main
+    ¦               ¦           ¦   AndroidManifest.xml
+    ¦               ¦           ¦   
+    ¦               ¦           +---java
+    ¦               ¦               +---io
+    ¦               ¦                   +---flutter
+    ¦               ¦                       +---plugins
+    ¦               ¦                           +---firebase
+    ¦               ¦                               +---core
+    ¦               ¦                                       FlutterFirebaseCorePlugin.java
+    ¦               ¦                                       FlutterFirebaseCoreRegistrar.java
+    ¦               ¦                                       FlutterFirebasePlugin.java
+    ¦               ¦                                       FlutterFirebasePluginRegistry.java
+    ¦               ¦                                       GeneratedAndroidFirebaseCore.java
+    ¦               ¦                                       
+    ¦               +---example
+    ¦               ¦   ¦   analysis_options.yaml
+    ¦               ¦   ¦   pubspec.yaml
+    ¦               ¦   ¦   README.md
+    ¦               ¦   ¦   
+    ¦               ¦   +---android
+    ¦               ¦   ¦   ¦   build.gradle
+    ¦               ¦   ¦   ¦   gradle.properties
+    ¦               ¦   ¦   ¦   settings.gradle
+    ¦               ¦   ¦   ¦   
+    ¦               ¦   ¦   +---app
+    ¦               ¦   ¦   ¦   ¦   build.gradle
+    ¦               ¦   ¦   ¦   ¦   google-services.json
+    ¦               ¦   ¦   ¦   ¦   
+    ¦               ¦   ¦   ¦   +---src
+    ¦               ¦   ¦   ¦       +---debug
+    ¦               ¦   ¦   ¦       ¦       AndroidManifest.xml
+    ¦               ¦   ¦   ¦       ¦       
+    ¦               ¦   ¦   ¦       +---main
+    ¦               ¦   ¦   ¦       ¦   ¦   AndroidManifest.xml
+    ¦               ¦   ¦   ¦       ¦   ¦   
+    ¦               ¦   ¦   ¦       ¦   +---java
+    ¦               ¦   ¦   ¦       ¦   ¦   +---io
+    ¦               ¦   ¦   ¦       ¦   ¦       +---flutter
+    ¦               ¦   ¦   ¦       ¦   ¦           +---plugins
+    ¦               ¦   ¦   ¦       ¦   +---kotlin
+    ¦               ¦   ¦   ¦       ¦   ¦   +---io
+    ¦               ¦   ¦   ¦       ¦   ¦       +---flutter
+    ¦               ¦   ¦   ¦       ¦   ¦           +---plugins
+    ¦               ¦   ¦   ¦       ¦   ¦               +---firebasecoreexample
+    ¦               ¦   ¦   ¦       ¦   ¦                       MainActivity.kt
+    ¦               ¦   ¦   ¦       ¦   ¦                       
+    ¦               ¦   ¦   ¦       ¦   +---res
+    ¦               ¦   ¦   ¦       ¦       +---drawable
+    ¦               ¦   ¦   ¦       ¦       ¦       launch_background.xml
+    ¦               ¦   ¦   ¦       ¦       ¦       
+    ¦               ¦   ¦   ¦       ¦       +---drawable-v21
+    ¦               ¦   ¦   ¦       ¦       ¦       launch_background.xml
+    ¦               ¦   ¦   ¦       ¦       ¦       
+    ¦               ¦   ¦   ¦       ¦       +---mipmap-hdpi
+    ¦               ¦   ¦   ¦       ¦       ¦       ic_launcher.png
+    ¦               ¦   ¦   ¦       ¦       ¦       
+    ¦               ¦   ¦   ¦       ¦       +---mipmap-mdpi
+    ¦               ¦   ¦   ¦       ¦       ¦       ic_launcher.png
+    ¦               ¦   ¦   ¦       ¦       ¦       
+    ¦               ¦   ¦   ¦       ¦       +---mipmap-xhdpi
+    ¦               ¦   ¦   ¦       ¦       ¦       ic_launcher.png
+    ¦               ¦   ¦   ¦       ¦       ¦       
+    ¦               ¦   ¦   ¦       ¦       +---mipmap-xxhdpi
+    ¦               ¦   ¦   ¦       ¦       ¦       ic_launcher.png
+    ¦               ¦   ¦   ¦       ¦       ¦       
+    ¦               ¦   ¦   ¦       ¦       +---mipmap-xxxhdpi
+    ¦               ¦   ¦   ¦       ¦       ¦       ic_launcher.png
+    ¦               ¦   ¦   ¦       ¦       ¦       
+    ¦               ¦   ¦   ¦       ¦       +---values
+    ¦               ¦   ¦   ¦       ¦       ¦       styles.xml
+    ¦               ¦   ¦   ¦       ¦       ¦       
+    ¦               ¦   ¦   ¦       ¦       +---values-night
+    ¦               ¦   ¦   ¦       ¦               styles.xml
+    ¦               ¦   ¦   ¦       ¦               
+    ¦               ¦   ¦   ¦       +---profile
+    ¦               ¦   ¦   ¦               AndroidManifest.xml
+    ¦               ¦   ¦   ¦               
+    ¦               ¦   ¦   +---gradle
+    ¦               ¦   ¦       +---wrapper
+    ¦               ¦   ¦               gradle-wrapper.properties
+    ¦               ¦   ¦               
+    ¦               ¦   +---ios
+    ¦               ¦   ¦   ¦   Podfile
+    ¦               ¦   ¦   ¦   
+    ¦               ¦   ¦   +---Flutter
+    ¦               ¦   ¦   ¦       AppFrameworkInfo.plist
+    ¦               ¦   ¦   ¦       Debug.xcconfig
+    ¦               ¦   ¦   ¦       Release.xcconfig
+    ¦               ¦   ¦   ¦       
+    ¦               ¦   ¦   +---Runner
+    ¦               ¦   ¦   ¦   ¦   AppDelegate.h
+    ¦               ¦   ¦   ¦   ¦   AppDelegate.m
+    ¦               ¦   ¦   ¦   ¦   Info.plist
+    ¦               ¦   ¦   ¦   ¦   main.m
+    ¦               ¦   ¦   ¦   ¦   
+    ¦               ¦   ¦   ¦   +---Assets.xcassets
+    ¦               ¦   ¦   ¦   ¦   +---AppIcon.appiconset
+    ¦               ¦   ¦   ¦   ¦   ¦       Contents.json
+    ¦               ¦   ¦   ¦   ¦   ¦       Icon-App-1024x1024@1x.png
+    ¦               ¦   ¦   ¦   ¦   ¦       Icon-App-20x20@1x.png
+    ¦               ¦   ¦   ¦   ¦   ¦       Icon-App-20x20@2x.png
+    ¦               ¦   ¦   ¦   ¦   ¦       Icon-App-20x20@3x.png
+    ¦               ¦   ¦   ¦   ¦   ¦       Icon-App-29x29@1x.png
+    ¦               ¦   ¦   ¦   ¦   ¦       Icon-App-29x29@2x.png
+    ¦               ¦   ¦   ¦   ¦   ¦       Icon-App-29x29@3x.png
+    ¦               ¦   ¦   ¦   ¦   ¦       Icon-App-40x40@1x.png
+    ¦               ¦   ¦   ¦   ¦   ¦       Icon-App-40x40@2x.png
+    ¦               ¦   ¦   ¦   ¦   ¦       Icon-App-40x40@3x.png
+    ¦               ¦   ¦   ¦   ¦   ¦       Icon-App-60x60@2x.png
+    ¦               ¦   ¦   ¦   ¦   ¦       Icon-App-60x60@3x.png
+    ¦               ¦   ¦   ¦   ¦   ¦       Icon-App-76x76@1x.png
+    ¦               ¦   ¦   ¦   ¦   ¦       Icon-App-76x76@2x.png
+    ¦               ¦   ¦   ¦   ¦   ¦       Icon-App-83.5x83.5@2x.png
+    ¦               ¦   ¦   ¦   ¦   ¦       
+    ¦               ¦   ¦   ¦   ¦   +---LaunchImage.imageset
+    ¦               ¦   ¦   ¦   ¦           Contents.json
+    ¦               ¦   ¦   ¦   ¦           LaunchImage.png
+    ¦               ¦   ¦   ¦   ¦           LaunchImage@2x.png
+    ¦               ¦   ¦   ¦   ¦           LaunchImage@3x.png
+    ¦               ¦   ¦   ¦   ¦           README.md
+    ¦               ¦   ¦   ¦   ¦           
+    ¦               ¦   ¦   ¦   +---Base.lproj
+    ¦               ¦   ¦   ¦           LaunchScreen.storyboard
+    ¦               ¦   ¦   ¦           Main.storyboard
+    ¦               ¦   ¦   ¦           
+    ¦               ¦   ¦   +---Runner.xcodeproj
+    ¦               ¦   ¦   ¦   ¦   project.pbxproj
+    ¦               ¦   ¦   ¦   ¦   
+    ¦               ¦   ¦   ¦   +---project.xcworkspace
+    ¦               ¦   ¦   ¦   ¦   ¦   contents.xcworkspacedata
+    ¦               ¦   ¦   ¦   ¦   ¦   
+    ¦               ¦   ¦   ¦   ¦   +---xcshareddata
+    ¦               ¦   ¦   ¦   ¦           IDEWorkspaceChecks.plist
+    ¦               ¦   ¦   ¦   ¦           
+    ¦               ¦   ¦   ¦   +---xcshareddata
+    ¦               ¦   ¦   ¦       +---xcschemes
+    ¦               ¦   ¦   ¦               Runner.xcscheme
+    ¦               ¦   ¦   ¦               
+    ¦               ¦   ¦   +---Runner.xcworkspace
+    ¦               ¦   ¦       ¦   contents.xcworkspacedata
+    ¦               ¦   ¦       ¦   
+    ¦               ¦   ¦       +---xcshareddata
+    ¦               ¦   ¦               IDEWorkspaceChecks.plist
+    ¦               ¦   ¦               
+    ¦               ¦   +---lib
+    ¦               ¦   ¦       firebase_options.dart
+    ¦               ¦   ¦       main.dart
+    ¦               ¦   ¦       
+    ¦               ¦   +---macos
+    ¦               ¦   ¦   ¦   Podfile
+    ¦               ¦   ¦   ¦   
+    ¦               ¦   ¦   +---Flutter
+    ¦               ¦   ¦   ¦       Flutter-Debug.xcconfig
+    ¦               ¦   ¦   ¦       Flutter-Release.xcconfig
+    ¦               ¦   ¦   ¦       
+    ¦               ¦   ¦   +---Runner
+    ¦               ¦   ¦   ¦   ¦   AppDelegate.swift
+    ¦               ¦   ¦   ¦   ¦   DebugProfile.entitlements
+    ¦               ¦   ¦   ¦   ¦   Info.plist
+    ¦               ¦   ¦   ¦   ¦   MainFlutterWindow.swift
+    ¦               ¦   ¦   ¦   ¦   Release.entitlements
+    ¦               ¦   ¦   ¦   ¦   
+    ¦               ¦   ¦   ¦   +---Assets.xcassets
+    ¦               ¦   ¦   ¦   ¦   +---AppIcon.appiconset
+    ¦               ¦   ¦   ¦   ¦           app_icon_1024.png
+    ¦               ¦   ¦   ¦   ¦           app_icon_128.png
+    ¦               ¦   ¦   ¦   ¦           app_icon_16.png
+    ¦               ¦   ¦   ¦   ¦           app_icon_256.png
+    ¦               ¦   ¦   ¦   ¦           app_icon_32.png
+    ¦               ¦   ¦   ¦   ¦           app_icon_512.png
+    ¦               ¦   ¦   ¦   ¦           app_icon_64.png
+    ¦               ¦   ¦   ¦   ¦           Contents.json
+    ¦               ¦   ¦   ¦   ¦           
+    ¦               ¦   ¦   ¦   +---Base.lproj
+    ¦               ¦   ¦   ¦   ¦       MainMenu.xib
+    ¦               ¦   ¦   ¦   ¦       
+    ¦               ¦   ¦   ¦   +---Configs
+    ¦               ¦   ¦   ¦           AppInfo.xcconfig
+    ¦               ¦   ¦   ¦           Debug.xcconfig
+    ¦               ¦   ¦   ¦           Release.xcconfig
+    ¦               ¦   ¦   ¦           Warnings.xcconfig
+    ¦               ¦   ¦   ¦           
+    ¦               ¦   ¦   +---Runner.xcodeproj
+    ¦               ¦   ¦   ¦   ¦   project.pbxproj
+    ¦               ¦   ¦   ¦   ¦   
+    ¦               ¦   ¦   ¦   +---project.xcworkspace
+    ¦               ¦   ¦   ¦   ¦   ¦   contents.xcworkspacedata
+    ¦               ¦   ¦   ¦   ¦   ¦   
+    ¦               ¦   ¦   ¦   ¦   +---xcshareddata
+    ¦               ¦   ¦   ¦   ¦           IDEWorkspaceChecks.plist
+    ¦               ¦   ¦   ¦   ¦           
+    ¦               ¦   ¦   ¦   +---xcshareddata
+    ¦               ¦   ¦   ¦       +---xcschemes
+    ¦               ¦   ¦   ¦               Runner.xcscheme
+    ¦               ¦   ¦   ¦               
+    ¦               ¦   ¦   +---Runner.xcworkspace
+    ¦               ¦   ¦       ¦   contents.xcworkspacedata
+    ¦               ¦   ¦       ¦   
+    ¦               ¦   ¦       +---xcshareddata
+    ¦               ¦   ¦               IDEWorkspaceChecks.plist
+    ¦               ¦   ¦               WorkspaceSettings.xcsettings
+    ¦               ¦   ¦               
+    ¦               ¦   +---web
+    ¦               ¦   ¦   ¦   favicon.png
+    ¦               ¦   ¦   ¦   index.html
+    ¦               ¦   ¦   ¦   manifest.json
+    ¦               ¦   ¦   ¦   
+    ¦               ¦   ¦   +---icons
+    ¦               ¦   ¦           Icon-192.png
+    ¦               ¦   ¦           Icon-512.png
+    ¦               ¦   ¦           Icon-maskable-192.png
+    ¦               ¦   ¦           Icon-maskable-512.png
+    ¦               ¦   ¦           
+    ¦               ¦   +---windows
+    ¦               ¦       ¦   CMakeLists.txt
+    ¦               ¦       ¦   
+    ¦               ¦       +---flutter
+    ¦               ¦       ¦       CMakeLists.txt
+    ¦               ¦       ¦       
+    ¦               ¦       +---runner
+    ¦               ¦           ¦   CMakeLists.txt
+    ¦               ¦           ¦   flutter_window.cpp
+    ¦               ¦           ¦   flutter_window.h
+    ¦               ¦           ¦   main.cpp
+    ¦               ¦           ¦   resource.h
+    ¦               ¦           ¦   runner.exe.manifest
+    ¦               ¦           ¦   Runner.rc
+    ¦               ¦           ¦   utils.cpp
+    ¦               ¦           ¦   utils.h
+    ¦               ¦           ¦   win32_window.cpp
+    ¦               ¦           ¦   win32_window.h
+    ¦               ¦           ¦   
+    ¦               ¦           +---resources
+    ¦               ¦                   app_icon.ico
+    ¦               ¦                   
+    ¦               +---ios
+    ¦               ¦   ¦   firebase_core.podspec
+    ¦               ¦   ¦   firebase_sdk_version.rb
+    ¦               ¦   ¦   
+    ¦               ¦   +---firebase_core
+    ¦               ¦       ¦   Package.swift
+    ¦               ¦       ¦   
+    ¦               ¦       +---Sources
+    ¦               ¦           +---firebase_core
+    ¦               ¦               ¦   dummy.m
+    ¦               ¦               ¦   FLTFirebaseCorePlugin.m
+    ¦               ¦               ¦   FLTFirebasePlugin.m
+    ¦               ¦               ¦   FLTFirebasePluginRegistry.m
+    ¦               ¦               ¦   messages.g.m
+    ¦               ¦               ¦   
+    ¦               ¦               +---include
+    ¦               ¦               ¦   +---firebase_core
+    ¦               ¦               ¦           dummy.h
+    ¦               ¦               ¦           FLTFirebaseCorePlugin.h
+    ¦               ¦               ¦           FLTFirebasePlugin.h
+    ¦               ¦               ¦           FLTFirebasePluginRegistry.h
+    ¦               ¦               ¦           messages.g.h
+    ¦               ¦               ¦           
+    ¦               ¦               +---Resources
+    ¦               +---lib
+    ¦               ¦   ¦   firebase_core.dart
+    ¦               ¦   ¦   
+    ¦               ¦   +---src
+    ¦               ¦           firebase.dart
+    ¦               ¦           firebase_app.dart
+    ¦               ¦           port_mapping.dart
+    ¦               ¦           
+    ¦               +---macos
+    ¦               ¦   ¦   firebase_core.podspec
+    ¦               ¦   ¦   
+    ¦               ¦   +---firebase_core
+    ¦               ¦       ¦   Package.swift
+    ¦               ¦       ¦   
+    ¦               ¦       +---Sources
+    ¦               ¦           +---firebase_core
+    ¦               ¦               ¦   dummy.m
+    ¦               ¦               ¦   FLTFirebaseCorePlugin.m
+    ¦               ¦               ¦   FLTFirebasePlugin.m
+    ¦               ¦               ¦   FLTFirebasePluginRegistry.m
+    ¦               ¦               ¦   messages.g.m
+    ¦               ¦               ¦   
+    ¦               ¦               +---include
+    ¦               ¦               ¦   ¦   dummy.h
+    ¦               ¦               ¦   ¦   
+    ¦               ¦               ¦   +---firebase_core
+    ¦               ¦               ¦           FLTFirebaseCorePlugin.h
+    ¦               ¦               ¦           FLTFirebasePlugin.h
+    ¦               ¦               ¦           FLTFirebasePluginRegistry.h
+    ¦               ¦               ¦           messages.g.h
+    ¦               ¦               ¦           
+    ¦               ¦               +---Resources
+    ¦               +---test
+    ¦               ¦       firebase_core_test.dart
+    ¦               ¦       
+    ¦               +---windows
+    ¦                   ¦   CMakeLists.txt
+    ¦                   ¦   firebase_core_plugin.cpp
+    ¦                   ¦   firebase_core_plugin.h
+    ¦                   ¦   firebase_core_plugin_c_api.cpp
+    ¦                   ¦   messages.g.cpp
+    ¦                   ¦   messages.g.h
+    ¦                   ¦   plugin_version.h.in
+    ¦                   ¦   
+    ¦                   +---include
+    ¦                       +---firebase_core
+    ¦                               firebase_core_plugin_c_api.h
+    ¦                               
+    +---runner
+        ¦   CMakeLists.txt
+        ¦   flutter_window.cpp
+        ¦   flutter_window.h
+        ¦   main.cpp
+        ¦   resource.h
+        ¦   runner.exe.manifest
+        ¦   Runner.rc
+        ¦   utils.cpp
+        ¦   utils.h
+        ¦   win32_window.cpp
+        ¦   win32_window.h
+        ¦   
+        +---resources
+                app_icon.ico
+                
