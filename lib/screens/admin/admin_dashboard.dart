@@ -1,11 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import '../../../services/firestore_service.dart';
-import '../../../services/auth_service.dart';
+import 'package:flutter/material.dart';
+
 import '../../../core/constants/app_colors.dart';
 import '../../../models/appointment_model.dart';
 import '../../../models/user_model.dart';
+import '../../../services/auth_service.dart';
+import '../../../services/firestore_service.dart';
 
 class AdminDashboard extends StatefulWidget {
   const AdminDashboard({super.key});
@@ -32,7 +32,11 @@ class _AdminDashboardState extends State<AdminDashboard> {
               onPressed: () async {
                 await _authService.signOut();
                 if (mounted) {
-                  Navigator.pushNamedAndRemoveUntil(context, '/landing', (_) => false);
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    '/landing',
+                    (_) => false,
+                  );
                 }
               },
             ),
@@ -102,10 +106,13 @@ class _AdminDashboardState extends State<AdminDashboard> {
             children: [
               Expanded(
                 child: StreamBuilder<QuerySnapshot>(
-                  stream: FirebaseFirestore.instance.collection('appointments').snapshots(),
+                  stream: FirebaseFirestore.instance
+                      .collection('appointments')
+                      .snapshots(),
                   builder: (context, snapshot) => _statCard(
                     "Appointments",
-                    (snapshot.hasData ? snapshot.data!.docs.length : 0).toString(),
+                    (snapshot.hasData ? snapshot.data!.docs.length : 0)
+                        .toString(),
                     Icons.calendar_today,
                     Colors.orange,
                   ),
@@ -186,8 +193,8 @@ class _AdminDashboardState extends State<AdminDashboard> {
             final roleColor = user.role == 'admin'
                 ? Colors.red
                 : user.role == 'doctor'
-                    ? Colors.blue
-                    : Colors.green;
+                ? Colors.blue
+                : Colors.green;
 
             return Card(
               margin: const EdgeInsets.only(bottom: 12),
@@ -201,23 +208,32 @@ class _AdminDashboardState extends State<AdminDashboard> {
                     user.role == 'doctor'
                         ? Icons.medical_services
                         : user.role == 'admin'
-                            ? Icons.admin_panel_settings
-                            : Icons.person,
+                        ? Icons.admin_panel_settings
+                        : Icons.person,
                     color: roleColor,
                   ),
                 ),
-                title: Text(user.name, style: const TextStyle(fontWeight: FontWeight.bold)),
+                title: Text(
+                  user.name,
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                ),
                 subtitle: Text("${user.email} | ${user.role.toUpperCase()}"),
                 trailing: user.role == 'doctor' && user.department != null
                     ? Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 8,
+                          vertical: 4,
+                        ),
                         decoration: BoxDecoration(
                           color: Colors.grey.shade100,
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Text(
                           user.department!,
-                          style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+                          style: const TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
                       )
                     : null,
@@ -251,14 +267,16 @@ class _AdminDashboardState extends State<AdminDashboard> {
             final statusColor = app.status == 'Approved'
                 ? Colors.green
                 : app.status == 'Rejected'
-                    ? Colors.red
-                    : app.status == 'Completed'
-                        ? Colors.blue
-                        : Colors.orange;
+                ? Colors.red
+                : app.status == 'Completed'
+                ? Colors.blue
+                : Colors.orange;
 
             return Card(
               margin: const EdgeInsets.only(bottom: 12),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
               child: Padding(
                 padding: const EdgeInsets.all(14),
                 child: Column(
@@ -269,17 +287,27 @@ class _AdminDashboardState extends State<AdminDashboard> {
                       children: [
                         Text(
                           app.patientName,
-                          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
                         ),
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 8,
+                            vertical: 4,
+                          ),
                           decoration: BoxDecoration(
                             color: statusColor.withOpacity(0.12),
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: Text(
                             app.status,
-                            style: TextStyle(color: statusColor, fontWeight: FontWeight.bold, fontSize: 12),
+                            style: TextStyle(
+                              color: statusColor,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12,
+                            ),
                           ),
                         ),
                       ],
@@ -351,10 +379,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
           borderRadius: BorderRadius.circular(20),
           border: Border.all(color: color.withOpacity(0.15)),
           boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.02),
-              blurRadius: 6,
-            ),
+            BoxShadow(color: Colors.black.withOpacity(0.02), blurRadius: 6),
           ],
         ),
         child: Column(
@@ -364,7 +389,10 @@ class _AdminDashboardState extends State<AdminDashboard> {
               child: Icon(icon, color: color),
             ),
             const SizedBox(height: 12),
-            Text(title, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+            Text(
+              title,
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+            ),
             const SizedBox(height: 4),
             Text(
               subtitle,
@@ -402,7 +430,10 @@ class _AdminDashboardState extends State<AdminDashboard> {
               const SizedBox(height: 16),
               const Align(
                 alignment: Alignment.centerLeft,
-                child: Text("Active Departments:", style: TextStyle(fontWeight: FontWeight.bold)),
+                child: Text(
+                  "Active Departments:",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
               ),
               const SizedBox(height: 8),
               Expanded(
@@ -411,12 +442,17 @@ class _AdminDashboardState extends State<AdminDashboard> {
                   builder: (context, snapshot) {
                     final depts = snapshot.data ?? [];
                     if (depts.isEmpty) {
-                      return const Center(child: Text("No departments configured"));
+                      return const Center(
+                        child: Text("No departments configured"),
+                      );
                     }
                     return ListView.builder(
                       itemCount: depts.length,
                       itemBuilder: (c, idx) => ListTile(
-                        leading: const Icon(Icons.apartment, color: AppColors.primary),
+                        leading: const Icon(
+                          Icons.apartment,
+                          color: AppColors.primary,
+                        ),
                         title: Text(depts[idx]),
                         dense: true,
                       ),
@@ -428,7 +464,10 @@ class _AdminDashboardState extends State<AdminDashboard> {
           ),
         ),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(ctx), child: const Text("Close")),
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text("Close"),
+          ),
           ElevatedButton(
             onPressed: () async {
               final val = nameController.text.trim();
@@ -437,7 +476,9 @@ class _AdminDashboardState extends State<AdminDashboard> {
                 await _firestoreService.addDepartment(val);
                 nameController.clear();
               } catch (e) {
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Error: $e")));
+                ScaffoldMessenger.of(
+                  context,
+                ).showSnackBar(SnackBar(content: Text("Error: $e")));
               }
             },
             child: const Text("Add"),
@@ -471,23 +512,39 @@ class _AdminDashboardState extends State<AdminDashboard> {
                 ),
                 TextField(
                   controller: emailController,
-                  decoration: const InputDecoration(labelText: "Doctor's Email"),
+                  decoration: const InputDecoration(
+                    labelText: "Doctor's Email",
+                  ),
                 ),
                 TextField(
                   controller: passwordController,
                   obscureText: true,
-                  decoration: const InputDecoration(labelText: "Temporary Password"),
+                  decoration: const InputDecoration(
+                    labelText: "Temporary Password",
+                  ),
                 ),
                 const SizedBox(height: 12),
                 StreamBuilder<List<String>>(
                   stream: _firestoreService.getDepartments(),
                   builder: (context, snapshot) {
-                    final depts = snapshot.data ?? ['Cardiology', 'Neurology', 'Orthopedics', 'Dermatology', 'Pediatrics'];
+                    final depts =
+                        snapshot.data ??
+                        [
+                          'Cardiology',
+                          'Neurology',
+                          'Orthopedics',
+                          'Dermatology',
+                          'Pediatrics',
+                        ];
                     return DropdownButtonFormField<String>(
                       initialValue: selectedDept,
-                      decoration: const InputDecoration(labelText: "Department"),
+                      decoration: const InputDecoration(
+                        labelText: "Department",
+                      ),
                       items: depts
-                          .map((d) => DropdownMenuItem(value: d, child: Text(d)))
+                          .map(
+                            (d) => DropdownMenuItem(value: d, child: Text(d)),
+                          )
                           .toList(),
                       onChanged: (v) {
                         if (v != null) {
@@ -499,13 +556,18 @@ class _AdminDashboardState extends State<AdminDashboard> {
                 ),
                 TextField(
                   controller: specializationController,
-                  decoration: const InputDecoration(labelText: "Specialization"),
+                  decoration: const InputDecoration(
+                    labelText: "Specialization",
+                  ),
                 ),
               ],
             ),
           ),
           actions: [
-            TextButton(onPressed: () => Navigator.pop(ctx), child: const Text("Cancel")),
+            TextButton(
+              onPressed: () => Navigator.pop(ctx),
+              child: const Text("Cancel"),
+            ),
             ElevatedButton(
               onPressed: () async {
                 final name = nameController.text.trim();
@@ -513,7 +575,10 @@ class _AdminDashboardState extends State<AdminDashboard> {
                 final password = passwordController.text.trim();
                 final spec = specializationController.text.trim();
 
-                if (name.isEmpty || email.isEmpty || password.isEmpty || spec.isEmpty) {
+                if (name.isEmpty ||
+                    email.isEmpty ||
+                    password.isEmpty ||
+                    spec.isEmpty) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(content: Text("Please fill all fields")),
                   );
@@ -524,7 +589,8 @@ class _AdminDashboardState extends State<AdminDashboard> {
                 showDialog(
                   context: context,
                   barrierDismissible: false,
-                  builder: (c) => const Center(child: CircularProgressIndicator()),
+                  builder: (c) =>
+                      const Center(child: CircularProgressIndicator()),
                 );
 
                 try {
@@ -539,7 +605,9 @@ class _AdminDashboardState extends State<AdminDashboard> {
                     Navigator.pop(ctx); // Close loading spinner
                     Navigator.pop(ctx); // Close dialog
                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text("Doctor Registered Successfully")),
+                      const SnackBar(
+                        content: Text("Doctor Registered Successfully"),
+                      ),
                     );
                   }
                 } catch (e) {

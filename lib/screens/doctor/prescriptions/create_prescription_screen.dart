@@ -23,7 +23,7 @@ class _CreatePrescriptionScreenState extends State<CreatePrescriptionScreen> {
   final doctorId = FirebaseAuth.instance.currentUser?.uid ?? '';
   String doctorName = '';
 
-  AppointmentModel? selectedAppointment;
+  String? selectedAppointmentId;
 
   @override
   void initState() {
@@ -32,19 +32,25 @@ class _CreatePrescriptionScreenState extends State<CreatePrescriptionScreen> {
   }
 
   Future<void> _loadDoctorName() async {
-    final service = FirestoreService();
-    final doctors = await service.getDoctors().first;
-
     try {
-      final doctor = doctors.firstWhere((d) => d.uid == doctorId);
+      final service = FirestoreService();
+      final doctors = await service.getDoctors().first;
+
+      final doctor = doctors.firstWhere(
+        (d) => d.uid == doctorId,
+        orElse: () => throw Exception("Doctor not found"),
+      );
+
       setState(() {
         doctorName = doctor.name;
       });
-    } catch (_) {}
+    } catch (e) {
+      debugPrint("Doctor load error: $e");
+    }
   }
 
-  Future<void> savePrescription() async {
-    if (selectedAppointment == null ||
+  Future<void> savePrescription(List<AppointmentModel> appointments) async {
+    if (selectedAppointmentId == null ||
         medicineController.text.trim().isEmpty ||
         dosageController.text.trim().isEmpty ||
         durationController.text.trim().isEmpty) {
@@ -54,29 +60,34 @@ class _CreatePrescriptionScreenState extends State<CreatePrescriptionScreen> {
       return;
     }
 
-    final prescription = PrescriptionModel(
-      id: '',
-      // appointmentId: selectedAppointment!.id,
-      patientId: selectedAppointment!.patientId,
-      patientName: selectedAppointment!.patientName,
-      doctorId: doctorId,
-      doctorName: doctorName,
-      medicine: medicineController.text.trim(),
-      dosage: dosageController.text.trim(),
-      duration: durationController.text.trim(),
-      notes: notesController.text.trim(),
-      date: DateTime.now().toString().split(' ')[0],
-    );
-
     try {
+      final appointment = appointments.firstWhere(
+        (a) => a.id == selectedAppointmentId,
+        orElse: () => throw Exception("Appointment not found"),
+      );
+
+      final prescription = PrescriptionModel(
+        id: '',
+        patientId: appointment.patientId,
+        patientName: appointment.patientName,
+        doctorId: doctorId,
+        doctorName: doctorName,
+        medicine: medicineController.text.trim(),
+        dosage: dosageController.text.trim(),
+        duration: durationController.text.trim(),
+        notes: notesController.text.trim(),
+        date: DateTime.now().toString().split(' ')[0],
+      );
+
       await FirestoreService().addPrescription(prescription);
 
-      if (mounted) {
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(const SnackBar(content: Text("Prescription created")));
-        Navigator.pop(context);
-      }
+      if (!mounted) return;
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Prescription created successfully")),
+      );
+
+      Navigator.pop(context);
     } catch (e) {
       ScaffoldMessenger.of(
         context,
@@ -85,97 +96,107 @@ class _CreatePrescriptionScreenState extends State<CreatePrescriptionScreen> {
   }
 
   @override
+  void dispose() {
+    medicineController.dispose();
+    dosageController.dispose();
+    durationController.dispose();
+    notesController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.background,
       appBar: AppBar(title: const Text("Create Prescription")),
+
       body: Padding(
         padding: const EdgeInsets.all(16),
-        child: Column(
-          children: [
-            // 🔥 ONLY COMPLETED APPOINTMENTS
-            StreamBuilder<List<AppointmentModel>>(
-              stream: FirestoreService().getDoctorAppointments(doctorId),
-              builder: (context, snapshot) {
-                if (!snapshot.hasData) {
-                  return const CircularProgressIndicator();
-                }
+        child: StreamBuilder<List<AppointmentModel>>(
+          stream: FirestoreService().getDoctorAppointments(doctorId),
+          builder: (context, snapshot) {
+            final appointments = snapshot.data ?? [];
 
-                final completed = snapshot.data!
-                    .where((a) => a.status == 'completed')
-                    .toList();
+            final completedAppointments = appointments
+                .where((a) => a.status.toLowerCase() == 'completed')
+                .toList();
 
-                return DropdownButton<AppointmentModel>(
-                  value: selectedAppointment,
+            return Column(
+              children: [
+                // ================= DROPDOWN =================
+                DropdownButton<String>(
+                  value: selectedAppointmentId,
                   hint: const Text("Select Completed Appointment"),
                   isExpanded: true,
-                  items: completed.map((a) {
-                    return DropdownMenuItem(
-                      value: a,
+                  items: completedAppointments.map((a) {
+                    return DropdownMenuItem<String>(
+                      value: a.id,
                       child: Text("${a.patientName} - ${a.date}"),
                     );
                   }).toList(),
                   onChanged: (value) {
                     setState(() {
-                      selectedAppointment = value;
+                      selectedAppointmentId = value;
                     });
                   },
-                );
-              },
-            ),
+                ),
 
-            const SizedBox(height: 15),
+                const SizedBox(height: 15),
 
-            TextField(
-              controller: medicineController,
-              decoration: const InputDecoration(
-                labelText: "Medicine",
-                border: OutlineInputBorder(),
-              ),
-            ),
+                TextField(
+                  controller: medicineController,
+                  decoration: const InputDecoration(
+                    labelText: "Medicine",
+                    border: OutlineInputBorder(),
+                  ),
+                ),
 
-            const SizedBox(height: 10),
+                const SizedBox(height: 10),
 
-            TextField(
-              controller: dosageController,
-              decoration: const InputDecoration(
-                labelText: "Dosage",
-                border: OutlineInputBorder(),
-              ),
-            ),
+                TextField(
+                  controller: dosageController,
+                  decoration: const InputDecoration(
+                    labelText: "Dosage",
+                    border: OutlineInputBorder(),
+                  ),
+                ),
 
-            const SizedBox(height: 10),
+                const SizedBox(height: 10),
 
-            TextField(
-              controller: durationController,
-              decoration: const InputDecoration(
-                labelText: "Duration",
-                border: OutlineInputBorder(),
-              ),
-            ),
+                TextField(
+                  controller: durationController,
+                  decoration: const InputDecoration(
+                    labelText: "Duration",
+                    border: OutlineInputBorder(),
+                  ),
+                ),
 
-            const SizedBox(height: 10),
+                const SizedBox(height: 10),
 
-            TextField(
-              controller: notesController,
-              maxLines: 3,
-              decoration: const InputDecoration(
-                labelText: "Notes",
-                border: OutlineInputBorder(),
-              ),
-            ),
+                TextField(
+                  controller: notesController,
+                  maxLines: 3,
+                  decoration: const InputDecoration(
+                    labelText: "Notes",
+                    border: OutlineInputBorder(),
+                  ),
+                ),
 
-            const SizedBox(height: 20),
+                const SizedBox(height: 20),
 
-            SizedBox(
-              width: double.infinity,
-              height: 50,
-              child: ElevatedButton(
-                onPressed: savePrescription,
-                child: const Text("Create Prescription"),
-              ),
-            ),
-          ],
+                SizedBox(
+                  width: double.infinity,
+                  height: 50,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      savePrescription(appointments);
+                    },
+                    child: const Text("Create Prescription"),
+                  ),
+                ),
+              ],
+            );
+          },
         ),
       ),
     );
