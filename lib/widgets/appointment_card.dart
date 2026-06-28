@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/appointment_model.dart';
 import '../core/constants/app_colors.dart';
+import '../services/firestore_service.dart';
 
 class AppointmentCard extends StatelessWidget {
   final AppointmentModel appointment;
@@ -8,16 +9,19 @@ class AppointmentCard extends StatelessWidget {
   const AppointmentCard({super.key, required this.appointment});
 
   Color getColor() {
-    switch (appointment.status) {
-      case "Approved":
+    switch (appointment.status.toLowerCase()) {
+      case "approved":
         return AppColors.success;
-      case "Pending":
       case "pending":
         return AppColors.warning;
-      case "Completed":
+      case "in_consultation":
+        return Colors.purple;
+      case "completed":
         return AppColors.primary;
-      case "Rejected":
+      case "rejected":
         return AppColors.error;
+      case "cancelled":
+        return Colors.grey;
       default:
         return Colors.grey;
     }
@@ -26,6 +30,7 @@ class AppointmentCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final statusColor = getColor();
+    final statusLower = appointment.status.toLowerCase();
 
     return Container(
       margin: const EdgeInsets.only(bottom: 14),
@@ -63,7 +68,9 @@ class AppointmentCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Text(
-                  appointment.status[0].toUpperCase() + appointment.status.substring(1),
+                  appointment.status.isEmpty
+                      ? "Pending"
+                      : appointment.status[0].toUpperCase() + appointment.status.substring(1),
                   style: TextStyle(
                     color: statusColor,
                     fontWeight: FontWeight.bold,
@@ -108,6 +115,72 @@ class AppointmentCard extends StatelessWidget {
               ),
             ],
           ),
+
+          if (appointment.diagnosis != null && appointment.diagnosis!.isNotEmpty) ...[
+            const SizedBox(height: 8),
+            const Divider(height: 1, color: Color(0xFFF3F4F6)),
+            const SizedBox(height: 8),
+            Text(
+              "Diagnosis: ${appointment.diagnosis}",
+              style: const TextStyle(fontWeight: FontWeight.w600, color: Colors.black87),
+            ),
+          ],
+
+          if (statusLower == 'pending' || statusLower == 'approved') ...[
+            const SizedBox(height: 12),
+            const Divider(height: 1, color: Color(0xFFF3F4F6)),
+            const SizedBox(height: 12),
+            SizedBox(
+              width: double.infinity,
+              child: OutlinedButton.icon(
+                style: OutlinedButton.styleFrom(
+                  foregroundColor: Colors.red,
+                  side: const BorderSide(color: Colors.red),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+                icon: const Icon(Icons.cancel, size: 16),
+                label: const Text("Cancel Appointment"),
+                onPressed: () async {
+                  final confirm = await showDialog<bool>(
+                    context: context,
+                    builder: (ctx) => AlertDialog(
+                      title: const Text("Cancel Appointment"),
+                      content: const Text("Are you sure you want to cancel this appointment?"),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.pop(ctx, false),
+                          child: const Text("No"),
+                        ),
+                        TextButton(
+                          style: TextButton.styleFrom(foregroundColor: Colors.red),
+                          onPressed: () => Navigator.pop(ctx, true),
+                          child: const Text("Yes, Cancel"),
+                        ),
+                      ],
+                    ),
+                  );
+                  if (confirm == true) {
+                    try {
+                      await FirestoreService().cancelAppointmentIfAllowed(appointment);
+                      if (context.mounted) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text("Appointment cancelled successfully")),
+                        );
+                      }
+                    } catch (e) {
+                      if (context.mounted) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text("Failed to cancel: $e")),
+                        );
+                      }
+                    }
+                  }
+                },
+              ),
+            ),
+          ],
         ],
       ),
     );

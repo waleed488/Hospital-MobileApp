@@ -68,6 +68,7 @@ class _CreatePrescriptionScreenState extends State<CreatePrescriptionScreen> {
 
       final prescription = PrescriptionModel(
         id: '',
+        appointmentId: appointment.id,
         patientId: appointment.patientId,
         patientName: appointment.patientName,
         doctorId: doctorId,

@@ -18,6 +18,13 @@ class _AdminDashboardState extends State<AdminDashboard> {
   final FirestoreService _firestoreService = FirestoreService();
   final AuthService _authService = AuthService();
 
+  String _userSearchQuery = '';
+  String _selectedRoleFilter = 'all';
+  String _selectedDeptFilter = 'all';
+
+  String _appSearchQuery = '';
+  String _selectedStatusFilter = 'all';
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -454,6 +461,54 @@ class _AdminDashboardState extends State<AdminDashboard> {
                           color: AppColors.primary,
                         ),
                         title: Text(depts[idx]),
+                        trailing: IconButton(
+                          icon: const Icon(
+                            Icons.delete,
+                            color: Colors.red,
+                            size: 18,
+                          ),
+                          onPressed: () async {
+                            final confirm = await showDialog<bool>(
+                              context: context,
+                              builder: (context) => AlertDialog(
+                                title: const Text("Delete Department"),
+                                content: Text(
+                                  "Are you sure you want to delete '${depts[idx]}'?",
+                                ),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () =>
+                                        Navigator.pop(context, false),
+                                    child: const Text("Cancel"),
+                                  ),
+                                  TextButton(
+                                    onPressed: () =>
+                                        Navigator.pop(context, true),
+                                    child: const Text(
+                                      "Delete",
+                                      style: TextStyle(color: Colors.red),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                            if (confirm == true) {
+                              try {
+                                await _firestoreService.deleteDepartment(
+                                  depts[idx],
+                                );
+                              } catch (e) {
+                                if (context.mounted) {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text("Error deleting: $e"),
+                                    ),
+                                  );
+                                }
+                              }
+                            }
+                          },
+                        ),
                         dense: true,
                       ),
                     );

@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 
 import '../../../core/constants/app_colors.dart';
 import '../../../models/medical_record_model.dart';
+import '../../../models/prescription_model.dart';
 import '../../../models/user_model.dart';
+import '../../../services/firestore_service.dart';
 import '../../patient/records/medical_records_screen.dart';
 import '../../patient/records/prescriptions_screen.dart';
 
@@ -179,6 +181,7 @@ class _PatientHistoryDetailScreenState
   // Dialog to Add a Medical Record Note
   void _showAddRecordDialog() {
     final diagnosisController = TextEditingController();
+    final symptomsController = TextEditingController();
     final notesController = TextEditingController();
 
     showDialog(
@@ -192,6 +195,11 @@ class _PatientHistoryDetailScreenState
               TextField(
                 controller: diagnosisController,
                 decoration: const InputDecoration(labelText: "Diagnosis"),
+              ),
+              const SizedBox(height: 12),
+              TextField(
+                controller: symptomsController,
+                decoration: const InputDecoration(labelText: "Symptoms"),
               ),
               const SizedBox(height: 12),
               TextField(
@@ -210,9 +218,10 @@ class _PatientHistoryDetailScreenState
           ElevatedButton(
             onPressed: () async {
               final diag = diagnosisController.text.trim();
+              final symptoms = symptomsController.text.trim();
               final notes = notesController.text.trim();
 
-              if (diag.isEmpty || notes.isEmpty) {
+              if (diag.isEmpty || symptoms.isEmpty || notes.isEmpty) {
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text("Please fill all fields")),
                 );
@@ -227,6 +236,7 @@ class _PatientHistoryDetailScreenState
                   doctorId: doctorId,
                   doctorName: doctorName,
                   diagnosis: diag,
+                  symptoms: symptoms,
                   notes: notes,
                   date: DateTime.now().toString().split(' ')[0],
                 );
@@ -304,7 +314,56 @@ class _PatientHistoryDetailScreenState
             onPressed: () => Navigator.pop(ctx),
             child: const Text("Cancel"),
           ),
-          ElevatedButton(onPressed: () async {}, child: const Text("Save")),
+          ElevatedButton(
+            onPressed: () async {
+              final medicine = medicineController.text.trim();
+              final dosage = dosageController.text.trim();
+              final duration = durationController.text.trim();
+              final notes = notesController.text.trim();
+
+              if (medicine.isEmpty || dosage.isEmpty || duration.isEmpty) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text("Please fill all required fields"),
+                  ),
+                );
+                return;
+              }
+
+              try {
+                final prescription = PrescriptionModel(
+                  id: '',
+                  appointmentId: '',
+                  patientId: widget.patient.uid,
+                  patientName: widget.patient.name,
+                  doctorId: doctorId,
+                  doctorName: doctorName,
+                  medicine: medicine,
+                  dosage: dosage,
+                  duration: duration,
+                  notes: notes,
+                  date: DateTime.now().toString().split(' ')[0],
+                );
+
+                await FirestoreService().addPrescription(prescription);
+                if (mounted) {
+                  Navigator.pop(ctx);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text("Prescription saved successfully"),
+                    ),
+                  );
+                }
+              } catch (e) {
+                if (mounted) {
+                  ScaffoldMessenger.of(
+                    context,
+                  ).showSnackBar(SnackBar(content: Text("Error saving: $e")));
+                }
+              }
+            },
+            child: const Text("Save"),
+          ),
         ],
       ),
     );

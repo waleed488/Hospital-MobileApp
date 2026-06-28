@@ -23,6 +23,10 @@ class FirestoreService {
     await _db.collection('departments').doc(name.trim()).set({});
   }
 
+  Future<void> deleteDepartment(String name) async {
+    await _db.collection('departments').doc(name.trim()).delete();
+  }
+
   // ================= USERS =================
 
   Stream<List<UserModel>> getDoctors() {
@@ -59,8 +63,6 @@ class FirestoreService {
         );
   }
 
-  // ================= 🔥 ADDED: USER COUNTS =================
-
   Stream<int> getUserCount(String role) {
     return _db
         .collection('users')
@@ -68,8 +70,6 @@ class FirestoreService {
         .snapshots()
         .map((snapshot) => snapshot.size);
   }
-
-  // ================= DOCTOR CREATE =================
 
   Future<void> addDoctor({
     required String name,
@@ -105,6 +105,14 @@ class FirestoreService {
     } finally {
       await tempApp.delete();
     }
+  }
+
+  Future<void> deleteUser(String uid) async {
+    await _db.collection('users').doc(uid).delete();
+  }
+
+  Future<void> updateUser(UserModel user) async {
+    await _db.collection('users').doc(user.uid).set(user.toMap());
   }
 
   // ================= APPOINTMENTS =================
@@ -163,16 +171,55 @@ class FirestoreService {
     });
   }
 
+  Future<void> completeConsultation({
+    required String appointmentId,
+    required String diagnosis,
+    required String symptoms,
+    required String notes,
+  }) async {
+    final doc = await _db.collection('appointments').doc(appointmentId).get();
+    if (!doc.exists) throw Exception("Appointment not found");
+    final app = AppointmentModel.fromMap(doc.data()!, doc.id);
+
+    final medicalRecord = MedicalRecordModel(
+      id: '',
+      patientId: app.patientId,
+      patientName: app.patientName,
+      doctorId: app.doctorId,
+      doctorName: app.doctorName,
+      diagnosis: diagnosis,
+      symptoms: symptoms,
+      notes: notes,
+      date: DateTime.now().toString().split(' ')[0],
+    );
+    await addMedicalRecord(medicalRecord);
+
+    await _db.collection('appointments').doc(appointmentId).update({
+      'status': 'completed',
+      'diagnosis': diagnosis,
+      'symptoms': symptoms,
+      'consultationNotes': notes,
+    });
+  }
+
   Future<void> cancelAppointmentIfAllowed(AppointmentModel app) async {
     final status = app.status.toLowerCase();
 
-    if (status == 'completed' || status == 'in_consultation') {
-      throw Exception("Cannot cancel after consultation started");
+    if (status != 'pending' && status != 'approved') {
+      throw Exception("Can only cancel pending or approved appointments");
     }
 
     await _db.collection('appointments').doc(app.id).update({
       'status': 'cancelled',
     });
+  }
+
+  Future<void> updateAppointment(AppointmentModel app) async {
+    await _db.collection('appointments').doc(app.id).set(app.toMap());
+  }
+
+  Future<void> deleteAppointment(String id) async {
+    await _db.collection('appointments').doc(id).delete();
   }
 
   // ================= STREAMS =================
@@ -183,9 +230,17 @@ class FirestoreService {
         .where('patientId', isEqualTo: patientId)
         .snapshots()
         .map(
-          (snap) => snap.docs
-              .map((d) => AppointmentModel.fromMap(d.data(), d.id))
-              .toList(),
+          (snap) {
+            final list = snap.docs
+                .map((d) => AppointmentModel.fromMap(d.data(), d.id))
+                .toList();
+            list.sort((a, b) {
+              final dateA = a.createdAt ?? DateTime.fromMillisecondsSinceEpoch(0);
+              final dateB = b.createdAt ?? DateTime.fromMillisecondsSinceEpoch(0);
+              return dateB.compareTo(dateA); // newest first
+            });
+            return list;
+          },
         );
   }
 
@@ -195,29 +250,46 @@ class FirestoreService {
         .where('doctorId', isEqualTo: doctorId)
         .snapshots()
         .map(
-          (snap) => snap.docs
-              .map((d) => AppointmentModel.fromMap(d.data(), d.id))
-              .toList(),
+          (snap) {
+            final list = snap.docs
+                .map((d) => AppointmentModel.fromMap(d.data(), d.id))
+                .toList();
+            list.sort((a, b) {
+              final dateA = a.createdAt ?? DateTime.fromMillisecondsSinceEpoch(0);
+              final dateB = b.createdAt ?? DateTime.fromMillisecondsSinceEpoch(0);
+              return dateB.compareTo(dateA); // newest first
+            });
+            return list;
+          },
         );
   }
 
-  // ================= 🔥 ADDED: ALL APPOINTMENTS =================
-
   Stream<List<AppointmentModel>> getAllAppointments() {
-    return _db
-        .collection('appointments')
-        .snapshots()
-        .map(
-          (snap) => snap.docs
-              .map((d) => AppointmentModel.fromMap(d.data(), d.id))
-              .toList(),
-        );
+    return _db.collection('appointments').snapshots().map(
+      (snap) {
+        final list = snap.docs
+            .map((d) => AppointmentModel.fromMap(d.data(), d.id))
+            .toList();
+        list.sort((a, b) {
+          final dateA = a.createdAt ?? DateTime.fromMillisecondsSinceEpoch(0);
+          final dateB = b.createdAt ?? DateTime.fromMillisecondsSinceEpoch(0);
+          return dateB.compareTo(dateA); // newest first
+        });
+        return list;
+      },
+    );
   }
 
   // ================= PRESCRIPTIONS =================
 
   Future<void> addPrescription(PrescriptionModel prescription) async {
     await _db.collection('prescriptions').add(prescription.toMap());
+    if (prescription.appointmentId.isNotEmpty) {
+      await _db
+          .collection('appointments')
+          .doc(prescription.appointmentId)
+          .update({'prescriptionCreated': true});
+    }
   }
 
   Stream<List<PrescriptionModel>> getPatientPrescriptions(String patientId) {
@@ -226,9 +298,17 @@ class FirestoreService {
         .where('patientId', isEqualTo: patientId)
         .snapshots()
         .map(
-          (snap) => snap.docs
-              .map((d) => PrescriptionModel.fromMap(d.data(), d.id))
-              .toList(),
+          (snap) {
+            final list = snap.docs
+                .map((d) => PrescriptionModel.fromMap(d.data(), d.id))
+                .toList();
+            list.sort((a, b) {
+              final dateA = a.createdAt ?? DateTime.fromMillisecondsSinceEpoch(0);
+              final dateB = b.createdAt ?? DateTime.fromMillisecondsSinceEpoch(0);
+              return dateB.compareTo(dateA); // newest first
+            });
+            return list;
+          },
         );
   }
 
@@ -244,9 +324,17 @@ class FirestoreService {
         .where('patientId', isEqualTo: patientId)
         .snapshots()
         .map(
-          (snap) => snap.docs
-              .map((d) => MedicalRecordModel.fromMap(d.data(), d.id))
-              .toList(),
+          (snap) {
+            final list = snap.docs
+                .map((d) => MedicalRecordModel.fromMap(d.data(), d.id))
+                .toList();
+            list.sort((a, b) {
+              final dateA = a.createdAt ?? DateTime.fromMillisecondsSinceEpoch(0);
+              final dateB = b.createdAt ?? DateTime.fromMillisecondsSinceEpoch(0);
+              return dateB.compareTo(dateA); // newest first
+            });
+            return list;
+          },
         );
   }
 }

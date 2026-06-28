@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/constants/app_colors.dart';
+import '../../../services/auth_service.dart';
 import '../appointments/doctor_appointments_screen.dart';
 import '../patients/patient_records_screen.dart';
 import '../prescriptions/create_prescription_screen.dart';
@@ -19,6 +20,7 @@ class _DoctorDashboardState extends State<DoctorDashboard> {
   final uid = FirebaseAuth.instance.currentUser?.uid ?? '';
   String doctorName = "Dr. Doctor";
   String department = "Cardiologist";
+  final AuthService _authService = AuthService();
 
   @override
   void initState() {
@@ -35,7 +37,7 @@ class _DoctorDashboardState extends State<DoctorDashboard> {
       if (doc.exists && doc.data() != null) {
         setState(() {
           doctorName = doc.data()?['name'] ?? "Dr. Doctor";
-          department = doc.data()?['department'] ?? "General Practitioner";
+          department = doc.data()?['department'] ?? "";
         });
       }
     }
@@ -45,6 +47,61 @@ class _DoctorDashboardState extends State<DoctorDashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.background,
+      appBar: AppBar(
+        title: const Text("Doctor Portal"),
+        centerTitle: false,
+        automaticallyImplyLeading: false,
+        actions: [
+          PopupMenuButton<String>(
+            icon: CircleAvatar(
+              backgroundColor: AppColors.primary.withOpacity(0.15),
+              child: const Icon(Icons.person, color: AppColors.primary),
+            ),
+            onSelected: (value) async {
+              if (value == 'profile') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const DoctorProfileScreen(),
+                  ),
+                );
+              } else if (value == 'logout') {
+                await _authService.signOut();
+                if (mounted) {
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    '/landing',
+                    (_) => false,
+                  );
+                }
+              }
+            },
+            itemBuilder: (context) => [
+              const PopupMenuItem(
+                value: 'profile',
+                child: Row(
+                  children: [
+                    Icon(Icons.person_outline, color: AppColors.textPrimary),
+                    SizedBox(width: 8),
+                    Text('My Profile'),
+                  ],
+                ),
+              ),
+              const PopupMenuItem(
+                value: 'logout',
+                child: Row(
+                  children: [
+                    Icon(Icons.logout, color: Colors.red),
+                    SizedBox(width: 8),
+                    Text('Logout', style: TextStyle(color: Colors.red)),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(width: 16),
+        ],
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(20),
@@ -62,13 +119,13 @@ class _DoctorDashboardState extends State<DoctorDashboard> {
                 ),
                 child: Row(
                   children: [
-                    const CircleAvatar(
+                    CircleAvatar(
                       radius: 32,
-                      backgroundColor: Colors.white,
-                      child: Icon(
+                      backgroundColor: Colors.white.withOpacity(0.2),
+                      child: const Icon(
                         Icons.medical_services,
                         size: 35,
-                        color: AppColors.primary,
+                        color: Colors.white,
                       ),
                     ),
                     const SizedBox(width: 15),
@@ -199,13 +256,6 @@ class _DoctorDashboardState extends State<DoctorDashboard> {
                     Colors.orange,
                     const CreatePrescriptionScreen(),
                   ),
-                  _dashboardCard(
-                    context,
-                    "Profile",
-                    Icons.person_outline,
-                    Colors.purple,
-                    const DoctorProfileScreen(),
-                  ),
                 ],
               ),
             ],
@@ -255,20 +305,7 @@ class _DoctorDashboardState extends State<DoctorDashboard> {
     return InkWell(
       borderRadius: BorderRadius.circular(20),
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (_) => Scaffold(
-              appBar: AppBar(
-                title: Text(title),
-                centerTitle: true,
-                backgroundColor: AppColors.primary,
-                foregroundColor: Colors.white,
-              ),
-              body: screen,
-            ),
-          ),
-        );
+        Navigator.push(context, MaterialPageRoute(builder: (_) => screen));
       },
       child: Container(
         decoration: BoxDecoration(

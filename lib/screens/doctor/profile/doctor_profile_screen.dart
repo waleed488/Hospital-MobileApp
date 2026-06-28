@@ -22,6 +22,93 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
   String specialization = 'Heart Surgeon';
   String experience = '8 Years';
 
+  void _showEditProfileDialog() {
+    final nameController = TextEditingController(text: name);
+    final qualificationController = TextEditingController(text: qualification);
+    final specializationController = TextEditingController(text: specialization);
+    final experienceController = TextEditingController(text: experience);
+    final departmentController = TextEditingController(text: department);
+
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text("Edit Profile"),
+        content: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextField(
+                controller: nameController,
+                decoration: const InputDecoration(labelText: "Name"),
+              ),
+              TextField(
+                controller: qualificationController,
+                decoration: const InputDecoration(labelText: "Qualification"),
+              ),
+              TextField(
+                controller: specializationController,
+                decoration: const InputDecoration(labelText: "Specialization"),
+              ),
+              TextField(
+                controller: experienceController,
+                decoration: const InputDecoration(labelText: "Experience"),
+              ),
+              TextField(
+                controller: departmentController,
+                decoration: const InputDecoration(labelText: "Department"),
+              ),
+            ],
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text("Cancel"),
+          ),
+          ElevatedButton(
+            onPressed: () async {
+              final newName = nameController.text.trim();
+              final newQual = qualificationController.text.trim();
+              final newSpec = specializationController.text.trim();
+              final newExp = experienceController.text.trim();
+              final newDept = departmentController.text.trim();
+
+              if (newName.isEmpty) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text("Name cannot be empty")),
+                );
+                return;
+              }
+
+              try {
+                await FirebaseFirestore.instance.collection('users').doc(uid).update({
+                  'name': newName,
+                  'qualification': newQual,
+                  'specialization': newSpec,
+                  'experience': newExp,
+                  'department': newDept,
+                });
+                if (mounted) {
+                  Navigator.pop(ctx);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text("Profile updated successfully")),
+                  );
+                }
+              } catch (e) {
+                if (mounted) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text("Failed to update: $e")),
+                  );
+                }
+              }
+            },
+            child: const Text("Save"),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,6 +116,12 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
       appBar: AppBar(
         title: const Text("Doctor Profile"),
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.edit),
+            onPressed: _showEditProfileDialog,
+          ),
+        ],
       ),
       body: StreamBuilder<DocumentSnapshot>(
         stream: FirebaseFirestore.instance.collection('users').doc(uid).snapshots(),

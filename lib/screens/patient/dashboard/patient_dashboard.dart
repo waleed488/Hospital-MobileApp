@@ -7,6 +7,7 @@ import '../records/medical_records_screen.dart';
 import '../records/prescriptions_screen.dart';
 import '../profile/patient_profile_screen.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../services/auth_service.dart';
 
 class PatientDashboard extends StatefulWidget {
   const PatientDashboard({super.key});
@@ -18,6 +19,7 @@ class PatientDashboard extends StatefulWidget {
 class _PatientDashboardState extends State<PatientDashboard> {
   final uid = FirebaseAuth.instance.currentUser?.uid ?? '';
   String patientName = "Patient";
+  final AuthService _authService = AuthService();
 
   @override
   void initState() {
@@ -40,6 +42,59 @@ class _PatientDashboardState extends State<PatientDashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.background,
+      appBar: AppBar(
+        title: const Text("Patient Portal"),
+        centerTitle: false,
+        automaticallyImplyLeading: false,
+        actions: [
+          PopupMenuButton<String>(
+            icon: CircleAvatar(
+              backgroundColor: AppColors.primary.withOpacity(0.15),
+              child: const Icon(Icons.person, color: AppColors.primary),
+            ),
+            onSelected: (value) async {
+              if (value == 'profile') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const PatientProfileScreen()),
+                );
+              } else if (value == 'logout') {
+                await _authService.signOut();
+                if (mounted) {
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    '/landing',
+                    (_) => false,
+                  );
+                }
+              }
+            },
+            itemBuilder: (context) => [
+              const PopupMenuItem(
+                value: 'profile',
+                child: Row(
+                  children: [
+                    Icon(Icons.person_outline, color: AppColors.textPrimary),
+                    SizedBox(width: 8),
+                    Text('My Profile'),
+                  ],
+                ),
+              ),
+              const PopupMenuItem(
+                value: 'logout',
+                child: Row(
+                  children: [
+                    Icon(Icons.logout, color: Colors.red),
+                    SizedBox(width: 8),
+                    Text('Logout', style: TextStyle(color: Colors.red)),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(width: 16),
+        ],
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(20),
@@ -59,13 +114,13 @@ class _PatientDashboardState extends State<PatientDashboard> {
                 ),
                 child: Row(
                   children: [
-                    const CircleAvatar(
+                    CircleAvatar(
                       radius: 30,
-                      backgroundColor: Colors.white,
-                      child: Icon(
+                      backgroundColor: Colors.white.withOpacity(0.2),
+                      child: const Icon(
                         Icons.person,
                         size: 32,
-                        color: AppColors.primary,
+                        color: Colors.white,
                       ),
                     ),
                     const SizedBox(width: 15),
@@ -158,7 +213,6 @@ class _PatientDashboardState extends State<PatientDashboard> {
                   _actionCard(context, "My Bookings", Icons.event_note, Colors.indigo, const MyAppointmentsScreen()),
                   _actionCard(context, "Medical Records", Icons.folder_copy, Colors.teal, const MedicalRecordsScreen()),
                   _actionCard(context, "Prescriptions", Icons.medication, Colors.orange, const PrescriptionsScreen()),
-                  _actionCard(context, "My Profile", Icons.person, Colors.purple, const PatientProfileScreen()),
                 ],
               ),
             ],

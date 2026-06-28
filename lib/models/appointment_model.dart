@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class AppointmentModel {
   final String id;
 
@@ -15,9 +17,11 @@ class AppointmentModel {
   String status;
 
   final String? diagnosis;
+  final String? symptoms;
   final String? consultationNotes;
 
   final bool prescriptionCreated;
+  final DateTime? createdAt;
 
   AppointmentModel({
     required this.id,
@@ -30,8 +34,10 @@ class AppointmentModel {
     required this.time,
     required this.status,
     this.diagnosis,
+    this.symptoms,
     this.consultationNotes,
     this.prescriptionCreated = false,
+    this.createdAt,
   });
 
   // ================= SAFE FROM FIRESTORE =================
@@ -48,8 +54,12 @@ class AppointmentModel {
       time: map['time'] ?? '',
       status: _normalizeStatus(map['status']),
       diagnosis: map['diagnosis'],
+      symptoms: map['symptoms'],
       consultationNotes: map['consultationNotes'],
       prescriptionCreated: map['prescriptionCreated'] ?? false,
+      createdAt: map['createdAt'] != null
+          ? (map['createdAt'] as Timestamp).toDate()
+          : null,
     );
   }
 
@@ -64,8 +74,12 @@ class AppointmentModel {
       'time': time,
       'status': status.toLowerCase(),
       'diagnosis': diagnosis,
+      'symptoms': symptoms,
       'consultationNotes': consultationNotes,
       'prescriptionCreated': prescriptionCreated,
+      'createdAt': createdAt != null
+          ? Timestamp.fromDate(createdAt!)
+          : FieldValue.serverTimestamp(),
     };
   }
 

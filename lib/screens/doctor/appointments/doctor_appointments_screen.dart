@@ -99,6 +99,89 @@ class _DoctorAppointmentsScreenState extends State<DoctorAppointmentsScreen> {
     await service.startConsultation(id);
   }
 
+  void _showCompleteConsultationDialog(AppointmentModel app) {
+    final diagnosisController = TextEditingController();
+    final symptomsController = TextEditingController();
+    final notesController = TextEditingController();
+
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text("Complete Consultation - ${app.patientName}"),
+        content: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextField(
+                controller: diagnosisController,
+                decoration: const InputDecoration(labelText: "Diagnosis"),
+              ),
+              const SizedBox(height: 12),
+              TextField(
+                controller: symptomsController,
+                decoration: const InputDecoration(labelText: "Symptoms"),
+              ),
+              const SizedBox(height: 12),
+              TextField(
+                controller: notesController,
+                maxLines: 4,
+                decoration: const InputDecoration(
+                  labelText: "Clinical Notes / Suggestions",
+                ),
+              ),
+            ],
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text("Cancel"),
+          ),
+          ElevatedButton(
+            onPressed: () async {
+              final diag = diagnosisController.text.trim();
+              final symptoms = symptomsController.text.trim();
+              final notes = notesController.text.trim();
+
+              if (diag.isEmpty || symptoms.isEmpty || notes.isEmpty) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text("Please fill all fields")),
+                );
+                return;
+              }
+
+              try {
+                await service.completeConsultation(
+                  appointmentId: app.id,
+                  diagnosis: diag,
+                  symptoms: symptoms,
+                  notes: notes,
+                );
+                if (mounted) {
+                  Navigator.pop(ctx);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text(
+                        "Consultation completed and medical record generated",
+                      ),
+                    ),
+                  );
+                }
+              } catch (e) {
+                if (mounted) {
+                  ScaffoldMessenger.of(
+                    context,
+                  ).showSnackBar(SnackBar(content: Text("Error: $e")));
+                }
+              }
+            },
+            child: const Text("Complete"),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -126,7 +209,7 @@ class _DoctorAppointmentsScreenState extends State<DoctorAppointmentsScreen> {
                 onApprove: () => update(app.id, 'approved'),
                 onReject: () => update(app.id, 'rejected'),
                 onStartConsultation: () => startConsultation(app.id),
-                onComplete: () => update(app.id, 'completed'),
+                onComplete: () => _showCompleteConsultationDialog(app),
               );
             },
           );

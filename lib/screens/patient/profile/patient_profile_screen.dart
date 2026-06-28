@@ -21,11 +21,101 @@ class _PatientProfileScreenState extends State<PatientProfileScreen> {
   String bloodGroup = 'O+';
   String phone = '+92 300 1234567';
 
+  void _showEditProfileDialog() {
+    final nameController = TextEditingController(text: name);
+    final ageController = TextEditingController(text: age);
+    final bloodGroupController = TextEditingController(text: bloodGroup);
+    final phoneController = TextEditingController(text: phone);
+
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text("Edit Profile"),
+        content: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextField(
+                controller: nameController,
+                decoration: const InputDecoration(labelText: "Name"),
+              ),
+              TextField(
+                controller: ageController,
+                decoration: const InputDecoration(labelText: "Age"),
+                keyboardType: TextInputType.number,
+              ),
+              TextField(
+                controller: bloodGroupController,
+                decoration: const InputDecoration(labelText: "Blood Group"),
+              ),
+              TextField(
+                controller: phoneController,
+                decoration: const InputDecoration(labelText: "Phone Number"),
+                keyboardType: TextInputType.phone,
+              ),
+            ],
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text("Cancel"),
+          ),
+          ElevatedButton(
+            onPressed: () async {
+              final newName = nameController.text.trim();
+              final newAge = ageController.text.trim();
+              final newBlood = bloodGroupController.text.trim();
+              final newPhone = phoneController.text.trim();
+
+              if (newName.isEmpty) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text("Name cannot be empty")),
+                );
+                return;
+              }
+
+              try {
+                await FirebaseFirestore.instance.collection('users').doc(uid).update({
+                  'name': newName,
+                  'age': newAge,
+                  'bloodGroup': newBlood,
+                  'phone': newPhone,
+                });
+                if (mounted) {
+                  Navigator.pop(ctx);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text("Profile updated successfully")),
+                  );
+                }
+              } catch (e) {
+                if (mounted) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text("Failed to update: $e")),
+                  );
+                }
+              }
+            },
+            child: const Text("Save"),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.background,
-      appBar: AppBar(title: const Text("Patient Profile")),
+      appBar: AppBar(
+        title: const Text("Patient Profile"),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.edit),
+            onPressed: _showEditProfileDialog,
+          ),
+        ],
+      ),
       body: StreamBuilder<DocumentSnapshot>(
         stream: FirebaseFirestore.instance.collection('users').doc(uid).snapshots(),
         builder: (context, snapshot) {

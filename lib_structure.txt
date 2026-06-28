@@ -1,0 +1,76 @@
+Folder PATH listing
+Volume serial number is 94C9-F421
+C:\USERS\PMLS\DESKTOP\F\HOSPITALPROJECT\LIB
+|   firebase_options.dart
+|   main.dart
+|   
++---core
+|   +---constants
+|   |       app_colors.dart
+|   |       app_strings.dart
+|   |       
+|   \---theme
+|           app_theme.dart
+|           
++---models
+|       appointment_model.dart
+|       medical_record_model.dart
+|       prescription_model.dart
+|       user_model.dart
+|       
++---screens
+|   +---admin
+|   |       admin_dashboard.dart
+|   |       
+|   +---auth
+|   |       landing_screen.dart
+|   |       login_screen.dart
+|   |       register_screen.dart
+|   |       role_selector.dart
+|   |       
+|   +---doctor
+|   |   +---appointments
+|   |   |       appointment_details_screen.dart
+|   |   |       doctor_appointments_screen.dart
+|   |   |       
+|   |   +---dashboard
+|   |   |       doctor_dashboard.dart
+|   |   |       
+|   |   +---patients
+|   |   |       patient_records_screen.dart
+|   |   |       
+|   |   +---prescriptions
+|   |   |       create_prescription_screen.dart
+|   |   |       
+|   |   \---profile
+|   |           doctor_profile_screen.dart
+|   |           
+|   +---patient
+|   |   +---appointments
+|   |   |       book_appointment_screen.dart
+|   |   |       my_appointments_screen.dart
+|   |   |       
+|   |   +---dashboard
+|   |   |       patient_dashboard.dart
+|   |   |       
+|   |   +---profile
+|   |   |       patient_profile_screen.dart
+|   |   |       
+|   |   \---records
+|   |           medical_records_screen.dart
+|   |           prescriptions_screen.dart
+|   |           
+|   \---splash
+|           splash_screen.dart
+|           
++---services
+|       auth_service.dart
+|       firestore_service.dart
+|       
+\---widgets
+        appointment_card.dart
+        custom_button.dart
+        doctor_appointment_card.dart
+        medical_record_card.dart
+        prescription_card.dart
+        

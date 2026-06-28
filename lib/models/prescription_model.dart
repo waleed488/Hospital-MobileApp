@@ -1,5 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class PrescriptionModel {
   final String id;
+  final String appointmentId;
   final String patientId;
   final String patientName;
   final String doctorId;
@@ -9,9 +12,11 @@ class PrescriptionModel {
   final String duration;
   final String notes;
   final String date;
+  final DateTime? createdAt;
 
   PrescriptionModel({
     required this.id,
+    required this.appointmentId,
     required this.patientId,
     required this.patientName,
     required this.doctorId,
@@ -21,11 +26,13 @@ class PrescriptionModel {
     required this.duration,
     required this.notes,
     required this.date,
+    this.createdAt,
   });
 
   factory PrescriptionModel.fromMap(Map<String, dynamic> map, String id) {
     return PrescriptionModel(
       id: id,
+      appointmentId: map['appointmentId'] ?? '',
       patientId: map['patientId'] ?? '',
       patientName: map['patientName'] ?? '',
       doctorId: map['doctorId'] ?? '',
@@ -35,11 +42,15 @@ class PrescriptionModel {
       duration: map['duration'] ?? '',
       notes: map['notes'] ?? '',
       date: map['date'] ?? '',
+      createdAt: map['createdAt'] != null
+          ? (map['createdAt'] as Timestamp).toDate()
+          : null,
     );
   }
 
   Map<String, dynamic> toMap() {
     return {
+      'appointmentId': appointmentId,
       'patientId': patientId,
       'patientName': patientName,
       'doctorId': doctorId,
@@ -49,6 +60,9 @@ class PrescriptionModel {
       'duration': duration,
       'notes': notes,
       'date': date,
+      'createdAt': createdAt != null
+          ? Timestamp.fromDate(createdAt!)
+          : FieldValue.serverTimestamp(),
     };
   }
 }
