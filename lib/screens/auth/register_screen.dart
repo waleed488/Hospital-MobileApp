@@ -163,6 +163,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                 const SizedBox(height: 20),
 
+                // SizedBox(
+                //   width: double.infinity,
+                //   height: 50,
+                //   child: ElevatedButton(
+                //     onPressed: isLoading ? null : register,
+                //     child: isLoading
+                //         ? const CircularProgressIndicator(color: Colors.white)
+                //         : const Text("Register"),
+                //   ),
+                // ),
                 SizedBox(
                   width: double.infinity,
                   height: 50,
@@ -172,6 +182,64 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ? const CircularProgressIndicator(color: Colors.white)
                         : const Text("Register"),
                   ),
+                ),
+
+                // const SizedBox(height: 20),
+
+                // Wrap(
+                //   alignment: WrapAlignment.center,
+                //   spacing: 4,
+                //   crossAxisAlignment: WrapCrossAlignment.center,
+                //   children: [
+                //     const Text(
+                //       "Already have an account?",
+                //       style: TextStyle(color: Colors.grey),
+                //     ),
+                //     TextButton(
+                //       onPressed: () {
+                //         Navigator.pop(context);
+                //       },
+                //       child: const Text(
+                //         "Login",
+                //         style: TextStyle(
+                //           fontWeight: FontWeight.bold,
+                //         ),
+                //       ),
+                //     ),
+                //   ],
+                // ),
+                SizedBox(
+                  width: double.infinity,
+                  height: 50,
+                  child: ElevatedButton(
+                    onPressed: isLoading ? null : register,
+                    child: isLoading
+                        ? const CircularProgressIndicator(color: Colors.white)
+                        : const Text("Register"),
+                  ),
+                ),
+
+                const SizedBox(height: 20),
+
+                Wrap(
+                  alignment: WrapAlignment.center,
+                  spacing: 4,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  children: [
+                    const Text(
+                      "Already have an account?",
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: const Text(
+                        "Login",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
