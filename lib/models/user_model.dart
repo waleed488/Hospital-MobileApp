@@ -68,6 +68,33 @@ class UserModel {
 
   final String? profileImage;
 
+  // New Patient Profile fields
+  final String? height;
+  final String? weight;
+  final String? allergies;
+  final String? chronicDiseases;
+  final String? emergencyContact;
+  final String? dateOfBirth;
+  final List<String>? favoriteDoctors;
+
+  // New Doctor fields
+  final String? consultationFee;
+  final String? availabilityStatus; // "Available Today", "Busy", "On Leave"
+
+  // New Doctor verification document fields
+  final String? medicalLicenseUrl;
+  final String? degreeUrl;
+  final String? certificateUrl;
+  final String? verificationStatus; // "unverified", "pending", "verified", "rejected"
+
+  // Admin & Security fields
+  final bool isApproved;
+  final bool isVerified;
+  final bool isFeatured;
+  final String? address;
+  final String? bio;
+  final List<String>? availableSlots;
+
   final DateTime? createdAt;
 
   UserModel({
@@ -88,6 +115,29 @@ class UserModel {
     this.experience,
 
     this.profileImage,
+
+    this.height,
+    this.weight,
+    this.allergies,
+    this.chronicDiseases,
+    this.emergencyContact,
+    this.dateOfBirth,
+    this.favoriteDoctors,
+
+    this.consultationFee,
+    this.availabilityStatus,
+
+    this.medicalLicenseUrl,
+    this.degreeUrl,
+    this.certificateUrl,
+    this.verificationStatus = 'unverified',
+
+    this.isApproved = true,
+    this.isVerified = false,
+    this.isFeatured = false,
+    this.address,
+    this.bio,
+    this.availableSlots,
 
     this.createdAt,
   });
@@ -111,6 +161,33 @@ class UserModel {
       experience: map['experience'],
 
       profileImage: map['profileImage'],
+
+      height: map['height'],
+      weight: map['weight'],
+      allergies: map['allergies'],
+      chronicDiseases: map['chronicDiseases'],
+      emergencyContact: map['emergencyContact'],
+      dateOfBirth: map['dateOfBirth'],
+      favoriteDoctors: map['favoriteDoctors'] != null
+          ? List<String>.from(map['favoriteDoctors'])
+          : [],
+
+      consultationFee: map['consultationFee'],
+      availabilityStatus: map['availabilityStatus'] ?? 'Available Today',
+
+      medicalLicenseUrl: map['medicalLicenseUrl'],
+      degreeUrl: map['degreeUrl'],
+      certificateUrl: map['certificateUrl'],
+      verificationStatus: map['verificationStatus'] ?? 'unverified',
+
+      isApproved: map['isApproved'] ?? (map['role'] == 'doctor' ? false : true),
+      isVerified: map['isVerified'] ?? false,
+      isFeatured: map['isFeatured'] ?? false,
+      address: map['address'],
+      bio: map['bio'],
+      availableSlots: map['availableSlots'] != null
+          ? List<String>.from(map['availableSlots'])
+          : null,
 
       createdAt: map['createdAt'] != null
           ? (map['createdAt'] as Timestamp).toDate()
@@ -138,6 +215,29 @@ class UserModel {
       'experience': experience,
 
       'profileImage': profileImage,
+
+      'height': height,
+      'weight': weight,
+      'allergies': allergies,
+      'chronicDiseases': chronicDiseases,
+      'emergencyContact': emergencyContact,
+      'dateOfBirth': dateOfBirth,
+      'favoriteDoctors': favoriteDoctors ?? [],
+
+      'consultationFee': consultationFee,
+      'availabilityStatus': availabilityStatus ?? 'Available Today',
+
+      'medicalLicenseUrl': medicalLicenseUrl,
+      'degreeUrl': degreeUrl,
+      'certificateUrl': certificateUrl,
+      'verificationStatus': verificationStatus ?? 'unverified',
+
+      'isApproved': isApproved,
+      'isVerified': isVerified,
+      'isFeatured': isFeatured,
+      'address': address,
+      'bio': bio,
+      'availableSlots': availableSlots ?? [],
 
       'createdAt': FieldValue.serverTimestamp(),
     };

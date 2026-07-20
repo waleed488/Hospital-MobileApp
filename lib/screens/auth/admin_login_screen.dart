@@ -4,18 +4,15 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 import '../../core/constants/app_colors.dart';
 import '../../services/auth_service.dart';
-import 'register_screen.dart';
-import 'forgot_password_screen.dart';
 
-class LoginScreen extends StatefulWidget {
-  final String role; // "patient" or "doctor"
-  const LoginScreen({super.key, this.role = 'patient'});
+class AdminLoginScreen extends StatefulWidget {
+  const AdminLoginScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<AdminLoginScreen> createState() => _AdminLoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _AdminLoginScreenState extends State<AdminLoginScreen> {
   final _formKey = GlobalKey<FormState>();
 
   final TextEditingController emailController = TextEditingController();
@@ -26,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
   bool isLoading = false;
   bool obscurePassword = true;
 
-  Future<void> loginUser() async {
+  Future<void> loginAdmin() async {
     if (!_formKey.currentState!.validate()) {
       return;
     }
@@ -40,7 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
       // Sign in
       final cred = await _authService.login(email, password);
 
-      // Verify role in Firestore
+      // Verify admin role in Firestore
       final doc = await FirebaseFirestore.instance
           .collection('users')
           .doc(cred.user!.uid)
@@ -54,30 +51,16 @@ class _LoginScreenState extends State<LoginScreen> {
       final data = doc.data() as Map<String, dynamic>;
       final userRole = data['role'] ?? 'patient';
 
-      // Enforce Role Separation
-      if (userRole == 'admin') {
+      // Enforce strict admin role verification
+      if (userRole != 'admin') {
         await _authService.signOut();
-        throw Exception("Admins must log in through the Admin Portal.");
-      }
-
-      if (userRole != widget.role) {
-        await _authService.signOut();
-        throw Exception("Unauthorized. Please use the correct Portal to log in.");
-      }
-
-      // Check Doctor Approval Status
-      if (userRole == 'doctor') {
-        final isApproved = data['isApproved'] ?? false;
-        if (!isApproved) {
-          await _authService.signOut();
-          throw Exception("Your doctor account is pending admin approval.");
-        }
+        throw Exception("Access Denied: Admin privileges required.");
       }
 
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text("Logged in successfully!"),
+            content: Text("Welcome back, Administrator!"),
             backgroundColor: AppColors.success,
           ),
         );
@@ -110,8 +93,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final portalName = widget.role == 'doctor' ? "Doctor Portal" : "Patient Portal";
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -127,7 +108,7 @@ class _LoginScreenState extends State<LoginScreen> {
         width: double.infinity,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [AppColors.primary, AppColors.secondary],
+            colors: [Color(0xFF374151), Color(0xFF111827)], // dark professional admin theme
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -145,9 +126,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     borderRadius: BorderRadius.circular(28),
                     boxShadow: const [
                       BoxShadow(
-                        color: Colors.black12,
-                        blurRadius: 20,
-                        offset: Offset(0, 10),
+                        color: Colors.black26,
+                        blurRadius: 25,
+                        offset: Offset(0, 12),
                       ),
                     ],
                   ),
@@ -156,28 +137,26 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        // Medical Icon Accent
+                        // Shield Lock Icon for Admin Controls
                         Container(
                           height: 80,
                           width: 80,
                           decoration: BoxDecoration(
-                            color: AppColors.primary.withOpacity(0.1),
+                            color: Colors.red.shade50,
                             shape: BoxShape.circle,
                           ),
                           child: Icon(
-                            widget.role == 'doctor'
-                                ? Icons.medical_services
-                                : Icons.people_alt,
-                            size: 44,
-                            color: AppColors.primary,
+                            Icons.admin_panel_settings,
+                            size: 46,
+                            color: Colors.red.shade700,
                           ),
                         ),
                         const SizedBox(height: 18),
 
-                        Text(
-                          portalName,
+                        const Text(
+                          "Admin Portal",
                           textAlign: TextAlign.center,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 26,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -185,7 +164,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         const SizedBox(height: 6),
                         const Text(
-                          "Log in to manage your medical services",
+                          "Access administration control panel",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             color: AppColors.textSecondary,
@@ -199,7 +178,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           controller: emailController,
                           keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
-                            labelText: "Email Address",
+                            labelText: "Admin Email",
                             prefixIcon: const Icon(Icons.email_outlined),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(14),
@@ -207,7 +186,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           validator: (value) {
                             if (value == null || value.trim().isEmpty) {
-                              return "Email is required";
+                              return "Admin email is required";
                             }
                             if (!RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
                                 .hasMatch(value)) {
@@ -248,33 +227,18 @@ class _LoginScreenState extends State<LoginScreen> {
                             return null;
                           },
                         ),
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: TextButton(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (_) => const ForgotPasswordScreen(),
-                                ),
-                              );
-                            },
-                            child: const Text(
-                              "Forgot Password?",
-                              style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 12),
+                        const SizedBox(height: 24),
 
                         // Login button
                         SizedBox(
                           width: double.infinity,
                           height: 52,
                           child: ElevatedButton(
-                            onPressed: isLoading ? null : loginUser,
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.red.shade700,
+                              foregroundColor: Colors.white,
+                            ),
+                            onPressed: isLoading ? null : loginAdmin,
                             child: isLoading
                                 ? const SizedBox(
                                     width: 22,
@@ -285,41 +249,13 @@ class _LoginScreenState extends State<LoginScreen> {
                                     ),
                                   )
                                 : const Text(
-                                    "Log In",
+                                    "Log In to Admin",
                                     style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
                           ),
-                        ),
-                        const SizedBox(height: 20),
-
-                        // Register selector link
-                        Wrap(
-                          alignment: WrapAlignment.center,
-                          crossAxisAlignment: WrapCrossAlignment.center,
-                          spacing: 4,
-                          children: [
-                            const Text(
-                              "Don't have an account?",
-                              style: TextStyle(color: Colors.grey),
-                            ),
-                            TextButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (_) => const RegisterScreen(),
-                                  ),
-                                );
-                              },
-                              child: const Text(
-                                "Register",
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ],
                         ),
                       ],
                     ),

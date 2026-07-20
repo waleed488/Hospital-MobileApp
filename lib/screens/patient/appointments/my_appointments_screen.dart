@@ -48,9 +48,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import 'book_appointment_screen.dart';
 import '../../../models/appointment_model.dart';
 import '../../../services/firestore_service.dart';
 import '../../../widgets/appointment_card.dart';
+import '../../../widgets/empty_state.dart';
+import '../../../widgets/skeleton_loader.dart';
 
 class MyAppointmentsScreen extends StatelessWidget {
   const MyAppointmentsScreen({super.key});
@@ -64,17 +67,29 @@ class MyAppointmentsScreen extends StatelessWidget {
       body: StreamBuilder<List<AppointmentModel>>(
         stream: FirestoreService().getPatientAppointments(patientId),
         builder: (context, snapshot) {
-          if (!snapshot.hasData) {
-            return const Center(child: CircularProgressIndicator());
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const SkeletonList(itemCount: 4);
           }
 
-          final list = snapshot.data!;
+          final list = snapshot.data ?? [];
 
           if (list.isEmpty) {
-            return const Center(child: Text("No Appointments"));
+            return EmptyState(
+              title: "No Appointments Scheduled",
+              message: "It looks like you don't have any appointments lined up. Easily schedule one today!",
+              icon: Icons.event_busy,
+              actionLabel: "Book Appointment",
+              onActionPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const BookAppointmentScreen()),
+                );
+              },
+            );
           }
 
           return ListView.builder(
+            padding: const EdgeInsets.all(16),
             itemCount: list.length,
             itemBuilder: (_, i) => AppointmentCard(appointment: list[i]),
           );

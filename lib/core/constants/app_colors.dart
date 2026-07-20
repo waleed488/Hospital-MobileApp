@@ -15,4 +15,7 @@ class AppColors {
   static const Color success = Color(0xFF2E7D32);
   static const Color warning = Color(0xFFF9A825);
   static const Color error = Color(0xFFC62828);
+
+  static const Color verified = Color(0xFF0288D1); // clinical blue checkmark color
+  static const Color featured = Color(0xFFFBC02D); // hospital featured star rating color
 }

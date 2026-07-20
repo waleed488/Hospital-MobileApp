@@ -7,7 +7,14 @@ import '../../../models/appointment_model.dart';
 import '../../../services/firestore_service.dart';
 
 class BookAppointmentScreen extends StatefulWidget {
-  const BookAppointmentScreen({super.key});
+  final String? preSelectedDoctorId;
+  final String? preSelectedDepartment;
+
+  const BookAppointmentScreen({
+    super.key,
+    this.preSelectedDoctorId,
+    this.preSelectedDepartment,
+  });
 
   @override
   State<BookAppointmentScreen> createState() => _BookAppointmentScreenState();
@@ -35,6 +42,8 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
   @override
   void initState() {
     super.initState();
+    selectedDepartment = widget.preSelectedDepartment;
+    selectedDoctorId = widget.preSelectedDoctorId;
     _loadPatientName();
   }
 
@@ -46,6 +55,17 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
           .get();
       if (doc.exists && doc.data() != null) {
         patientName = doc.data()?['name'] ?? 'Patient';
+      }
+    }
+    if (widget.preSelectedDoctorId != null) {
+      final doc = await FirebaseFirestore.instance
+          .collection('users')
+          .doc(widget.preSelectedDoctorId!)
+          .get();
+      if (doc.exists && doc.data() != null) {
+        setState(() {
+          selectedDoctorName = doc.data()?['name'] ?? 'Doctor';
+        });
       }
     }
   }
@@ -175,7 +195,10 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
                         return const Center(child: CircularProgressIndicator());
                       }
 
-                      final docs = snapshot.data!.docs;
+                      final docs = snapshot.data!.docs.where((doc) {
+                        final data = doc.data() as Map<String, dynamic>;
+                        return data['isApproved'] == true;
+                      }).toList();
 
                       return Container(
                         padding: const EdgeInsets.symmetric(horizontal: 12),

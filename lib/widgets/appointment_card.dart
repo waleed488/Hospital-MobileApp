@@ -116,10 +116,16 @@ class AppointmentCard extends StatelessWidget {
             ],
           ),
 
+          // Visual Timeline Status Stepper
+          const SizedBox(height: 12),
+          const Divider(height: 1, color: Color(0xFFF3F4F6)),
+          const SizedBox(height: 12),
+          _buildTimeline(appointment.status),
+
           if (appointment.diagnosis != null && appointment.diagnosis!.isNotEmpty) ...[
-            const SizedBox(height: 8),
+            const SizedBox(height: 12),
             const Divider(height: 1, color: Color(0xFFF3F4F6)),
-            const SizedBox(height: 8),
+            const SizedBox(height: 12),
             Text(
               "Diagnosis: ${appointment.diagnosis}",
               style: const TextStyle(fontWeight: FontWeight.w600, color: Colors.black87),
@@ -182,6 +188,87 @@ class AppointmentCard extends StatelessWidget {
             ),
           ],
         ],
+      ),
+    );
+  }
+
+  Widget _buildTimeline(String currentStatus) {
+    final status = currentStatus.toLowerCase();
+    
+    List<String> steps = ['pending', 'approved', 'completed'];
+    if (status == 'in_consultation') {
+      steps = ['pending', 'approved', 'in consultation', 'completed'];
+    } else if (status == 'cancelled' || status == 'rejected') {
+      steps = ['pending', status];
+    }
+
+    int currentIndex = steps.indexOf(status);
+    if (status == 'in_consultation') {
+      currentIndex = 2;
+    }
+
+    return Container(
+      margin: const EdgeInsets.only(top: 8, bottom: 8),
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: Colors.grey.shade50,
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(color: Colors.grey.shade100),
+      ),
+      child: Row(
+        children: List.generate(steps.length, (idx) {
+          final stepName = steps[idx];
+          final stepLabel = stepName[0].toUpperCase() + stepName.substring(1);
+          final isCompleted = idx <= currentIndex;
+          final isCurrent = idx == currentIndex;
+          final isLast = idx == steps.length - 1;
+
+          Color stepColor = Colors.grey.shade300;
+          if (isCompleted) {
+            stepColor = getColor();
+          }
+
+          return Expanded(
+            flex: isLast ? 0 : 1,
+            child: Row(
+              children: [
+                // Step Dot + Label
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    CircleAvatar(
+                      radius: 8,
+                      backgroundColor: stepColor,
+                      child: isCurrent
+                          ? const CircleAvatar(radius: 4, backgroundColor: Colors.white)
+                          : (isCompleted
+                              ? const Icon(Icons.check, size: 10, color: Colors.white)
+                              : null),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      stepLabel,
+                      style: TextStyle(
+                        fontSize: 9,
+                        fontWeight: isCurrent ? FontWeight.bold : FontWeight.normal,
+                        color: isCurrent ? AppColors.textPrimary : Colors.grey.shade500,
+                      ),
+                    ),
+                  ],
+                ),
+                // Connector Line
+                if (!isLast)
+                  Expanded(
+                    child: Container(
+                      height: 2,
+                      color: isCompleted ? getColor() : Colors.grey.shade300,
+                      margin: const EdgeInsets.only(bottom: 12),
+                    ),
+                  ),
+              ],
+            ),
+          );
+        }),
       ),
     );
   }
