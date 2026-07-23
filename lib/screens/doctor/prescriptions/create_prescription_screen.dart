@@ -108,7 +108,6 @@ class _CreatePrescriptionScreenState extends State<CreatePrescriptionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.background,
       appBar: AppBar(title: const Text("Create Prescription")),
 
       body: Padding(

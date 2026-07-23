@@ -9,6 +9,9 @@ class AppointmentCard extends StatelessWidget {
   const AppointmentCard({super.key, required this.appointment});
 
   Color getColor() {
+    if (appointment.isExpired) {
+      return Colors.grey.shade600;
+    }
     switch (appointment.status.toLowerCase()) {
       case "approved":
         return AppColors.success;
@@ -21,9 +24,10 @@ class AppointmentCard extends StatelessWidget {
       case "rejected":
         return AppColors.error;
       case "cancelled":
-        return Colors.grey;
+      case "expired":
+        return Colors.grey.shade600;
       default:
-        return Colors.grey;
+        return Colors.grey.shade600;
     }
   }
 
@@ -68,9 +72,11 @@ class AppointmentCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Text(
-                  appointment.status.isEmpty
-                      ? "Pending"
-                      : appointment.status[0].toUpperCase() + appointment.status.substring(1),
+                  appointment.isExpired
+                      ? "Expired"
+                      : (appointment.status.isEmpty
+                          ? "Pending"
+                          : appointment.status[0].toUpperCase() + appointment.status.substring(1)),
                   style: TextStyle(
                     color: statusColor,
                     fontWeight: FontWeight.bold,
@@ -132,7 +138,7 @@ class AppointmentCard extends StatelessWidget {
             ),
           ],
 
-          if (statusLower == 'pending' || statusLower == 'approved') ...[
+          if ((statusLower == 'pending' || statusLower == 'approved') && !appointment.isExpired) ...[
             const SizedBox(height: 12),
             const Divider(height: 1, color: Color(0xFFF3F4F6)),
             const SizedBox(height: 12),
@@ -198,7 +204,7 @@ class AppointmentCard extends StatelessWidget {
     List<String> steps = ['pending', 'approved', 'completed'];
     if (status == 'in_consultation') {
       steps = ['pending', 'approved', 'in consultation', 'completed'];
-    } else if (status == 'cancelled' || status == 'rejected') {
+    } else if (status == 'cancelled' || status == 'rejected' || status == 'expired') {
       steps = ['pending', status];
     }
 

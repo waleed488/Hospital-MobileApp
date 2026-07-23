@@ -174,7 +174,6 @@ class _MedicineRemindersScreenState extends State<MedicineRemindersScreen> {
     final todayStr = DateTime.now().toString().split(' ')[0];
 
     return Scaffold(
-      backgroundColor: AppColors.background,
       appBar: AppBar(
         title: const Text("Medicine Reminders"),
         actions: [

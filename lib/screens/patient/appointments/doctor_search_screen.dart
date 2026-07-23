@@ -47,7 +47,6 @@ class _DoctorSearchScreenState extends State<DoctorSearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.background,
       appBar: AppBar(
         title: const Text("Find Doctors"),
         elevation: 0,

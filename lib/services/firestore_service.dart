@@ -1,8 +1,8 @@
-import 'dart:io';
+import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 
 import '../models/appointment_model.dart';
 import '../models/medical_record_model.dart';
@@ -113,6 +113,85 @@ class FirestoreService {
   }
 
   Future<void> deleteUser(String uid) async {
+    // Get user to check role
+    final userDoc = await _db.collection('users').doc(uid).get();
+    if (userDoc.exists) {
+      final role = userDoc.data()?['role'];
+      if (role == 'doctor') {
+        // Cascade delete doctor-related collections
+        
+        // Delete appointments
+        final appointments = await _db.collection('appointments').where('doctorId', isEqualTo: uid).get();
+        for (var doc in appointments.docs) {
+          await doc.reference.delete();
+        }
+
+        // Delete prescriptions
+        final prescriptions = await _db.collection('prescriptions').where('doctorId', isEqualTo: uid).get();
+        for (var doc in prescriptions.docs) {
+          await doc.reference.delete();
+        }
+
+        // Delete medical records
+        final medicalRecords = await _db.collection('medical_records').where('doctorId', isEqualTo: uid).get();
+        for (var doc in medicalRecords.docs) {
+          await doc.reference.delete();
+        }
+
+        // Delete reviews
+        final reviews = await _db.collection('reviews').where('doctorId', isEqualTo: uid).get();
+        for (var doc in reviews.docs) {
+          await doc.reference.delete();
+        }
+
+        // Remove from patients' favorites list
+        final patients = await _db.collection('users').where('favoriteDoctors', arrayContains: uid).get();
+        for (var doc in patients.docs) {
+          await doc.reference.update({
+            'favoriteDoctors': FieldValue.arrayRemove([uid])
+          });
+        }
+      } else if (role == 'patient') {
+        // Cascade delete patient-related collections
+        
+        // Delete appointments
+        final appointments = await _db.collection('appointments').where('patientId', isEqualTo: uid).get();
+        for (var doc in appointments.docs) {
+          await doc.reference.delete();
+        }
+
+        // Delete prescriptions
+        final prescriptions = await _db.collection('prescriptions').where('patientId', isEqualTo: uid).get();
+        for (var doc in prescriptions.docs) {
+          await doc.reference.delete();
+        }
+
+        // Delete medical records
+        final medicalRecords = await _db.collection('medical_records').where('patientId', isEqualTo: uid).get();
+        for (var doc in medicalRecords.docs) {
+          await doc.reference.delete();
+        }
+
+        // Delete reviews
+        final reviews = await _db.collection('reviews').where('patientId', isEqualTo: uid).get();
+        for (var doc in reviews.docs) {
+          await doc.reference.delete();
+        }
+
+        // Delete medicine reminders
+        final reminders = await _db.collection('medicine_reminders').where('patientId', isEqualTo: uid).get();
+        for (var doc in reminders.docs) {
+          await doc.reference.delete();
+        }
+
+        // Delete notifications
+        final notifications = await _db.collection('notifications').where('userId', isEqualTo: uid).get();
+        for (var doc in notifications.docs) {
+          await doc.reference.delete();
+        }
+      }
+    }
+    // Delete the user record itself
     await _db.collection('users').doc(uid).delete();
   }
 
@@ -122,22 +201,20 @@ class FirestoreService {
 
   // ================= ADMIN & STORAGE EXTENSIONS =================
 
-  Future<String> uploadProfileImage(String uid, File imageFile) async {
+  Future<String> uploadProfileImage(String uid, Uint8List imageBytes, String fileName) async {
     try {
-      final ref = FirebaseStorage.instance
-          .ref()
-          .child('profile_images')
-          .child('$uid.jpg');
+      debugPrint("Starting profile image conversion to Base64 for user: $uid");
+      final base64Str = 'data:image/jpeg;base64,${base64Encode(imageBytes)}';
 
-      final uploadTask = await ref.putFile(imageFile);
-      final downloadUrl = await uploadTask.ref.getDownloadURL();
-
+      debugPrint("Updating Firestore user record with Base64 image...");
       await _db.collection('users').doc(uid).update({
-        'profileImage': downloadUrl,
+        'profileImage': base64Str,
       });
 
-      return downloadUrl;
+      debugPrint("Firestore user record updated with Base64 image successfully.");
+      return base64Str;
     } catch (e) {
+      debugPrint("Error storing profile image: $e");
       throw Exception("Failed to upload image: $e");
     }
   }
@@ -239,10 +316,19 @@ class FirestoreService {
       'completed',
       'rejected',
       'cancelled',
+      'expired',
     ];
 
     if (!allowed.contains(normalized)) {
       throw Exception("Invalid status");
+    }
+
+    final doc = await _db.collection('appointments').doc(id).get();
+    if (doc.exists && doc.data() != null) {
+      final app = AppointmentModel.fromMap(doc.data()!, doc.id);
+      if (app.isExpired) {
+        throw Exception("Cannot update status of an expired appointment");
+      }
     }
 
     await _db.collection('appointments').doc(id).update({'status': normalized});
@@ -287,6 +373,13 @@ class FirestoreService {
   }
 
   Future<void> startConsultation(String id) async {
+    final doc = await _db.collection('appointments').doc(id).get();
+    if (doc.exists && doc.data() != null) {
+      final app = AppointmentModel.fromMap(doc.data()!, doc.id);
+      if (app.isExpired) {
+        throw Exception("Cannot start consultation for an expired appointment");
+      }
+    }
     await _db.collection('appointments').doc(id).update({
       'status': 'in_consultation',
     });
@@ -325,6 +418,9 @@ class FirestoreService {
   }
 
   Future<void> cancelAppointmentIfAllowed(AppointmentModel app) async {
+    if (app.isExpired) {
+      throw Exception("Cannot cancel an expired appointment");
+    }
     final status = app.status.toLowerCase();
 
     if (status != 'pending' && status != 'approved') {
@@ -345,6 +441,15 @@ class FirestoreService {
     await _db.collection('appointments').doc(id).delete();
   }
 
+  void _checkAndMarkExpired(AppointmentModel app) {
+    if (app.status == 'pending' && app.isExpired) {
+      app.status = 'expired';
+      _db.collection('appointments').doc(app.id).update({'status': 'expired'}).catchError((e) {
+        debugPrint("Failed to auto-expire appointment: $e");
+      });
+    }
+  }
+
   // ================= STREAMS =================
 
   Stream<List<AppointmentModel>> getPatientAppointments(String patientId) {
@@ -355,7 +460,11 @@ class FirestoreService {
         .map(
           (snap) {
             final list = snap.docs
-                .map((d) => AppointmentModel.fromMap(d.data(), d.id))
+                .map((d) {
+                  final app = AppointmentModel.fromMap(d.data(), d.id);
+                  _checkAndMarkExpired(app);
+                  return app;
+                })
                 .toList();
             list.sort((a, b) {
               final dateA = a.createdAt ?? DateTime.fromMillisecondsSinceEpoch(0);
@@ -375,7 +484,11 @@ class FirestoreService {
         .map(
           (snap) {
             final list = snap.docs
-                .map((d) => AppointmentModel.fromMap(d.data(), d.id))
+                .map((d) {
+                  final app = AppointmentModel.fromMap(d.data(), d.id);
+                  _checkAndMarkExpired(app);
+                  return app;
+                })
                 .toList();
             list.sort((a, b) {
               final dateA = a.createdAt ?? DateTime.fromMillisecondsSinceEpoch(0);
@@ -391,7 +504,11 @@ class FirestoreService {
     return _db.collection('appointments').snapshots().map(
       (snap) {
         final list = snap.docs
-            .map((d) => AppointmentModel.fromMap(d.data(), d.id))
+            .map((d) {
+              final app = AppointmentModel.fromMap(d.data(), d.id);
+              _checkAndMarkExpired(app);
+              return app;
+            })
             .toList();
         list.sort((a, b) {
           final dateA = a.createdAt ?? DateTime.fromMillisecondsSinceEpoch(0);
@@ -572,30 +689,28 @@ class FirestoreService {
   Future<String> uploadDoctorDocument({
     required String uid,
     required String docType, // 'license', 'degree', 'certificate'
-    required File file,
+    required Uint8List fileBytes,
+    required String fileName,
   }) async {
     try {
-      final ref = FirebaseStorage.instance
-          .ref()
-          .child('doctor_documents')
-          .child(uid)
-          .child('$docType.jpg');
-
-      final uploadTask = await ref.putFile(file);
-      final downloadUrl = await uploadTask.ref.getDownloadURL();
+      debugPrint("Starting doctor document conversion to Base64 for doctor: $uid, type: $docType");
+      final base64Str = 'data:image/jpeg;base64,${base64Encode(fileBytes)}';
 
       String mappedFieldName = docType;
       if (docType == 'license') mappedFieldName = 'medicalLicenseUrl';
       else if (docType == 'degree') mappedFieldName = 'degreeUrl';
       else if (docType == 'certificate') mappedFieldName = 'certificateUrl';
 
+      debugPrint("Updating Firestore doctor record with Base64 document...");
       await _db.collection('users').doc(uid).update({
-        mappedFieldName: downloadUrl,
+        mappedFieldName: base64Str,
         'verificationStatus': 'pending',
       });
 
-      return downloadUrl;
+      debugPrint("Firestore doctor record updated with Base64 document successfully.");
+      return base64Str;
     } catch (e) {
+      debugPrint("Error storing doctor document: $e");
       throw Exception("Failed to upload document: $e");
     }
   }

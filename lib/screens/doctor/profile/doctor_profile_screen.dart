@@ -1,4 +1,5 @@
-import 'dart:io';
+import 'dart:convert';
+import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -6,6 +7,7 @@ import 'package:image_picker/image_picker.dart';
 import '../../../services/auth_service.dart';
 import '../../../services/firestore_service.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../core/theme/theme_controller.dart';
 
 class DoctorProfileScreen extends StatefulWidget {
   const DoctorProfileScreen({super.key});
@@ -56,9 +58,13 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
       if (image == null) return;
 
       setState(() => _isLoading = true);
+      final Uint8List imageBytes = await image.readAsBytes();
+      final String fileName = '${uid}_${DateTime.now().millisecondsSinceEpoch}.jpg';
+
       final downloadUrl = await _firestoreService.uploadProfileImage(
         uid,
-        File(image.path),
+        imageBytes,
+        fileName,
       );
 
       setState(() {
@@ -98,10 +104,14 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
 
       setState(() => _isUploadingDoc = true);
 
+      final Uint8List fileBytes = await file.readAsBytes();
+      final String fileName = '${uid}_${docType}_${DateTime.now().millisecondsSinceEpoch}.jpg';
+
       final downloadUrl = await _firestoreService.uploadDoctorDocument(
         uid: uid,
         docType: docType,
-        file: File(file.path),
+        fileBytes: fileBytes,
+        fileName: fileName,
       );
 
       setState(() {
@@ -341,7 +351,6 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.background,
       appBar: AppBar(
         title: const Text("Doctor Profile"),
         actions: [
@@ -395,7 +404,7 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
                   width: double.infinity,
                   padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Theme.of(context).cardColor,
                     borderRadius: BorderRadius.circular(24),
                     boxShadow: [
                       BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 10),
@@ -409,7 +418,9 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
                             radius: 54,
                             backgroundColor: AppColors.primary.withOpacity(0.12),
                             backgroundImage: profileImage != null && profileImage!.isNotEmpty
-                                ? NetworkImage(profileImage!)
+                                ? (profileImage!.startsWith('data:image/')
+                                    ? MemoryImage(base64Decode(profileImage!.split('base64,').last))
+                                    : NetworkImage(profileImage!)) as ImageProvider
                                 : null,
                             child: profileImage == null || profileImage!.isEmpty
                                 ? const Icon(Icons.person, size: 54, color: AppColors.primary)
@@ -431,7 +442,7 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
                             bottom: 0,
                             right: 0,
                             child: GestureDetector(
-                              onTap: _pickAndUploadProfilePic,
+                              onTap: _isLoading ? null : _pickAndUploadProfilePic,
                               child: const CircleAvatar(
                                 radius: 18,
                                 backgroundColor: AppColors.primary,
@@ -595,7 +606,7 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
                               label: Text(slot),
                               onDeleted: () => _removeSlot(slot),
                               deleteIconColor: Colors.red.shade600,
-                              backgroundColor: AppColors.background,
+                              backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                             );
                           }).toList(),
@@ -611,7 +622,7 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
                 const SizedBox(height: 10),
                 Container(
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Theme.of(context).cardColor,
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: [
                       BoxShadow(color: Colors.black.withOpacity(0.03), blurRadius: 8),
@@ -631,6 +642,39 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
                       const Divider(height: 1),
                       _buildInfoTile(Icons.info, "Biography", bio.isNotEmpty ? bio : "Write a biography..."),
                     ],
+                  ),
+                ),
+                const SizedBox(height: 20),
+
+                // Theme Mode Option
+                Container(
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).cardColor,
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.03),
+                        blurRadius: 8,
+                        offset: const Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: ListenableBuilder(
+                    listenable: themeController,
+                    builder: (context, child) {
+                      return SwitchListTile(
+                        secondary: CircleAvatar(
+                          radius: 18,
+                          backgroundColor: AppColors.secondary.withOpacity(0.1),
+                          child: const Icon(Icons.dark_mode, color: AppColors.secondary, size: 18),
+                        ),
+                        title: const Text("Dark Mode", style: TextStyle(fontWeight: FontWeight.bold)),
+                        value: themeController.isDarkMode,
+                        onChanged: (bool val) {
+                          themeController.toggleTheme(val);
+                        },
+                      );
+                    },
                   ),
                 ),
                 const SizedBox(height: 30),
@@ -725,10 +769,10 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
   Widget _buildInfoTile(IconData icon, String title, String value) {
     return ListTile(
       leading: Icon(icon, color: AppColors.primary),
-      title: Text(title, style: TextStyle(fontSize: 11, color: Colors.grey.shade500)),
+      title: Text(title, style: TextStyle(fontSize: 11, color: Theme.of(context).textTheme.bodyMedium?.color?.withOpacity(0.7))),
       subtitle: Text(
         value,
-        style: const TextStyle(fontSize: 14, color: AppColors.textPrimary, fontWeight: FontWeight.w600),
+        style: TextStyle(fontSize: 14, color: Theme.of(context).colorScheme.onSurface, fontWeight: FontWeight.w600),
       ),
     );
   }

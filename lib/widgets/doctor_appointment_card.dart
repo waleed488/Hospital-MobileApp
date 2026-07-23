@@ -19,6 +19,9 @@ class DoctorAppointmentCard extends StatelessWidget {
   });
 
   Color statusColor() {
+    if (appointment.isExpired) {
+      return Colors.grey;
+    }
     switch (appointment.status.toLowerCase()) {
       case 'approved':
         return Colors.green;
@@ -29,6 +32,7 @@ class DoctorAppointmentCard extends StatelessWidget {
       case 'in_consultation':
         return Colors.purple;
       case 'cancelled':
+      case 'expired':
         return Colors.grey;
       default:
         return Colors.orange;
@@ -38,6 +42,7 @@ class DoctorAppointmentCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final status = appointment.status.toLowerCase();
+    final isExpired = appointment.isExpired;
 
     return Card(
       margin: const EdgeInsets.only(bottom: 12),
@@ -54,7 +59,7 @@ class DoctorAppointmentCard extends StatelessWidget {
             const SizedBox(height: 6),
 
             Text(
-              "Status: ${appointment.status}",
+              "Status: ${isExpired ? 'Expired' : appointment.status}",
               style: TextStyle(color: statusColor()),
             ),
 
@@ -63,7 +68,7 @@ class DoctorAppointmentCard extends StatelessWidget {
 
             const SizedBox(height: 10),
 
-            if (status == 'pending')
+            if (status == 'pending' && !isExpired)
               Row(
                 children: [
                   ElevatedButton(
@@ -78,13 +83,13 @@ class DoctorAppointmentCard extends StatelessWidget {
                 ],
               ),
 
-            if (status == 'approved')
+            if (status == 'approved' && !isExpired)
               ElevatedButton(
                 onPressed: onStartConsultation,
                 child: const Text("Start Consultation"),
               ),
 
-            if (status == 'in_consultation')
+            if (status == 'in_consultation' && !isExpired)
               ElevatedButton(
                 onPressed: onComplete,
                 child: const Text("Complete"),

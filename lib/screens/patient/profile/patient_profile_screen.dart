@@ -1,11 +1,14 @@
-import 'dart:io';
-import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
+
+import '../../../core/constants/app_colors.dart';
+import '../../../core/theme/theme_controller.dart';
 import '../../../services/auth_service.dart';
 import '../../../services/firestore_service.dart';
-import '../../../core/constants/app_colors.dart';
 
 class PatientProfileScreen extends StatefulWidget {
   const PatientProfileScreen({super.key});
@@ -46,9 +49,13 @@ class _PatientProfileScreenState extends State<PatientProfileScreen> {
 
       setState(() => _isUploadingImage = true);
 
+      final Uint8List imageBytes = await image.readAsBytes();
+      final String fileName = '${uid}_${DateTime.now().millisecondsSinceEpoch}.jpg';
+
       final downloadUrl = await _firestoreService.uploadProfileImage(
         uid,
-        File(image.path),
+        imageBytes,
+        fileName,
       );
 
       setState(() {
@@ -87,7 +94,10 @@ class _PatientProfileScreenState extends State<PatientProfileScreen> {
         child: Wrap(
           children: [
             ListTile(
-              leading: const Icon(Icons.photo_library, color: AppColors.primary),
+              leading: const Icon(
+                Icons.photo_library,
+                color: AppColors.primary,
+              ),
               title: const Text('Choose from Gallery'),
               onTap: () {
                 Navigator.pop(context);
@@ -119,18 +129,30 @@ class _PatientProfileScreenState extends State<PatientProfileScreen> {
     final chronicController = TextEditingController(text: chronicDiseases);
     final bioController = TextEditingController(text: bio);
 
-    String localGender = ['male', 'female', 'other'].contains(gender.toLowerCase())
+    String localGender =
+        ['male', 'female', 'other'].contains(gender.toLowerCase())
         ? gender.toLowerCase()
         : 'male';
     String localBloodGroup = bloodGroup.isNotEmpty ? bloodGroup : 'O+';
 
-    final List<String> bloodGroups = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'];
+    final List<String> bloodGroups = [
+      'A+',
+      'A-',
+      'B+',
+      'B-',
+      'AB+',
+      'AB-',
+      'O+',
+      'O-',
+    ];
 
     showDialog(
       context: context,
       builder: (ctx) => StatefulBuilder(
         builder: (context, setDialogState) => AlertDialog(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
           title: const Text(
             "Update Personal Info",
             style: TextStyle(fontWeight: FontWeight.bold),
@@ -159,7 +181,9 @@ class _PatientProfileScreenState extends State<PatientProfileScreen> {
                     const SizedBox(height: 12),
                     TextFormField(
                       controller: phoneController,
-                      decoration: const InputDecoration(labelText: "Phone Number"),
+                      decoration: const InputDecoration(
+                        labelText: "Phone Number",
+                      ),
                       keyboardType: TextInputType.phone,
                       validator: (value) {
                         if (value == null || value.trim().isEmpty) {
@@ -193,13 +217,17 @@ class _PatientProfileScreenState extends State<PatientProfileScreen> {
                       onTap: () async {
                         final picked = await showDatePicker(
                           context: context,
-                          initialDate: DateTime.now().subtract(const Duration(days: 365 * 25)),
+                          initialDate: DateTime.now().subtract(
+                            const Duration(days: 365 * 25),
+                          ),
                           firstDate: DateTime(1900),
                           lastDate: DateTime.now(),
                         );
                         if (picked != null) {
                           setDialogState(() {
-                            dobController.text = picked.toString().split(' ')[0];
+                            dobController.text = picked.toString().split(
+                              ' ',
+                            )[0];
                           });
                         }
                       },
@@ -216,7 +244,10 @@ class _PatientProfileScreenState extends State<PatientProfileScreen> {
                       decoration: const InputDecoration(labelText: "Gender"),
                       items: const [
                         DropdownMenuItem(value: 'male', child: Text("Male")),
-                        DropdownMenuItem(value: 'female', child: Text("Female")),
+                        DropdownMenuItem(
+                          value: 'female',
+                          child: Text("Female"),
+                        ),
                         DropdownMenuItem(value: 'other', child: Text("Other")),
                       ],
                       onChanged: (v) => setDialogState(() => localGender = v!),
@@ -224,20 +255,33 @@ class _PatientProfileScreenState extends State<PatientProfileScreen> {
                     const SizedBox(height: 12),
                     DropdownButtonFormField<String>(
                       value: localBloodGroup,
-                      decoration: const InputDecoration(labelText: "Blood Group"),
+                      decoration: const InputDecoration(
+                        labelText: "Blood Group",
+                      ),
                       items: bloodGroups.map((bg) {
                         return DropdownMenuItem(value: bg, child: Text(bg));
                       }).toList(),
-                      onChanged: (v) => setDialogState(() => localBloodGroup = v!),
+                      onChanged: (v) =>
+                          setDialogState(() => localBloodGroup = v!),
                     ),
                     const SizedBox(height: 12),
                     TextFormField(
                       controller: emergencyController,
-                      decoration: const InputDecoration(labelText: "Emergency Contact"),
+                      decoration: const InputDecoration(
+                        labelText: "Emergency Contact",
+                      ),
                       keyboardType: TextInputType.phone,
+                      maxLength: 11,
+                      inputFormatters: [
+                        FilteringTextInputFormatter.digitsOnly,
+                        LengthLimitingTextInputFormatter(11),
+                      ],
                       validator: (value) {
                         if (value == null || value.trim().isEmpty) {
                           return "Emergency contact is required";
+                        }
+                        if (!RegExp(r'^\d+$').hasMatch(value.trim())) {
+                          return "Emergency contact must contain only numeric digits";
                         }
                         return null;
                       },
@@ -245,12 +289,16 @@ class _PatientProfileScreenState extends State<PatientProfileScreen> {
                     const SizedBox(height: 12),
                     TextFormField(
                       controller: allergiesController,
-                      decoration: const InputDecoration(labelText: "Allergies (if any)"),
+                      decoration: const InputDecoration(
+                        labelText: "Allergies (if any)",
+                      ),
                     ),
                     const SizedBox(height: 12),
                     TextFormField(
                       controller: chronicController,
-                      decoration: const InputDecoration(labelText: "Chronic Diseases"),
+                      decoration: const InputDecoration(
+                        labelText: "Chronic Diseases",
+                      ),
                     ),
                     const SizedBox(height: 12),
                     TextFormField(
@@ -273,23 +321,28 @@ class _PatientProfileScreenState extends State<PatientProfileScreen> {
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
               ),
               onPressed: () async {
                 if (formKey.currentState!.validate()) {
                   try {
-                    await FirebaseFirestore.instance.collection('users').doc(uid).update({
-                      'name': nameController.text.trim(),
-                      'phone': phoneController.text.trim(),
-                      'address': addressController.text.trim(),
-                      'dateOfBirth': dobController.text.trim(),
-                      'gender': localGender,
-                      'bloodGroup': localBloodGroup,
-                      'emergencyContact': emergencyController.text.trim(),
-                      'allergies': allergiesController.text.trim(),
-                      'chronicDiseases': chronicController.text.trim(),
-                      'bio': bioController.text.trim(),
-                    });
+                    await FirebaseFirestore.instance
+                        .collection('users')
+                        .doc(uid)
+                        .update({
+                          'name': nameController.text.trim(),
+                          'phone': phoneController.text.trim(),
+                          'address': addressController.text.trim(),
+                          'dateOfBirth': dobController.text.trim(),
+                          'gender': localGender,
+                          'bloodGroup': localBloodGroup,
+                          'emergencyContact': emergencyController.text.trim(),
+                          'allergies': allergiesController.text.trim(),
+                          'chronicDiseases': chronicController.text.trim(),
+                          'bio': bioController.text.trim(),
+                        });
                     if (mounted) {
                       Navigator.pop(ctx);
                       ScaffoldMessenger.of(context).showSnackBar(
@@ -320,7 +373,6 @@ class _PatientProfileScreenState extends State<PatientProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.background,
       appBar: AppBar(
         title: const Text("Patient Profile"),
         actions: [
@@ -332,7 +384,10 @@ class _PatientProfileScreenState extends State<PatientProfileScreen> {
         ],
       ),
       body: StreamBuilder<DocumentSnapshot>(
-        stream: FirebaseFirestore.instance.collection('users').doc(uid).snapshots(),
+        stream: FirebaseFirestore.instance
+            .collection('users')
+            .doc(uid)
+            .snapshots(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
@@ -363,7 +418,7 @@ class _PatientProfileScreenState extends State<PatientProfileScreen> {
                   width: double.infinity,
                   padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Theme.of(context).cardColor,
                     borderRadius: BorderRadius.circular(24),
                     boxShadow: [
                       BoxShadow(
@@ -379,12 +434,21 @@ class _PatientProfileScreenState extends State<PatientProfileScreen> {
                         children: [
                           CircleAvatar(
                             radius: 54,
-                            backgroundColor: AppColors.primary.withOpacity(0.12),
-                            backgroundImage: profileImage != null && profileImage!.isNotEmpty
-                                ? NetworkImage(profileImage!)
+                            backgroundColor: AppColors.primary.withOpacity(
+                              0.12,
+                            ),
+                            backgroundImage:
+                                profileImage != null && profileImage!.isNotEmpty
+                                ? (profileImage!.startsWith('data:image/')
+                                    ? MemoryImage(base64Decode(profileImage!.split('base64,').last))
+                                    : NetworkImage(profileImage!)) as ImageProvider
                                 : null,
                             child: profileImage == null || profileImage!.isEmpty
-                                ? const Icon(Icons.person, size: 54, color: AppColors.primary)
+                                ? const Icon(
+                                    Icons.person,
+                                    size: 54,
+                                    color: AppColors.primary,
+                                  )
                                 : null,
                           ),
                           if (_isUploadingImage)
@@ -395,7 +459,9 @@ class _PatientProfileScreenState extends State<PatientProfileScreen> {
                                   shape: BoxShape.circle,
                                 ),
                                 child: const Center(
-                                  child: CircularProgressIndicator(color: Colors.white),
+                                  child: CircularProgressIndicator(
+                                    color: Colors.white,
+                                  ),
                                 ),
                               ),
                             ),
@@ -403,7 +469,9 @@ class _PatientProfileScreenState extends State<PatientProfileScreen> {
                             bottom: 0,
                             right: 0,
                             child: GestureDetector(
-                              onTap: _showImageSourceActionSheet,
+                              onTap: _isUploadingImage
+                                  ? null
+                                  : _showImageSourceActionSheet,
                               child: CircleAvatar(
                                 radius: 18,
                                 backgroundColor: AppColors.primary,
@@ -423,12 +491,18 @@ class _PatientProfileScreenState extends State<PatientProfileScreen> {
                       Text(
                         name,
                         textAlign: TextAlign.center,
-                        style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                        style: const TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                       const SizedBox(height: 4),
                       Text(
                         email,
-                        style: TextStyle(color: Colors.grey.shade600, fontSize: 14),
+                        style: TextStyle(
+                          color: Colors.grey.shade600,
+                          fontSize: 14,
+                        ),
                       ),
                     ],
                   ),
@@ -442,13 +516,17 @@ class _PatientProfileScreenState extends State<PatientProfileScreen> {
                     padding: const EdgeInsets.only(left: 4, bottom: 8),
                     child: Text(
                       "Clinical & Medical Profile",
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.grey.shade800),
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Theme.of(context).colorScheme.onSurface,
+                      ),
                     ),
                   ),
                 ),
                 Container(
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Theme.of(context).cardColor,
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: [
                       BoxShadow(
@@ -460,13 +538,33 @@ class _PatientProfileScreenState extends State<PatientProfileScreen> {
                   ),
                   child: Column(
                     children: [
-                      _buildInfoTile(Icons.bloodtype, "Blood Type", bloodGroup, Colors.red),
+                      _buildInfoTile(
+                        Icons.bloodtype,
+                        "Blood Type",
+                        bloodGroup,
+                        Colors.red,
+                      ),
                       const Divider(height: 1),
-                      _buildInfoTile(Icons.medical_services, "Allergies", allergies, Colors.orange),
+                      _buildInfoTile(
+                        Icons.medical_services,
+                        "Allergies",
+                        allergies,
+                        Colors.orange,
+                      ),
                       const Divider(height: 1),
-                      _buildInfoTile(Icons.health_and_safety, "Chronic Diseases", chronicDiseases, Colors.deepPurple),
+                      _buildInfoTile(
+                        Icons.health_and_safety,
+                        "Chronic Diseases",
+                        chronicDiseases,
+                        Colors.deepPurple,
+                      ),
                       const Divider(height: 1),
-                      _buildInfoTile(Icons.assignment, "Medical Record Info", bio.isNotEmpty ? bio : "Not entered yet", Colors.teal),
+                      _buildInfoTile(
+                        Icons.assignment,
+                        "Medical Record Info",
+                        bio.isNotEmpty ? bio : "Not entered yet",
+                        Colors.teal,
+                      ),
                     ],
                   ),
                 ),
@@ -479,13 +577,17 @@ class _PatientProfileScreenState extends State<PatientProfileScreen> {
                     padding: const EdgeInsets.only(left: 4, bottom: 8),
                     child: Text(
                       "Contact & Demographics",
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.grey.shade800),
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Theme.of(context).colorScheme.onSurface,
+                      ),
                     ),
                   ),
                 ),
                 Container(
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Theme.of(context).cardColor,
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: [
                       BoxShadow(
@@ -497,16 +599,84 @@ class _PatientProfileScreenState extends State<PatientProfileScreen> {
                   ),
                   child: Column(
                     children: [
-                      _buildInfoTile(Icons.phone, "Phone Number", phone.isNotEmpty ? phone : "Not set", AppColors.primary),
+                      _buildInfoTile(
+                        Icons.phone,
+                        "Phone Number",
+                        phone.isNotEmpty ? phone : "Not set",
+                        AppColors.primary,
+                      ),
                       const Divider(height: 1),
-                      _buildInfoTile(Icons.contact_emergency, "Emergency Phone", emergencyContact.isNotEmpty ? emergencyContact : "Not set", Colors.pink),
+                      _buildInfoTile(
+                        Icons.contact_emergency,
+                        "Emergency Phone",
+                        emergencyContact.isNotEmpty
+                            ? emergencyContact
+                            : "Not set",
+                        Colors.pink,
+                      ),
                       const Divider(height: 1),
-                      _buildInfoTile(Icons.wc, "Gender", gender[0].toUpperCase() + gender.substring(1).toLowerCase(), Colors.blue),
+                      _buildInfoTile(
+                        Icons.wc,
+                        "Gender",
+                        gender[0].toUpperCase() +
+                            gender.substring(1).toLowerCase(),
+                        Colors.blue,
+                      ),
                       const Divider(height: 1),
-                      _buildInfoTile(Icons.cake, "Date of Birth", dob.isNotEmpty ? dob : "Not set", Colors.indigo),
+                      _buildInfoTile(
+                        Icons.cake,
+                        "Date of Birth",
+                        dob.isNotEmpty ? dob : "Not set",
+                        Colors.indigo,
+                      ),
                       const Divider(height: 1),
-                      _buildInfoTile(Icons.home, "Home Address", address.isNotEmpty ? address : "Not set", Colors.blueGrey),
+                      _buildInfoTile(
+                        Icons.home,
+                        "Home Address",
+                        address.isNotEmpty ? address : "Not set",
+                        Colors.blueGrey,
+                      ),
                     ],
+                  ),
+                ),
+                const SizedBox(height: 20),
+
+                // Theme Mode Option
+                Container(
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).cardColor,
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.03),
+                        blurRadius: 8,
+                        offset: const Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: ListenableBuilder(
+                    listenable: themeController,
+                    builder: (context, child) {
+                      return SwitchListTile(
+                        secondary: CircleAvatar(
+                          radius: 18,
+                          backgroundColor: AppColors.secondary.withOpacity(0.1),
+                          child: const Icon(
+                            Icons.dark_mode,
+                            color: AppColors.secondary,
+                            size: 18,
+                          ),
+                        ),
+                        title: const Text(
+                          "Dark Mode",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        value: themeController.isDarkMode,
+                        onChanged: (bool val) {
+                          themeController.toggleTheme(val);
+                        },
+                      );
+                    },
                   ),
                 ),
                 const SizedBox(height: 30),
@@ -526,17 +696,30 @@ class _PatientProfileScreenState extends State<PatientProfileScreen> {
                       ),
                     ),
                     icon: const Icon(Icons.logout),
-                    label: const Text("Log Out from Account", style: TextStyle(fontWeight: FontWeight.bold)),
+                    label: const Text(
+                      "Log Out from Account",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                     onPressed: () async {
                       final confirm = await showDialog<bool>(
                         context: context,
                         builder: (ctx) => AlertDialog(
-                          title: const Text("Confirm Logout", style: TextStyle(fontWeight: FontWeight.bold)),
-                          content: const Text("Are you sure you want to log out of your patient profile?"),
+                          title: const Text(
+                            "Confirm Logout",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          content: const Text(
+                            "Are you sure you want to log out of your patient profile?",
+                          ),
                           actions: [
-                            TextButton(onPressed: () => Navigator.pop(ctx, false), child: const Text("Cancel")),
                             TextButton(
-                              style: TextButton.styleFrom(foregroundColor: Colors.red),
+                              onPressed: () => Navigator.pop(ctx, false),
+                              child: const Text("Cancel"),
+                            ),
+                            TextButton(
+                              style: TextButton.styleFrom(
+                                foregroundColor: Colors.red,
+                              ),
                               onPressed: () => Navigator.pop(ctx, true),
                               child: const Text("Logout"),
                             ),
@@ -546,12 +729,16 @@ class _PatientProfileScreenState extends State<PatientProfileScreen> {
                       if (confirm == true) {
                         await _authService.signOut();
                         if (context.mounted) {
-                          Navigator.pushNamedAndRemoveUntil(context, '/landing', (_) => false);
+                          Navigator.pushNamedAndRemoveUntil(
+                            context,
+                            '/landing',
+                            (_) => false,
+                          );
                         }
                       }
                     },
                   ),
-                )
+                ),
               ],
             ),
           );
@@ -560,7 +747,12 @@ class _PatientProfileScreenState extends State<PatientProfileScreen> {
     );
   }
 
-  Widget _buildInfoTile(IconData icon, String label, String value, Color iconColor) {
+  Widget _buildInfoTile(
+    IconData icon,
+    String label,
+    String value,
+    Color iconColor,
+  ) {
     return ListTile(
       leading: CircleAvatar(
         radius: 18,
@@ -569,11 +761,21 @@ class _PatientProfileScreenState extends State<PatientProfileScreen> {
       ),
       title: Text(
         label,
-        style: TextStyle(fontSize: 12, color: Colors.grey.shade500, fontWeight: FontWeight.w500),
+        style: TextStyle(
+          fontSize: 12,
+          color: Theme.of(
+            context,
+          ).textTheme.bodyMedium?.color?.withOpacity(0.7),
+          fontWeight: FontWeight.w500,
+        ),
       ),
       subtitle: Text(
         value,
-        style: const TextStyle(fontSize: 15, color: Colors.black87, fontWeight: FontWeight.bold),
+        style: TextStyle(
+          fontSize: 15,
+          color: Theme.of(context).colorScheme.onSurface,
+          fontWeight: FontWeight.bold,
+        ),
       ),
     );
   }

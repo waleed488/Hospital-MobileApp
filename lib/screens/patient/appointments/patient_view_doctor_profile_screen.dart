@@ -194,7 +194,6 @@ class _PatientViewDoctorProfileScreenState
     }
 
     return Scaffold(
-      backgroundColor: AppColors.background,
       appBar: AppBar(
         title: const Text("Doctor Details"),
         elevation: 0,

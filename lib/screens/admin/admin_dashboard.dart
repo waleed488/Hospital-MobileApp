@@ -1,5 +1,7 @@
+import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../../core/constants/app_colors.dart';
 import '../../../models/appointment_model.dart';
@@ -7,6 +9,7 @@ import '../../../models/review_model.dart';
 import '../../../models/user_model.dart';
 import '../../../services/auth_service.dart';
 import '../../../services/firestore_service.dart';
+import '../../../core/theme/theme_controller.dart';
 
 class AdminDashboard extends StatefulWidget {
   const AdminDashboard({super.key});
@@ -24,7 +27,6 @@ class _AdminDashboardState extends State<AdminDashboard> {
     return DefaultTabController(
       length: 5,
       child: Scaffold(
-        backgroundColor: AppColors.background,
         appBar: AppBar(
           title: const Text(
             "Admin Management Portal",
@@ -37,6 +39,20 @@ class _AdminDashboardState extends State<AdminDashboard> {
           backgroundColor: const Color(0xFF1E293B), // slate color for admin app bar
           foregroundColor: Colors.white,
           actions: [
+            ListenableBuilder(
+              listenable: themeController,
+              builder: (context, child) {
+                return IconButton(
+                  icon: Icon(
+                    themeController.isDarkMode ? Icons.light_mode : Icons.dark_mode,
+                    color: Colors.white,
+                  ),
+                  onPressed: () {
+                    themeController.toggleTheme(!themeController.isDarkMode);
+                  },
+                );
+              },
+            ),
             IconButton(
               icon: const Icon(Icons.logout, color: Colors.redAccent),
               onPressed: () async {
@@ -356,7 +372,9 @@ class _AdminDashboardState extends State<AdminDashboard> {
                           radius: 30,
                           backgroundColor: Colors.blue.withOpacity(0.1),
                           backgroundImage: doc.profileImage != null && doc.profileImage!.isNotEmpty
-                              ? NetworkImage(doc.profileImage!)
+                              ? (doc.profileImage!.startsWith('data:image/')
+                                  ? MemoryImage(base64Decode(doc.profileImage!.split('base64,').last))
+                                  : NetworkImage(doc.profileImage!)) as ImageProvider
                               : null,
                           child: doc.profileImage == null || doc.profileImage!.isEmpty
                               ? const Icon(Icons.person, size: 32, color: Colors.blue)
@@ -567,7 +585,9 @@ class _AdminDashboardState extends State<AdminDashboard> {
                 leading: CircleAvatar(
                   backgroundColor: Colors.green.withOpacity(0.1),
                   backgroundImage: patient.profileImage != null && patient.profileImage!.isNotEmpty
-                      ? NetworkImage(patient.profileImage!)
+                      ? (patient.profileImage!.startsWith('data:image/')
+                          ? MemoryImage(base64Decode(patient.profileImage!.split('base64,').last))
+                          : NetworkImage(patient.profileImage!)) as ImageProvider
                       : null,
                   child: patient.profileImage == null || patient.profileImage!.isEmpty
                       ? const Icon(Icons.person, color: Colors.green)
@@ -1402,6 +1422,17 @@ class _AdminDashboardState extends State<AdminDashboard> {
                     controller: emergencyController,
                     decoration: const InputDecoration(labelText: "Emergency Contact"),
                     keyboardType: TextInputType.phone,
+                    maxLength: 11,
+                    inputFormatters: [
+                      FilteringTextInputFormatter.digitsOnly,
+                      LengthLimitingTextInputFormatter(11),
+                    ],
+                    validator: (v) {
+                      if (v != null && v.trim().isNotEmpty && !RegExp(r'^\d+$').hasMatch(v.trim())) {
+                        return "Emergency contact must contain only numeric digits";
+                      }
+                      return null;
+                    },
                   ),
                   TextFormField(
                     controller: addressController,
@@ -1572,18 +1603,31 @@ class _AdminDashboardState extends State<AdminDashboard> {
               )
             : ClipRRect(
                 borderRadius: BorderRadius.circular(12),
-                child: Image.network(
-                  url,
-                  height: 180,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
-                  errorBuilder: (c, o, s) => const Center(
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(vertical: 20),
-                      child: Text("Error loading document image file", style: TextStyle(color: Colors.red)),
-                    ),
-                  ),
-                ),
+                child: url.startsWith('data:image/')
+                    ? Image.memory(
+                        base64Decode(url.split('base64,').last),
+                        height: 180,
+                        width: double.infinity,
+                        fit: BoxFit.cover,
+                        errorBuilder: (c, o, s) => const Center(
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(vertical: 20),
+                            child: Text("Error loading document image file", style: TextStyle(color: Colors.red)),
+                          ),
+                        ),
+                      )
+                    : Image.network(
+                        url,
+                        height: 180,
+                        width: double.infinity,
+                        fit: BoxFit.cover,
+                        errorBuilder: (c, o, s) => const Center(
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(vertical: 20),
+                            child: Text("Error loading document image file", style: TextStyle(color: Colors.red)),
+                          ),
+                        ),
+                      ),
               ),
       ],
     );

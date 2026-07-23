@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../core/constants/app_colors.dart';
 import '../../services/auth_service.dart';
 
@@ -33,10 +34,16 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
         context: context,
         barrierDismissible: false,
         builder: (ctx) => AlertDialog(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
           title: const Row(
             children: [
-              Icon(Icons.check_circle_outline, color: AppColors.success, size: 28),
+              Icon(
+                Icons.check_circle_outline,
+                color: AppColors.success,
+                size: 28,
+              ),
               SizedBox(width: 8),
               Text("Email Sent", style: TextStyle(fontWeight: FontWeight.bold)),
             ],
@@ -48,7 +55,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           actions: [
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
               ),
               onPressed: () {
                 Navigator.pop(ctx); // Close dialog
@@ -66,12 +75,17 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
       showDialog(
         context: context,
         builder: (ctx) => AlertDialog(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
           title: const Row(
             children: [
               Icon(Icons.error_outline, color: AppColors.error, size: 28),
               SizedBox(width: 8),
-              Text("Request Failed", style: TextStyle(fontWeight: FontWeight.bold)),
+              Text(
+                "Request Failed",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
             ],
           ),
           content: Text(
@@ -108,14 +122,15 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
         foregroundColor: AppColors.textPrimary,
         elevation: 0,
       ),
-      backgroundColor: AppColors.background,
       body: Center(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(24),
           child: ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 420),
             child: Card(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(24),
+              ),
               elevation: 4,
               child: Padding(
                 padding: const EdgeInsets.all(28),
@@ -171,8 +186,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                           if (value == null || value.trim().isEmpty) {
                             return "Email is required";
                           }
-                          if (!RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                              .hasMatch(value)) {
+                          if (!RegExp(
+                            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+",
+                          ).hasMatch(value)) {
                             return "Please enter a valid email address";
                           }
                           return null;

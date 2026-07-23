@@ -101,6 +101,8 @@ class AppointmentModel {
         return 'rejected';
       case 'cancelled':
         return 'cancelled';
+      case 'expired':
+        return 'expired';
       default:
         return 'pending';
     }
@@ -114,4 +116,45 @@ class AppointmentModel {
   bool get isCompleted => status == 'completed';
   bool get isRejected => status == 'rejected';
   bool get isCancelled => status == 'cancelled';
+  bool get isExpiredStatus => status == 'expired';
+
+  DateTime? get scheduledDateTime {
+    if (date.isEmpty) return null;
+    try {
+      final parsedDate = DateTime.tryParse(date);
+      if (parsedDate == null) return null;
+
+      int hour = 0;
+      int minute = 0;
+      if (time.isNotEmpty) {
+        final timeTrimmed = time.trim().toUpperCase();
+        final isPm = timeTrimmed.contains('PM');
+        final isAm = timeTrimmed.contains('AM');
+        final cleanTime = timeTrimmed.replaceAll(RegExp(r'[^\d:]'), '');
+        final parts = cleanTime.split(':');
+        if (parts.isNotEmpty) {
+          hour = int.tryParse(parts[0]) ?? 0;
+          if (parts.length > 1) {
+            minute = int.tryParse(parts[1]) ?? 0;
+          }
+          if (isPm && hour < 12) hour += 12;
+          if (isAm && hour == 12) hour = 0;
+        }
+      }
+      return DateTime(parsedDate.year, parsedDate.month, parsedDate.day, hour, minute);
+    } catch (_) {
+      return null;
+    }
+  }
+
+  bool get isExpired {
+    if (status == 'expired') return true;
+    if (status == 'pending') {
+      final dt = scheduledDateTime;
+      if (dt != null && DateTime.now().isAfter(dt)) {
+        return true;
+      }
+    }
+    return false;
+  }
 }

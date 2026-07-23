@@ -129,7 +129,6 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.background,
       appBar: AppBar(title: const Text("Book Appointment")),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),

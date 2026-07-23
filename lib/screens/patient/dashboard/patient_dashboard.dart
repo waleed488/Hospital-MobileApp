@@ -620,7 +620,6 @@ class _PatientDashboardState extends State<PatientDashboard> {
     final todayStr = DateTime.now().toString().split(' ')[0];
 
     return Scaffold(
-      backgroundColor: AppColors.background,
       // Added the navigation drawer here. This instantly brings up the hamburger menu button.
       drawer: _buildPatientDrawer(context),
       appBar: AppBar(

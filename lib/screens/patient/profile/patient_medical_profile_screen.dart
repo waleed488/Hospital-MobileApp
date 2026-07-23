@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../../../core/constants/app_colors.dart';
 
 class PatientMedicalProfileScreen extends StatefulWidget {
@@ -100,7 +101,6 @@ class _PatientMedicalProfileScreenState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.background,
       appBar: AppBar(
         title: const Text("Medical Profile"),
         elevation: 0,
@@ -244,9 +244,17 @@ class _PatientMedicalProfileScreenState
                   TextFormField(
                     controller: emergencyContactController,
                     keyboardType: TextInputType.phone,
-                    decoration: _inputDecoration("Emergency Contact Name/Phone", Icons.contact_phone),
+                    maxLength: 11,
+                    inputFormatters: [
+                      FilteringTextInputFormatter.digitsOnly,
+                      LengthLimitingTextInputFormatter(11),
+                    ],
+                    decoration: _inputDecoration("Emergency Contact Phone", Icons.contact_phone),
                     validator: (val) {
                       if (val == null || val.trim().isEmpty) return "Required";
+                      if (!RegExp(r'^\d+$').hasMatch(val.trim())) {
+                        return "Emergency contact must contain only numeric digits";
+                      }
                       return null;
                     },
                   ),

@@ -24,7 +24,6 @@ class _PatientRecordsScreenState extends State<PatientRecordsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.background,
       appBar: AppBar(title: const Text("Patient Records & History")),
       body: Column(
         children: [
@@ -374,7 +373,6 @@ class _PatientHistoryDetailScreenState
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        backgroundColor: AppColors.background,
         appBar: AppBar(
           title: Text(widget.patient.name),
           bottom: const TabBar(
